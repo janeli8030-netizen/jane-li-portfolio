@@ -224,6 +224,14 @@ export const projects: Project[] = [
       final: {
         renders: [
           {
+            src: "/projects/kids-balance-bike/sections/cmf-analysis-brainstorm/top.png",
+            alt: { zh: "CMF 分析与头脑风暴（上）", en: "CMF analysis & brainstorming (top)" },
+          },
+          {
+            src: "/projects/kids-balance-bike/sections/cmf-analysis-brainstorm/bottom.png",
+            alt: { zh: "草图推演（下）", en: "Sketch deduction (bottom)" },
+          },
+          {
             src: "/projects/kids-balance-bike/final-renders.png",
             alt: { zh: "儿童滑步车渲染图", en: "Kids balance bike renders" },
           },
