@@ -170,33 +170,33 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* 1) Hero */}
-      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--deep-green)] text-white">
+      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-white text-[var(--ink)]">
         <div className="grid gap-8 p-10 md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
-            <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
+            <div className="text-xs font-medium text-zinc-500">CMF Portfolio</div>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
               {site.slogan.zh}
             </h1>
-            <div className="mt-3 text-lg text-white/90 italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+            <div className="mt-3 text-lg text-zinc-700 italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
               “{site.slogan.en}”
             </div>
 
-            <div className="mt-6 text-base text-white/90">
+            <div className="mt-6 text-base text-zinc-700">
               {site.name.zh} · {site.title.zh}
-              <span className="mx-2 text-white/50">|</span>
+              <span className="mx-2 text-zinc-300">|</span>
               {site.name.en} · {site.title.en}
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--deep-green)] hover:bg-white/90"
+                className="rounded-full bg-[var(--deep-green)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95"
               >
                 查看作品 / Projects
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
+                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 hover:bg-zinc-50"
               >
                 联系我 / Contact
               </Link>
@@ -209,9 +209,9 @@ export default function HomePage() {
               <img
                 src="/images/hero.png"
                 alt="Hero image"
-                className="h-full w-full object-cover opacity-95"
+                className="h-full w-full object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-black/0 to-black/0" />
             </div>
             <div className="mt-3 text-xs text-white/70">Hero image</div>
           </div>
