@@ -82,8 +82,20 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <section className="rounded-3xl border border-black/10 bg-white p-7">
         <h2 className="text-sm font-semibold">Final Renders</h2>
-        <p className="mt-3 text-sm text-zinc-700">{s.final?.notes?.en}</p>
-        <p className="mt-2 text-xs text-zinc-500">{s.final?.notes?.zh}</p>
+
+        {(s.final?.renders ?? []).length ? (
+          <div className="mt-4 grid gap-4">
+            {(s.final?.renders ?? []).map((r) => (
+              <div key={r.src} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={r.src} alt={r.alt.en} className="h-auto w-full" />
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {s.final?.notes?.en ? <p className="mt-4 text-sm text-zinc-700">{s.final?.notes?.en}</p> : null}
+        {s.final?.notes?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.final?.notes?.zh}</p> : null}
       </section>
     </div>
   );

@@ -114,18 +114,125 @@ export const projects: Project[] = [
     slug: "kids-balance-bike",
     order: 2,
     type: "kids-balance-bike",
-    title: { zh: "儿童滑步车", en: "Kids Balance Bike" },
+    title: { zh: "儿童滑步车｜Mantis", en: "Kids Balance Bike | Mantis" },
     summary: {
-      zh: "从用户情绪与安全感出发，构建亲和但不过度幼稚的色彩与材料策略。",
-      en: "A CMF strategy balancing approachability and safety without feeling overly childish.",
+      zh: "以螳螂自然色为起点，通过降饱和色彩策略与安全识别点，打造轻便、安全、舒适的儿童滑步车 CMF 方案。",
+      en: "Starting from mantis-inspired naturals, a de-saturated palette and safety accents shape a lightweight, safe, and comfortable CMF concept.",
     },
     sections: {
-      overview: { zh: "（待补充项目概述）", en: "(Project overview coming soon)" },
-      challengeAndGoal: { zh: "（待补充）", en: "(Coming soon)" },
-      color: { palette: [] },
-      material: { items: [] },
-      finish: { processes: [] },
-      final: { renders: [] },
+      overview: {
+        zh: "以仿生螳螂为灵感的儿童滑步车概念方案，围绕“轻便、安全、舒适”建立 CMF 语言与可制造的落地细节。",
+        en: "A kids balance bike concept inspired by a mantis, building a manufacturable CMF language around lightness, safety, and comfort.",
+      },
+      challengeAndGoal: {
+        zh: "挑战：在户外高频使用场景下兼顾轻量化、耐候、耐脏与儿童安全；目标：用颜色与触感建立识别度与安全感，并形成可生产的材料/工艺组合。",
+        en: "Challenge: balance lightweight construction with outdoor durability and child safety. Goal: use color and tactility to build recognizability and trust, with producible material/finish choices.",
+      },
+      color: {
+        palette: [
+          {
+            name: "Matte Ink Green",
+            note: {
+              zh: "主色：Pantone 19-5217 TCX｜车架主体，传递自然、沉稳、生命力",
+              en: "Primary: Pantone 19-5217 TCX — frame body; natural, calm, vital",
+            },
+          },
+          {
+            name: "Warm Limestone",
+            note: {
+              zh: "辅色：Pantone 16-3802 TCX｜连接件/螺丝盖，平衡主色冷感",
+              en: "Secondary: Pantone 16-3802 TCX — connectors/caps; balances coolness",
+            },
+          },
+          {
+            name: "Fluoro Yellow-Green",
+            note: {
+              zh: "点缀：Pantone 13-0630 TN｜轮毂/把手端，提升辨识度与安全警示",
+              en: "Accent: Pantone 13-0630 TN — hubs/handle ends; visibility & safety cue",
+            },
+          },
+        ],
+        source: {
+          zh: "色彩策略：以螳螂自然色为起点，进行“降饱和”处理，形成差异化。",
+          en: "Color strategy: start from mantis naturals and de-saturate for differentiation.",
+        },
+      },
+      material: {
+        items: [
+          {
+            name: "车架｜镁合金",
+            why: {
+              zh: "比碳钢轻约 40%（整车约 1.2kg），儿童可自己搬动；天然减震性更好。",
+              en: "~40% lighter than carbon steel (target 1.2kg total); kids can carry it; better inherent damping.",
+            },
+          },
+          {
+            name: "车轮｜充气橡胶胎",
+            why: {
+              zh: "缓冲碎石路震动，抓地力强，适合公园/小区/草地。",
+              en: "Absorbs vibration on rough ground; strong grip for parks/communities/grass.",
+            },
+          },
+          {
+            name: "把手/坐垫｜环保 PU 发泡",
+            why: {
+              zh: "柔软但有支撑，无毒无味，符合儿童产品安全标准。",
+              en: "Soft yet supportive; non-toxic/low-odor for child safety standards.",
+            },
+          },
+          {
+            name: "紧固件｜不锈钢",
+            why: {
+              zh: "防锈，淋雨不腐蚀。",
+              en: "Corrosion-resistant; safe for rainy outdoor use.",
+            },
+          },
+        ],
+      },
+      finish: {
+        processes: [
+          {
+            name: "车架｜哑光喷涂 + 微磨砂纹理",
+            description: {
+              zh: "触感细腻不滑手；户外不反光刺眼；磨砂增加摩擦力，孩子握持更稳。",
+              en: "Fine, non-slippery feel; reduced glare outdoors; micro texture improves grip.",
+            },
+          },
+          {
+            name: "车轮｜原生橡胶 + 防滑纹路",
+            description: {
+              zh: "柔软有弹性；纹路深度约 1.5mm，排水+防滑。",
+              en: "Soft and elastic; ~1.5mm tread depth for drainage and anti-slip.",
+            },
+          },
+          {
+            name: "把手｜双色注塑 + 防滑颗粒",
+            description: {
+              zh: "柔软、微粘；颗粒密度约 30 目，小手不易滑脱。",
+              en: "Soft with slight tack; ~30-mesh bumps reduce slippage for small hands.",
+            },
+          },
+          {
+            name: "品牌 LOGO｜激光雕刻",
+            description: {
+              zh: "平整无凸起，避免贴纸被抠咬或脱落，安全第一。",
+              en: "Flush and durable; avoids stickers that could be picked/chewed—safety first.",
+            },
+          },
+        ],
+      },
+      final: {
+        renders: [
+          {
+            src: "/projects/kids-balance-bike/final-renders.png",
+            alt: { zh: "儿童滑步车渲染图", en: "Kids balance bike renders" },
+          },
+        ],
+        notes: {
+          zh: "材料组合逻辑：镁合金（轻）+ 充气胎（稳）+ PU 发泡（软）= 兼顾“轻便、安全、舒适”。",
+          en: "Material logic: Mg alloy (light) + pneumatic tire (stable) + PU foam (soft) = lightweight, safe, comfortable.",
+        },
+      },
     },
   },
   {
