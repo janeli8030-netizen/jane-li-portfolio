@@ -180,7 +180,7 @@ export default function HomePage() {
             >
               “{site.slogan.en}”
             </h1>
-            <div className="mt-3 text-xl text-white/90 md:text-2xl">{site.slogan.zh}</div>
+
 
             <div className="mt-6 text-base text-white/90">
               {site.name.zh} · {site.title.zh}
