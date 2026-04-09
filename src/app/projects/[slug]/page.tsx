@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Palette from "@/components/Palette";
+import SectionImage from "@/components/SectionImage";
 import { projects } from "@/lib/content";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -23,7 +24,18 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <section className="rounded-3xl border border-black/10 bg-white p-7">
         <h2 className="text-sm font-semibold">Project Overview</h2>
-        <p className="mt-3 text-sm text-zinc-700">{s.overview?.en}</p>
+
+        {project.slug === "kids-balance-bike" ? (
+          <div className="mt-4">
+            <SectionImage
+              src="/projects/kids-balance-bike/sections/cmf-analysis-brainstorm.png"
+              alt="CMF analysis + sketch deduction"
+              caption="过程页：CMF 分析 / 头脑风暴 / 草图推演"
+            />
+          </div>
+        ) : null}
+
+        <p className="mt-4 text-sm text-zinc-700">{s.overview?.en}</p>
         <p className="mt-2 text-xs text-zinc-500">{s.overview?.zh}</p>
       </section>
 
