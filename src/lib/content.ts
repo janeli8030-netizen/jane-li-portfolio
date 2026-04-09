@@ -132,6 +132,7 @@ export const projects: Project[] = [
         palette: [
           {
             name: "Matte Ink Green",
+            hex: "#1F3A2E",
             note: {
               zh: "主色：Pantone 19-5217 TCX｜车架主体，传递自然、沉稳、生命力",
               en: "Primary: Pantone 19-5217 TCX — frame body; natural, calm, vital",
@@ -139,6 +140,7 @@ export const projects: Project[] = [
           },
           {
             name: "Warm Limestone",
+            hex: "#D7D0C2",
             note: {
               zh: "辅色：Pantone 16-3802 TCX｜连接件/螺丝盖，平衡主色冷感",
               en: "Secondary: Pantone 16-3802 TCX — connectors/caps; balances coolness",
@@ -146,6 +148,7 @@ export const projects: Project[] = [
           },
           {
             name: "Fluoro Yellow-Green",
+            hex: "#D7E100",
             note: {
               zh: "点缀：Pantone 13-0630 TN｜轮毂/把手端，提升辨识度与安全警示",
               en: "Accent: Pantone 13-0630 TN — hubs/handle ends; visibility & safety cue",
