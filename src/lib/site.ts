@@ -1,5 +1,5 @@
 export const site = {
-  name: { zh: "李佳馨", en: "Jiaxin Li" },
+  name: { zh: "李佳馨", en: "Jane Li" },
   domain: "jane-li.top",
   slogan: {
     zh: "让材料说话，用色彩共鸣",

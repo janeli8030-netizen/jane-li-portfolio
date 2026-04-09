@@ -92,8 +92,10 @@ function AboutMe() {
   return (
     <section className="grid gap-6 rounded-3xl border border-black/10 bg-white p-8 md:grid-cols-12 md:items-center">
       <div className="md:col-span-4">
-        <div className="aspect-square w-full max-w-[260px] rounded-3xl bg-zinc-100" />
-        <div className="mt-3 text-xs text-zinc-500">（这里放你的照片/头像）</div>
+        <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-3xl bg-zinc-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/avatar.jpg" alt="Avatar" className="h-full w-full object-cover" />
+        </div>
       </div>
       <div className="md:col-span-8">
         <h2 className="text-xl font-semibold tracking-tight">关于我 / About</h2>
@@ -202,8 +204,16 @@ export default function HomePage() {
           </div>
 
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] w-full rounded-[28px] bg-white/10 ring-1 ring-white/15" />
-            <div className="mt-3 text-xs text-white/70">（这里放背景大图：材料样板特写/滑步车渲染图）</div>
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-white/10 ring-1 ring-white/15">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hero.png"
+                alt="Hero image"
+                className="h-full w-full object-cover opacity-95"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />
+            </div>
+            <div className="mt-3 text-xs text-white/70">Hero image</div>
           </div>
         </div>
       </section>
