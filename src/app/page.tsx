@@ -174,8 +174,11 @@ export default function HomePage() {
         <div className="grid gap-8 p-10 md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
             <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">{site.slogan.zh}</h1>
-            <div className="mt-3 text-lg text-white/90 italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">{site.slogan.zh}</h1>
+            <div
+              className="mt-3 text-xl text-white/90 italic md:text-2xl"
+              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+            >
               “{site.slogan.en}”
             </div>
 
