@@ -170,7 +170,7 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* 1) Hero */}
-      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--primary)] text-white">
+      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--deep-green)] text-white">
         <div className="grid gap-8 p-10 md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
             <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
@@ -188,7 +188,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--primary)] hover:bg-white/90"
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--deep-green)] hover:bg-white/90"
               >
                 查看作品 / Projects
               </Link>

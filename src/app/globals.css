@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* CMF palette (Jane Li) */
-  --primary: #2d4a3e; /* deep sage green */
-  --bg: #e8e2d5; /* warm limestone / off-white */
+  --bg: #fafaf9;
   --card: #ffffff;
-  --ink: #3a3a3a; /* deep gray for body */
-  --muted: #6b6b6b;
-  --gold: #c9a87c; /* matte gold / terracotta */
-  --accent: #d9c5b3; /* soft lotus pink */
+  --muted: #6b7280;
+  --ink: #111827;
+  --deep-green: #0f3d2e;
+  --gold: #c9a87c;
+  --warm-lime: #f4f1ea;
 }
 
 html,
@@ -21,6 +20,7 @@ body {
   color: var(--ink);
 }
 
+/* subtle selection */
 ::selection {
   background: color-mix(in oklab, var(--gold) 35%, white);
 }

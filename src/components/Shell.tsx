@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[var(--primary)] text-white">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[var(--deep-green)] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="text-sm font-medium tracking-tight">
             {site.name.en}
@@ -26,14 +26,14 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
       <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
 
-      <footer className="border-t border-black/10 bg-[var(--primary)] text-white">
-        <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-white/90">
+      <footer className="border-t border-black/10 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-zinc-700">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="font-medium">请联系我 → {site.contact.phone} / {site.contact.email}</div>
-              <div className="text-xs text-white/70">Contact → {site.contact.phone} / {site.contact.email}</div>
+              <div className="text-xs text-zinc-500">Contact → {site.contact.phone} / {site.contact.email}</div>
             </div>
-            <div className="text-xs text-white/70">© {new Date().getFullYear()} {site.name.zh} | CMF Portfolio | {site.domain}</div>
+            <div className="text-xs text-zinc-500">© {new Date().getFullYear()} {site.name.zh} | CMF Portfolio | {site.domain}</div>
           </div>
         </div>
       </footer>
