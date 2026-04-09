@@ -1,19 +1,20 @@
 import Link from "next/link";
 import LanguageToggle from "@/components/LanguageToggle";
 import { nav } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-dvh bg-zinc-50 text-zinc-900">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-zinc-50/80 backdrop-blur">
+    <div className="min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
+      <header className="sticky top-0 z-50 border-b border-black/5 bg-[var(--deep-green)] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="text-sm font-medium tracking-tight">
-            Jane Li
+            {site.name.en}
           </Link>
-          <nav className="hidden items-center gap-5 text-sm text-zinc-700 md:flex">
+          <nav className="hidden items-center gap-5 text-sm text-white/90 md:flex">
             {nav.primary.map((item) => (
-              <Link key={item.key} href={item.href} className="hover:text-zinc-900">
-                {item.label.en}
+              <Link key={item.key} href={item.href} className="hover:text-white">
+                {item.label.zh} / {item.label.en}
               </Link>
             ))}
           </nav>
@@ -25,10 +26,15 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
       <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
 
-      <footer className="border-t border-black/5 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 text-sm text-zinc-600">
-          <div>© {new Date().getFullYear()} Jane Li</div>
-          <div className="text-zinc-500">CMF Portfolio · jane-li.top</div>
+      <footer className="border-t border-black/10 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-zinc-700">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <div>
+              <div className="font-medium">请联系我 → {site.contact.phone} / {site.contact.email}</div>
+              <div className="text-xs text-zinc-500">Contact → {site.contact.phone} / {site.contact.email}</div>
+            </div>
+            <div className="text-xs text-zinc-500">© {new Date().getFullYear()} {site.name.zh} | CMF Portfolio | {site.domain}</div>
+          </div>
         </div>
       </footer>
     </div>
