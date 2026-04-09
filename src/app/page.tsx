@@ -35,7 +35,7 @@ function FeaturedProjects() {
                 <img
                   src={`/images/cover-${p.slug}.png`}
                   alt={`${p.title.en} cover`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full scale-[1.08] object-cover"
                 />
               </div>
               <div className="mt-4">
