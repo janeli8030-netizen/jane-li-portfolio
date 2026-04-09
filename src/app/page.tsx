@@ -221,7 +221,7 @@ export default function HomePage() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0" />
             </div>
-            <div className="mt-3 text-xs text-white/70">（Hero 背景图）</div>
+
           </div>
         </div>
       </section>
