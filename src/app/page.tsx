@@ -30,7 +30,14 @@ function FeaturedProjects() {
               href={`/projects/${p.slug}`}
               className="group rounded-[24px] border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:border-[var(--gold)]"
             >
-              <div className="aspect-[4/3] w-full rounded-[24px] bg-zinc-100" />
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-zinc-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/images/cover-${p.slug}.png`}
+                  alt={`${p.title.en} cover`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="mt-4">
                 <div className="text-sm font-semibold tracking-tight">
                   {p.title.zh}
