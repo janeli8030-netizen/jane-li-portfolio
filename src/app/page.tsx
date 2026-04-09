@@ -3,7 +3,7 @@ import { projects } from "@/lib/content";
 import { site } from "@/lib/site";
 
 function FeaturedProjects() {
-  const featuredSlugs = ["kids-balance-bike", "lulu-aroma-device", "miening-miniapp-vi", "ar-emotion-game"];
+  const featuredSlugs = ["kids-balance-bike", "lulu-aroma-device", "ar-emotion-game"];
   const featured = featuredSlugs
     .map((slug) => projects.find((p) => p.slug === slug))
     .filter(Boolean)
