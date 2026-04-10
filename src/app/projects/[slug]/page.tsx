@@ -25,18 +25,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <section className="rounded-3xl border border-black/10 bg-white p-7">
         <h2 className="text-sm font-semibold">Project Overview</h2>
 
-
         <p className="mt-4 text-sm text-zinc-700">{s.overview?.en}</p>
         <p className="mt-2 text-xs text-zinc-500">{s.overview?.zh}</p>
-      </section>
 
-      <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Design Challenge & CMF Goal</h2>
-        <p className="mt-3 text-sm text-zinc-700">{s.challengeAndGoal?.en}</p>
-        <p className="mt-2 text-xs text-zinc-500">{s.challengeAndGoal?.zh}</p>
-
+        {/* Process: moodboard + sketches under overview */}
         {project.slug === "kids-balance-bike" ? (
-          <div className="mt-5 grid gap-4">
+          <div className="mt-6 grid gap-4">
             <SectionImage
               src="/projects/kids-balance-bike/sections/moodboard.png"
               alt="Moodboard"
@@ -52,15 +46,28 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </section>
 
       <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Color Scheme</h2>
-        <div className="mt-4">
-          <Palette items={s.color?.palette ?? []} />
+        <h2 className="text-sm font-semibold">Design Challenge & CMF Goal</h2>
+
+        <div className="mt-4 grid gap-6 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <p className="text-sm text-zinc-700">{s.challengeAndGoal?.en}</p>
+            <p className="mt-2 text-xs text-zinc-500">{s.challengeAndGoal?.zh}</p>
+          </div>
+
+          {/* Palette integrated to the right */}
+          <div className="md:col-span-5">
+            <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
+              <div className="text-xs font-semibold text-zinc-700">Color Scheme</div>
+              <div className="mt-3">
+                <Palette items={s.color?.palette ?? []} />
+              </div>
+              {s.color?.source?.en ? <p className="mt-3 text-xs text-zinc-600">{s.color?.source?.en}</p> : null}
+              {s.color?.source?.zh ? <p className="mt-1 text-xs text-zinc-500">{s.color?.source?.zh}</p> : null}
+            </div>
+          </div>
         </div>
-        {s.color?.source?.en ? <p className="mt-4 text-sm text-zinc-700">{s.color?.source?.en}</p> : null}
-        {s.color?.source?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.color?.source?.zh}</p> : null}
-        {s.color?.psychology?.en ? (
-          <p className="mt-4 text-sm text-zinc-700">{s.color?.psychology?.en}</p>
-        ) : null}
+
+        {s.color?.psychology?.en ? <p className="mt-5 text-sm text-zinc-700">{s.color?.psychology?.en}</p> : null}
         {s.color?.psychology?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.color?.psychology?.zh}</p> : null}
       </section>
 
@@ -75,7 +82,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <>
               <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
                 <div className="text-sm font-semibold">车架 / Frame</div>
-                <div className="mt-3 grid gap-3 md:grid-cols-12">
+                <div className="mt-3 grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Material</div>
                     <div className="mt-1 text-sm font-medium">镁合金 / Magnesium alloy</div>
@@ -84,7 +91,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     </div>
                     <div className="mt-1 text-xs text-zinc-500">比碳钢轻约 40%（整车约 1.2kg），儿童可自己搬动；天然减震性更好。</div>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Finish</div>
                     <div className="mt-1 text-sm font-medium">哑光喷涂 + 微磨砂纹理 / Matte coating + micro texture</div>
                     <div className="mt-2 text-sm text-zinc-700">
@@ -92,12 +99,23 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     </div>
                     <div className="mt-1 text-xs text-zinc-500">触感细腻不滑手；户外不反光刺眼；磨砂增加摩擦力，孩子握持更稳。</div>
                   </div>
+                  <div className="md:col-span-2">
+                    <div className="text-xs text-zinc-500">Prototype</div>
+                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/projects/kids-balance-bike/sections/prototype-frame.svg"
+                        alt="Prototype material - frame"
+                        className="h-auto w-full"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
                 <div className="text-sm font-semibold">车轮 / Wheels</div>
-                <div className="mt-3 grid gap-3 md:grid-cols-12">
+                <div className="mt-3 grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Material</div>
                     <div className="mt-1 text-sm font-medium">充气橡胶胎 / Pneumatic rubber tire</div>
@@ -106,18 +124,29 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     </div>
                     <div className="mt-1 text-xs text-zinc-500">缓冲碎石路震动，抓地力强，适合公园/小区/草地。</div>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Finish</div>
                     <div className="mt-1 text-sm font-medium">原生橡胶 + 防滑纹路 / Natural rubber + tread</div>
                     <div className="mt-2 text-sm text-zinc-700">Soft and elastic; ~1.5mm tread depth for drainage and anti-slip.</div>
                     <div className="mt-1 text-xs text-zinc-500">柔软有弹性；纹路深度约 1.5mm，排水+防滑。</div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="text-xs text-zinc-500">Prototype</div>
+                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/projects/kids-balance-bike/sections/prototype-wheels.svg"
+                        alt="Prototype material - wheels"
+                        className="h-auto w-full"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
                 <div className="text-sm font-semibold">把手 / Handle</div>
-                <div className="mt-3 grid gap-3 md:grid-cols-12">
+                <div className="mt-3 grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Material</div>
                     <div className="mt-1 text-sm font-medium">环保 PU 发泡 / Eco PU foam</div>
@@ -126,29 +155,51 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     </div>
                     <div className="mt-1 text-xs text-zinc-500">柔软但有支撑，无毒无味，符合儿童产品安全标准。</div>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Finish</div>
                     <div className="mt-1 text-sm font-medium">双色注塑 + 防滑颗粒 / Two-shot + grip bumps</div>
                     <div className="mt-2 text-sm text-zinc-700">Soft with slight tack; ~30-mesh bumps reduce slippage for small hands.</div>
                     <div className="mt-1 text-xs text-zinc-500">柔软、微粘；颗粒密度约 30 目，小手不易滑脱。</div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="text-xs text-zinc-500">Prototype</div>
+                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/projects/kids-balance-bike/sections/prototype-handle.svg"
+                        alt="Prototype material - handle"
+                        className="h-auto w-full"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
                 <div className="text-sm font-semibold">品牌标识 / Branding</div>
-                <div className="mt-3 grid gap-3 md:grid-cols-12">
+                <div className="mt-3 grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Material</div>
                     <div className="mt-1 text-sm font-medium">不锈钢紧固件 / Stainless fasteners</div>
                     <div className="mt-2 text-sm text-zinc-700">Corrosion-resistant; safe for rainy outdoor use.</div>
                     <div className="mt-1 text-xs text-zinc-500">防锈，淋雨不腐蚀。</div>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="md:col-span-5">
                     <div className="text-xs text-zinc-500">Finish</div>
                     <div className="mt-1 text-sm font-medium">激光雕刻 / Laser engraving</div>
                     <div className="mt-2 text-sm text-zinc-700">Flush and durable; avoids stickers that could be picked/chewed—safety first.</div>
                     <div className="mt-1 text-xs text-zinc-500">平整无凸起，避免贴纸被抠咬或脱落，安全第一。</div>
+                  </div>
+                  <div className="md:col-span-2">
+                    <div className="text-xs text-zinc-500">Prototype</div>
+                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/projects/kids-balance-bike/sections/prototype-branding.svg"
+                        alt="Prototype material - branding"
+                        className="h-auto w-full"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
