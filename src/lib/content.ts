@@ -266,12 +266,88 @@ export const projects: Project[] = [
       en: "A travel service app for Taibai Mountain—refining information architecture and key journeys for a clear, usable experience.",
     },
     sections: {
-      overview: { zh: "（待补充项目概述）", en: "(Project overview coming soon)" },
-      challengeAndGoal: { zh: "（待补充）", en: "(Coming soon)" },
-      color: { palette: [] },
-      material: { items: [] },
-      finish: { processes: [] },
-      final: { renders: [] },
+      overview: {
+        zh: "面向景区游客的旅游服务 App 概念方案，围绕“行前规划—到达出行—游玩路线—购票与服务—行后分享”构建关键体验。",
+        en: "A travel service app concept for Taibai Mountain, designed around key journeys from planning to on-site navigation and post-trip sharing.",
+      },
+      challengeAndGoal: {
+        zh: "挑战：多场景信息（路线/设施/票务/交通/客流/应急）分散且决策成本高。目标：用清晰的信息架构与可执行的用户旅程，降低在途焦虑并提升游玩效率。",
+        en: "Challenge: fragmented information across routes, facilities, tickets, transit, crowd flow and emergencies. Goal: reduce decision friction through clear IA and actionable journeys.",
+      },
+      color: {
+        palette: [
+          { name: "Taibai Teal", hex: "#4CB3AB", note: { zh: "主要强调色：引导与操作", en: "Primary accent for guidance and actions" } },
+          { name: "Warm Background", hex: "#F6F2EA", note: { zh: "暖底色：自然与舒适", en: "Warm base for calm, natural feel" } },
+          { name: "Border", hex: "#E7E1D7", note: { zh: "分隔线：轻量层级", en: "Light separators for hierarchy" } },
+          { name: "Text", hex: "#1B1B1B", note: { zh: "正文：可读性", en: "Text for readability" } },
+        ],
+        source: {
+          zh: "配色来源于项目内置主题（Primary #4CB3AB + Warm background #F6F2EA）。",
+          en: "Palette derived from the app theme tokens (Primary #4CB3AB + Warm background #F6F2EA).",
+        },
+      },
+      material: {
+        items: [
+          {
+            name: "Information Architecture",
+            why: {
+              zh: "四个一级入口（首页/探索/行程/我的）+ 关键二级页（路线详情/设施导览/客流/实时接驳/票务与订单），覆盖游客全链路。",
+              en: "Four primary tabs (Home/Explore/Trip/Me) plus key secondary screens cover the full visitor journey.",
+            },
+          },
+          {
+            name: "User Journeys",
+            why: {
+              zh: "行前规划 → 路线推荐/收藏 → 现场导航与设施 → 购票/核销 → 行后故事/评价。",
+              en: "Plan → route discovery/saving → on-site navigation & facilities → ticketing → post-trip story/review.",
+            },
+          },
+          {
+            name: "Prototype Screens (from local app)",
+            why: {
+              zh: "从本地 Expo 项目提取关键界面作为展示素材（路线高亮、地图探索、开屏）。",
+              en: "Key screens exported from the local Expo app as portfolio artifacts.",
+            },
+            photo: {
+              src: "/projects/taibai-travel-app/screens/taibai-opening.png",
+              alt: { zh: "太白山旅游App 开屏", en: "Taibai Travel App opening" },
+            },
+          },
+        ],
+      },
+      finish: {
+        processes: [
+          {
+            name: "UI Guidelines (Tokens)",
+            description: {
+              zh: "沉淀色彩、字号、圆角、间距等基础 token（见 theme.ts：colors/radius/spacing/typography）。",
+              en: "Design tokens for color/typography/radius/spacing (see theme.ts).",
+            },
+            compare: {
+              afterSrc: "/projects/taibai-travel-app/screens/taibai-route-highlight-realmap.jpg",
+              alt: { zh: "路线高亮示例", en: "Route highlight sample" },
+            },
+          },
+          {
+            name: "Data Results (Mock)",
+            description: {
+              zh: "提供内部数据分析页（mock）作为“数据结果呈现”示例：客流/票务/停车/应急趋势与洞察。",
+              en: "Internal data analysis (mock) demonstrates how results are presented: trends + insights.",
+            },
+          },
+        ],
+      },
+      final: {
+        renders: [
+          { src: "/projects/taibai-travel-app/screens/explore-map.png", alt: { zh: "探索地图", en: "Explore map" } },
+          { src: "/projects/taibai-travel-app/screens/taibai-route-highlight.png", alt: { zh: "路线高亮", en: "Route highlight" } },
+          { src: "/projects/taibai-travel-app/screens/taibai-opening.png", alt: { zh: "开屏", en: "Opening" } },
+        ],
+        notes: {
+          zh: "后续可补充：信息架构图、用户旅程图、关键流程原型、可用性验证与指标口径。",
+          en: "Next: IA diagram, journey map, flow prototypes, usability validation and metric definitions.",
+        },
+      },
     },
   },
   {
