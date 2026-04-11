@@ -8,9 +8,7 @@ export default function ExperiencePage() {
         <div className="mt-4 rounded-2xl border border-black/10 bg-white p-4">
           <div className="text-sm font-semibold">李佳馨</div>
           <div className="mt-2 grid gap-1 text-xs text-zinc-600 md:grid-cols-2">
-            <div>Email: Janeli@nwafu.edu.cn</div>
-            <div>Phone: 15004158030</div>
-            <div>Age: 25</div>
+            <div>Email: 2576584713@qq.com</div>
             <div>Language: IELTS 7.0 · CET-4/6</div>
           </div>
         </div>
