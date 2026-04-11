@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Palette from "@/components/Palette";
 import SectionImage from "@/components/SectionImage";
 import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
-import MoodboardSpread from "@/components/MoodboardSpread";
+import MoodboardMagazine from "@/components/MoodboardMagazine";
 import { projects } from "@/lib/content";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -33,16 +33,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         {/* Process: moodboard + sketches under overview */}
         {project.slug === "kids-balance-bike" ? (
           <div className="mt-6 grid gap-4">
-            <MoodboardSpread
-              primary={{
-                src: "/projects/kids-balance-bike/sections/mood-4.jpg",
-                alt: "Moodboard primary",
-              }}
-              accents={[
-                { src: "/projects/kids-balance-bike/sections/mood-1.jpg", alt: "Moodboard detail 1" },
-                { src: "/projects/kids-balance-bike/sections/mood-2.jpg", alt: "Moodboard detail 2" },
-                { src: "/projects/kids-balance-bike/sections/mood-3.jpg", alt: "Moodboard detail 3" },
+            <MoodboardMagazine
+              primary={{ src: "/projects/kids-balance-bike/sections/mood-4.jpg", alt: "Moodboard primary" }}
+              circle={{ src: "/projects/kids-balance-bike/sections/mood-2.jpg", alt: "Moodboard circle" }}
+              patterns={[
+                { src: "/projects/kids-balance-bike/sections/mood-1.jpg", alt: "Pattern 1" },
+                { src: "/projects/kids-balance-bike/sections/mood-2.jpg", alt: "Pattern 2" },
+                { src: "/projects/kids-balance-bike/sections/mood-3.jpg", alt: "Pattern 3" },
               ]}
+              seed={{ src: "/projects/kids-balance-bike/sections/moodboard.png", alt: "Seed / sprout mood" }}
             />
 
             <SectionImage
