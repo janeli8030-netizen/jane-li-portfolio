@@ -18,29 +18,52 @@ export default function MoodboardMagazine({
         <div className="text-xs text-zinc-500">INSPIRATION</div>
       </div>
 
-      {/* Collage: no gaps, unified height */}
+      {/* Asymmetric mosaic: left 1/3 tall, right 2/3 staggered cards (tight gaps) */}
       <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white">
-        <div className="grid grid-cols-12 gap-0">
-          {/* Left: two big images */}
-          <div className="col-span-12 md:col-span-8 grid grid-cols-2 gap-0">
-            <div className="aspect-[4/3]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={primary.src} alt={primary.alt} className="h-full w-full object-cover" />
-            </div>
-            <div className="aspect-[4/3]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={seed.src} alt={seed.alt} className="h-full w-full object-cover" />
+        <div className="grid gap-[6px] bg-black/10 p-[6px] md:grid-cols-12">
+          {/* Left: tall card (1/3) */}
+          <div className="md:col-span-4">
+            <div className="h-full overflow-hidden rounded-xl bg-white">
+              <div className="aspect-[3/4]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={primary.src} alt={primary.alt} className="h-full w-full object-cover" />
+              </div>
             </div>
           </div>
 
-          {/* Right: three small images stacked */}
-          <div className="col-span-12 md:col-span-4 grid grid-rows-3 gap-0">
-            {patterns.slice(0, 3).map((it) => (
-              <div key={it.src} className="aspect-[4/3]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={it.src} alt={it.alt} className="h-full w-full object-cover" />
+          {/* Right: 2/3 mosaic */}
+          <div className="md:col-span-8">
+            <div className="grid gap-[6px] md:grid-cols-2">
+              {/* Top row: seed is the large one (spans 2 columns) */}
+              <div className="md:col-span-2 overflow-hidden rounded-xl bg-white">
+                <div className="aspect-[16/9]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={seed.src} alt={seed.alt} className="h-full w-full object-cover" />
+                </div>
               </div>
-            ))}
+
+              {/* Bottom row: 3 cards, staggered via spans */}
+              <div className="overflow-hidden rounded-xl bg-white">
+                <div className="aspect-[4/3]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={patterns[0]?.src} alt={patterns[0]?.alt ?? "Pattern 1"} className="h-full w-full object-cover" />
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-xl bg-white md:row-span-2">
+                <div className="aspect-[4/3] md:aspect-[3/4]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={patterns[1]?.src} alt={patterns[1]?.alt ?? "Pattern 2"} className="h-full w-full object-cover" />
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-xl bg-white">
+                <div className="aspect-[4/3]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={patterns[2]?.src} alt={patterns[2]?.alt ?? "Pattern 3"} className="h-full w-full object-cover" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
