@@ -41,7 +41,7 @@ function ExperienceCard({
       <ul className="mt-5 space-y-3 text-sm text-zinc-700">
         {bullets.map((b, i) => (
           <li key={i} className="flex gap-3">
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D7D0C2]" />
             <span className="leading-relaxed">{b}</span>
           </li>
         ))}

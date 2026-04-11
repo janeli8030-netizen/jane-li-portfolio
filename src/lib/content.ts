@@ -4,7 +4,7 @@ export type ProjectType =
   | "cmf-experiment"
   | "kids-balance-bike"
   | "aroma-device"
-  | "miniapp-vi"
+  | "taibai-travel-app"
   | "ar-emotion-game";
 
 export type Project = {
@@ -257,13 +257,13 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "miening-miniapp-vi",
+    slug: "taibai-travel-app",
     order: 4,
-    type: "miniapp-vi",
-    title: { zh: "冕宁小程序 VI", en: "Miening Mini Program VI" },
+    type: "taibai-travel-app",
+    title: { zh: "太白山旅游 APP", en: "Taibai Mountain Travel App" },
     summary: {
-      zh: "建立可扩展的色彩系统与视觉规范，保证不同场景下的一致性与识别度。",
-      en: "A scalable color system and visual guideline for consistency across scenarios.",
+      zh: "围绕景区出行与游玩路径，梳理信息架构与关键流程，打造清晰、易用的旅游服务 App 体验。",
+      en: "A travel service app for Taibai Mountain—refining information architecture and key journeys for a clear, usable experience.",
     },
     sections: {
       overview: { zh: "（待补充项目概述）", en: "(Project overview coming soon)" },
