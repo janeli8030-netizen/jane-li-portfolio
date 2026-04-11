@@ -132,7 +132,7 @@ export default function ExperiencePage() {
 
         {/* Right: Toolkit + Honors */}
         <aside className="md:col-span-4 space-y-6">
-          <div className="rounded-3xl border border-black/10 bg-zinc-900 p-7 text-white">
+          <div className="rounded-3xl border border-black/10 bg-[var(--deep-green)] p-7 text-white">
             <div className="text-sm font-semibold">Toolkit</div>
             <div className="mt-4 flex flex-wrap gap-2">
               {[
