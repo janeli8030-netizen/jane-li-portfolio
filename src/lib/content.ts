@@ -296,9 +296,9 @@ export const projects: Project[] = [
 
 export const nav = {
   primary: [
-    { key: "projects", href: "/projects", label: { zh: "Projects", en: "Projects" } },
-    { key: "research", href: "/research", label: { zh: "Research", en: "Research" } },
-    { key: "experiments", href: "/experiments", label: { zh: "Experiments", en: "Experiments" } },
-    { key: "contact", href: "/contact", label: { zh: "Contact", en: "Contact" } },
+    { key: "projects", href: "/projects", label: { zh: "项目", en: "Projects" } },
+    { key: "research", href: "/research", label: { zh: "研究", en: "Research" } },
+    { key: "experience", href: "/experience", label: { zh: "个人经历", en: "Experience" } },
+    { key: "contact", href: "/contact", label: { zh: "联系我", en: "Contact" } },
   ],
 } as const;
