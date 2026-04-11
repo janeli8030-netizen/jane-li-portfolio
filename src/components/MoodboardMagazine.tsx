@@ -18,33 +18,31 @@ export default function MoodboardMagazine({
         <div className="text-xs text-zinc-500">INSPIRATION</div>
       </div>
 
-      {/* Two large images side-by-side */}
-      <div className="mt-6 grid gap-4 md:grid-cols-12">
-        <div className="md:col-span-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-3">
-          <div className="overflow-hidden rounded-xl border border-black/10 bg-white">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={primary.src} alt={primary.alt} className="h-auto w-full object-cover" />
-          </div>
-        </div>
-
-        <div className="md:col-span-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-3">
-          <div className="overflow-hidden rounded-xl border border-black/10 bg-white">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={seed.src} alt={seed.alt} className="h-auto w-full object-cover" />
-          </div>
-        </div>
-      </div>
-
-      {/* Three small images in a row */}
-      <div className="mt-4 grid gap-4 sm:grid-cols-3">
-        {patterns.slice(0, 3).map((it) => (
-          <div key={it.src} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-3">
-            <div className="overflow-hidden rounded-xl border border-black/10 bg-white">
+      {/* Collage: no gaps, unified height */}
+      <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white">
+        <div className="grid grid-cols-12 gap-0">
+          {/* Left: two big images */}
+          <div className="col-span-12 md:col-span-8 grid grid-cols-2 gap-0">
+            <div className="aspect-[4/3]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={it.src} alt={it.alt} className="aspect-square w-full object-cover" />
+              <img src={primary.src} alt={primary.alt} className="h-full w-full object-cover" />
+            </div>
+            <div className="aspect-[4/3]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={seed.src} alt={seed.alt} className="h-full w-full object-cover" />
             </div>
           </div>
-        ))}
+
+          {/* Right: three small images stacked */}
+          <div className="col-span-12 md:col-span-4 grid grid-rows-3 gap-0">
+            {patterns.slice(0, 3).map((it) => (
+              <div key={it.src} className="aspect-[4/3]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={it.src} alt={it.alt} className="h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[10px] text-zinc-500">
