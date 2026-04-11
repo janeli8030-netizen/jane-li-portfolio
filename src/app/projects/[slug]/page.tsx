@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Palette from "@/components/Palette";
 import SectionImage from "@/components/SectionImage";
+import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
 import { projects } from "@/lib/content";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -76,6 +77,60 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <p className="mt-2 text-xs text-zinc-500">
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
+
+        {project.slug === "kids-balance-bike" ? (
+          <div className="mt-5">
+            <CmfSwatchGrid
+              items={(
+                [
+                  {
+                    id: "magnesium-matte",
+                    title: "Magnesium alloy",
+                    subtitle: "Matte coating · micro texture",
+                    meta: "Frame · Lightweight, low glare, better grip",
+                    image: {
+                      src: "/projects/kids-balance-bike/materials/magnesium-matte.jpg",
+                      alt: "Magnesium alloy matte coating sample",
+                    },
+                  },
+                  {
+                    id: "rubber-tread",
+                    title: "Natural rubber",
+                    subtitle: "Pneumatic tire · anti-slip tread",
+                    meta: "Wheels · Vibration absorption, strong grip",
+                    image: {
+                      src: "/projects/kids-balance-bike/materials/rubber-tread.jpg",
+                      alt: "Natural rubber tread sample",
+                    },
+                  },
+                  {
+                    id: "pu-foam",
+                    title: "Eco PU foam",
+                    subtitle: "Soft-touch · low odor",
+                    meta: "Handle · Child-safe tactility",
+                    image: {
+                      src: "/projects/kids-balance-bike/materials/pu-foam.jpg",
+                      alt: "Eco PU foam sample",
+                    },
+                  },
+                  {
+                    id: "laser-engraved-steel",
+                    title: "Stainless steel",
+                    subtitle: "Laser engraved",
+                    meta: "Branding · Durable + safe (no stickers)",
+                    image: {
+                      src: "/projects/kids-balance-bike/materials/stainless-laser.jpg",
+                      alt: "Stainless steel laser engraving sample",
+                    },
+                  },
+                ] satisfies CmfSwatch[]
+              )}
+            />
+            <p className="mt-3 text-[11px] text-zinc-500">
+              Tip: replace these placeholder swatch images with your real material photos (close-up, neutral light).
+            </p>
+          </div>
+        ) : null}
 
         <div className="mt-5 space-y-4">
           {project.slug === "kids-balance-bike" ? (
