@@ -52,6 +52,32 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         ) : null}
       </section>
 
+      {(s.finish?.processes ?? []).length ? (
+        <section className="rounded-3xl border border-black/10 bg-white p-7">
+          <h2 className="text-sm font-semibold">IA & Journey</h2>
+          <p className="mt-2 text-xs text-zinc-500">Information Architecture · User journey · Guidelines</p>
+
+          <div className="mt-5 grid gap-4">
+            {(s.finish?.processes ?? []).map((p) => (
+              <div key={p.name} className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <div className="text-sm font-semibold text-zinc-900">{p.name}</div>
+                </div>
+                {p.description?.en ? <p className="mt-2 text-sm text-zinc-700">{p.description.en}</p> : null}
+                {p.description?.zh ? <p className="mt-1 text-xs text-zinc-500">{p.description.zh}</p> : null}
+
+                {p.compare?.afterSrc ? (
+                  <div className="mt-3 overflow-hidden rounded-xl border border-black/10 bg-white">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-auto w-full" />
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="rounded-3xl border border-black/10 bg-white p-7">
         <h2 className="text-sm font-semibold">Design Challenge & CMF Goal</h2>
 
