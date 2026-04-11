@@ -44,11 +44,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             />
 
             <SectionImage
-              src="/projects/kids-balance-bike/sections/moodboard.png"
-              alt="Moodboard"
-              caption="Moodboard / 情绪板"
-            />
-            <SectionImage
               src="/projects/kids-balance-bike/sections/cmf-analysis.png"
               alt="CMF analysis"
               caption="CMF analysis / CMF 分析与草图推演"
