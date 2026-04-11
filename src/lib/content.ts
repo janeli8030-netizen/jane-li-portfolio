@@ -308,10 +308,8 @@ export const projects: Project[] = [
               zh: "从本地 Expo 项目提取关键界面作为展示素材（路线高亮、地图探索、开屏）。",
               en: "Key screens exported from the local Expo app as portfolio artifacts.",
             },
-            photo: {
-              src: "/projects/taibai-travel-app/screens/taibai-opening.png",
-              alt: { zh: "太白山旅游App 开屏", en: "Taibai Travel App opening" },
-            },
+            // (images removed for now; will add IA/Journey diagrams next)
+            photo: undefined,
           },
         ],
       },
@@ -324,8 +322,19 @@ export const projects: Project[] = [
               en: "Design tokens for color/typography/radius/spacing (see theme.ts).",
             },
             compare: {
-              afterSrc: "/projects/taibai-travel-app/screens/taibai-route-highlight-realmap.jpg",
-              alt: { zh: "路线高亮示例", en: "Route highlight sample" },
+              afterSrc: "/projects/taibai-travel-app/diagrams/ia.svg",
+              alt: { zh: "信息架构（IA）", en: "Information architecture (IA)" },
+            },
+          },
+          {
+            name: "User Journey",
+            description: {
+              zh: "以游客全流程（行前—探索—到达—游玩—票务服务—行后）组织核心功能与页面入口。",
+              en: "Core journeys organized around the visitor flow from planning to post-trip sharing.",
+            },
+            compare: {
+              afterSrc: "/projects/taibai-travel-app/diagrams/journey.svg",
+              alt: { zh: "用户旅程", en: "User journey" },
             },
           },
           {
@@ -338,11 +347,7 @@ export const projects: Project[] = [
         ],
       },
       final: {
-        renders: [
-          { src: "/projects/taibai-travel-app/screens/explore-map.png", alt: { zh: "探索地图", en: "Explore map" } },
-          { src: "/projects/taibai-travel-app/screens/taibai-route-highlight.png", alt: { zh: "路线高亮", en: "Route highlight" } },
-          { src: "/projects/taibai-travel-app/screens/taibai-opening.png", alt: { zh: "开屏", en: "Opening" } },
-        ],
+        renders: [],
         notes: {
           zh: "后续可补充：信息架构图、用户旅程图、关键流程原型、可用性验证与指标口径。",
           en: "Next: IA diagram, journey map, flow prototypes, usability validation and metric definitions.",

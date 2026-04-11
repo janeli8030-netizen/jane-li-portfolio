@@ -1,0 +1,25 @@
+{
+  "tabs": [
+    {
+      "key": "Home",
+      "label": "首页",
+      "children": ["太白山介绍", "天气/今日天气", "景区客流量", "景区直播", "紧急联系", "智能客服"]
+    },
+    {
+      "key": "Explore",
+      "label": "探索",
+      "children": ["景点列表/详情", "推荐路线/路线详情", "便民设施", "设施导览", "停车场", "实时接驳", "VR体验"]
+    },
+    {
+      "key": "Trip",
+      "label": "行程",
+      "children": ["收藏/路线分析", "到站规划", "行后故事", "行后评价"]
+    },
+    {
+      "key": "Me",
+      "label": "我的",
+      "children": ["我的购买", "购买详情", "确认下单", "门票核销/票夹"]
+    }
+  ],
+  "note": "Generated from local taibai-app navigation structure (Tabs + key stack screens)."
+}
