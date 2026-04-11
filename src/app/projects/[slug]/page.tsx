@@ -35,13 +35,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="mt-6 grid gap-4">
             <MoodboardMagazine
               primary={{ src: "/projects/kids-balance-bike/sections/mood-4.jpg", alt: "Moodboard primary" }}
-              circle={{ src: "/projects/kids-balance-bike/sections/mood-2.jpg", alt: "Moodboard circle" }}
+              seed={{ src: "/projects/kids-balance-bike/sections/moodboard.png", alt: "Seed / sprout mood" }}
               patterns={[
                 { src: "/projects/kids-balance-bike/sections/mood-1.jpg", alt: "Pattern 1" },
                 { src: "/projects/kids-balance-bike/sections/mood-2.jpg", alt: "Pattern 2" },
                 { src: "/projects/kids-balance-bike/sections/mood-3.jpg", alt: "Pattern 3" },
               ]}
-              seed={{ src: "/projects/kids-balance-bike/sections/moodboard.png", alt: "Seed / sprout mood" }}
             />
 
             <SectionImage
