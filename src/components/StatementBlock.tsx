@@ -21,8 +21,8 @@ export default function StatementBlock({
         className="max-w-5xl"
       >
         <div className="text-[11px] uppercase tracking-[0.18em] text-[#C9A87C]">{eyebrow}</div>
-        <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl lg:text-6xl">{title}</h2>
-        <p className="mt-6 max-w-3xl text-sm leading-8 text-white/72 md:text-base">{body}</p>
+        <h2 className="mt-4 text-2xl font-semibold leading-tight md:text-4xl lg:text-5xl">{title}</h2>
+        <p className="mt-6 max-w-3xl text-sm leading-8 text-white/72 md:text-[15px]">{body}</p>
       </motion.div>
     </section>
   );

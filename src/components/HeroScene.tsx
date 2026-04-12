@@ -14,7 +14,7 @@ export default function HeroScene({
   tags: string[];
 }) {
   return (
-    <section className="relative isolate min-h-[88vh] overflow-hidden rounded-[32px] border border-black/10 bg-[#DCE7E4] text-white">
+    <section className="relative isolate min-h-screen overflow-hidden bg-[#DCE7E4] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.55),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(201,168,124,0.18),transparent_22%),linear-gradient(180deg,rgba(17,33,28,0.10),rgba(17,33,28,0.55))]" />
 
       {image ? (
@@ -30,7 +30,7 @@ export default function HeroScene({
 
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(19,29,27,0.08)_0%,rgba(19,29,27,0.34)_52%,rgba(19,29,27,0.74)_100%)]" />
 
-      <div className="relative z-10 flex min-h-[88vh] flex-col justify-end p-8 md:p-12 lg:p-16">
+      <div className="relative z-10 flex min-h-screen flex-col justify-end p-8 md:p-12 lg:p-16">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
