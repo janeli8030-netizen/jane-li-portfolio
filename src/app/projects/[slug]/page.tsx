@@ -162,10 +162,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
                 </div>
                 <div className="space-y-2 p-4">
-                  <div className="text-sm font-semibold text-[#556D7D]">{car.name}</div>
-                  <div className="text-xs text-[#8B9EAC]">{car.price}</div>
+                  <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>{car.name}</div>
+                  <div className={isKidsBike ? "text-xs text-[#B08F61]" : "text-xs text-[#8B9EAC]"}>{car.price}</div>
                   <div className="text-sm text-[#55635B]">{car.note}</div>
-                  <div className="inline-flex rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10">
+                  <div className={isKidsBike ? "inline-flex rounded-full bg-[#E0D7C8] px-3 py-1 text-[11px] text-[#55624F] ring-1 ring-black/10" : "inline-flex rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10"}>
                     {car.female}
                   </div>
                 </div>
@@ -174,9 +174,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#556D7D]">Exterior color comparison</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
-            <div className="mt-4 border-l-2 border-[#C7DAE6]/60 pl-4 text-xs leading-6 text-[#7C7468]">
+            <div className={isKidsBike ? "mt-4 border-l-2 border-[#BFA37A]/60 pl-4 text-xs leading-6 text-[#6E6558]" : "mt-4 border-l-2 border-[#C7DAE6]/60 pl-4 text-xs leading-6 text-[#7C7468]"}>
               图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
             </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -186,10 +186,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 { name: "蔚来 ET5", colors: ["镜空粉", "宇航蓝"] },
               ].map((item) => (
                 <div key={item.name} className="border-t border-black/10 bg-transparent px-0 py-4 first:border-t-0">
-                  <div className="text-sm font-semibold text-[#556D7D]">{item.name}</div>
+                  <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>{item.name}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {item.colors.map((c) => (
-                      <span key={c} className="rounded-full bg-[#E7E2DA] px-3 py-1 text-xs text-[#617785]">
+                      <span key={c} className={isKidsBike ? "rounded-full bg-[#E0D7C8] px-3 py-1 text-xs text-[#55624F]" : "rounded-full bg-[#E7E2DA] px-3 py-1 text-xs text-[#617785]"}>
                         {c}
                       </span>
                     ))}
@@ -200,7 +200,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#556D7D]">Interior CMF comparison</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/小米内饰米色.jpg" },
@@ -248,7 +248,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#556D7D]">Differentiation opportunities</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Differentiation opportunities</div>
             <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-zinc-50 text-zinc-700">
@@ -613,8 +613,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               ["状态", "概念设计"],
             ].map(([label, value]) => (
               <div key={label} className="rounded-[24px] border border-black/10 bg-white/80 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8B9EAC]">{label}</div>
-                <div className="mt-2 text-sm font-medium text-[#556D7D]">{value}</div>
+                <div className={isKidsBike ? "text-[11px] uppercase tracking-[0.12em] text-[#B08F61]" : "text-[11px] uppercase tracking-[0.12em] text-[#8B9EAC]"}>{label}</div>
+                <div className={isKidsBike ? "mt-2 text-sm font-medium text-[#284033]" : "mt-2 text-sm font-medium text-[#556D7D]"}>{value}</div>
               </div>
             ))}
           </div>
