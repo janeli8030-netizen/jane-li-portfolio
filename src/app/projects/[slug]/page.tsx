@@ -517,8 +517,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   body={`${p.description?.en ?? ""}\n\n${p.description?.zh ?? ""}`}
                 >
                   {p.compare?.afterSrc ? (
-                    <div className="relative min-h-[320px] overflow-hidden bg-transparent">
-                      <div className="overflow-hidden">
+                    <div className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-black/10 bg-[#E8E2D5] p-5 md:p-6 shadow-[0_20px_50px_rgba(45,74,62,0.10)]">
+                      <div className="overflow-hidden rounded-[24px] border border-white/60 bg-white">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]" />
                       </div>
@@ -546,7 +546,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       ) : null}
                     </div>
                   ) : (
-                    <div className="flex min-h-[220px] items-center justify-center bg-transparent p-6 text-sm text-[#7C7468]">
+                    <div className="flex min-h-[220px] items-center justify-center rounded-[24px] border border-black/10 bg-[#E8E2D5] p-6 text-sm text-[#7C7468]">
                       Visual coming soon
                     </div>
                   )}
