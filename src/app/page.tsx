@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import { projects } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -28,14 +29,14 @@ function FeaturedProjects() {
             <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
-              className="group rounded-[24px] border border-black/10 bg-white p-4 transition hover:-translate-y-0.5 hover:border-[var(--gold)]"
+              className="group rounded-[24px] border border-black/10 bg-white p-4 transition duration-500 hover:-translate-y-1 hover:border-[var(--gold)] hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-zinc-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`/images/cover-${p.slug}.png`}
                   alt={`${p.title.en} cover`}
-                  className="h-full w-full scale-[1.08] object-cover"
+                  className="h-full w-full scale-[1.08] object-cover transition duration-700 group-hover:scale-[1.12]"
                 />
               </div>
               <div className="mt-4">
@@ -84,7 +85,7 @@ function ResearchMethods() {
           <Link
             key={c.title}
             href={c.href}
-            className="rounded-3xl border border-black/10 bg-white p-6 transition hover:-translate-y-0.5 hover:border-black/20"
+            className="rounded-3xl border border-black/10 bg-white p-6 transition duration-500 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_18px_40px_rgba(0,0,0,0.06)]"
           >
             <div className="text-sm font-semibold">{c.title}</div>
             <div className="mt-2 text-sm text-zinc-600">{c.desc}</div>
@@ -120,13 +121,13 @@ function AboutMe() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a
             href="#"
-            className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-zinc-50"
+            className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
           >
             下载简历 / Resume
           </a>
           <a
             href={site.contact.linkedin || "#"}
-            className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium hover:bg-zinc-50"
+            className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
           >
             领英 / LinkedIn
           </a>
@@ -179,7 +180,7 @@ export default function HomePage() {
       {/* 1) Hero */}
       <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--deep-green)] text-white">
         <div className="grid gap-8 p-10 md:grid-cols-12 md:items-center">
-          <div className="md:col-span-7">
+          <Reveal className="md:col-span-7">
             <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
             <h1
               className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl italic"
@@ -187,7 +188,6 @@ export default function HomePage() {
             >
               “{site.slogan.en}”
             </h1>
-
 
             <div className="mt-6 text-base text-white/90">
               {site.name.zh} · {site.title.zh}
@@ -198,45 +198,48 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--deep-green)] hover:bg-white/90"
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--deep-green)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
               >
                 查看作品 / Projects
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/15"
+                className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/15"
               >
                 联系我 / Contact
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-white/10 ring-1 ring-white/15">
+          <Reveal delay={0.08} className="md:col-span-5">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-white/10 ring-1 ring-white/15 transition duration-700 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/hero.png"
                 alt="Hero image"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0" />
             </div>
-
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* 2) Featured */}
-      <FeaturedProjects />
+      <Reveal>
+        <FeaturedProjects />
+      </Reveal>
 
-      {/* 3) Research method */}
-      <ResearchMethods />
+      <Reveal>
+        <ResearchMethods />
+      </Reveal>
 
-      {/* 4) About */}
-      <AboutMe />
+      <Reveal>
+        <AboutMe />
+      </Reveal>
 
-      {/* 5) Skills */}
-      <Skills />
+      <Reveal>
+        <Skills />
+      </Reveal>
     </div>
   );
 }
