@@ -163,8 +163,8 @@ export const projects: Project[] = [
     type: "kids-balance-bike",
     title: { zh: "儿童滑步车｜Mantis", en: "Kids Balance Bike | Mantis" },
     summary: {
-      zh: "以螳螂自然色为起点，通过降饱和色彩策略与安全识别点，打造轻便、安全、舒适的儿童滑步车 CMF 方案。",
-      en: "Starting from mantis-inspired naturals, a de-saturated palette and safety accents shape a lightweight, safe, and comfortable CMF concept.",
+      zh: "以仿生螳螂为灵感，将轻量化结构、安全细节与儿童骑行体验整合为一套更完整的儿童滑步车产品设计方案。",
+      en: "Inspired by the mantis, this project integrates lightweight structure, safety details, and child-friendly riding experience into a more holistic balance bike product design proposal.",
     },
     tags: ["儿童产品CMF", "仿生灵感", "轻量化与安全"],
     cover: {
@@ -175,12 +175,12 @@ export const projects: Project[] = [
     role: { zh: "个人 CMF 概念设计", en: "Individual CMF concept" },
     sections: {
       overview: {
-        zh: "以仿生螳螂为灵感的儿童滑步车概念方案，围绕“轻便、安全、舒适”建立 CMF 语言与可制造的落地细节。",
-        en: "A kids balance bike concept inspired by a mantis, building a manufacturable CMF language around lightness, safety, and comfort.",
+        zh: "这是一款面向学龄前儿童的滑步车产品设计概念，灵感来源于螳螂前倾、敏捷且具有保护感的姿态。项目从儿童骑行稳定性、家长对安全性的关注，以及户外日常使用场景出发，整合车架比例、材料选择、握持触感与视觉识别，形成一套更完整的产品设计方案。",
+        en: "This concept balance bike is designed for preschool children and inspired by the forward-leaning, agile yet protective posture of a mantis. Starting from stability, parental trust, and everyday outdoor use, the project integrates frame proportion, material selection, tactile grip, and visual recognition into a more complete product design proposal.",
       },
       challengeAndGoal: {
-        zh: "挑战：在户外高频使用场景下兼顾轻量化、耐候、耐脏与儿童安全；目标：用颜色与触感建立识别度与安全感，并形成可生产的材料/工艺组合。",
-        en: "Challenge: balance lightweight construction with outdoor durability and child safety. Goal: use color and tactility to build recognizability and trust, with producible material/finish choices.",
+        zh: "挑战：在儿童产品中同时满足轻量化、耐候、耐脏、易抓握和安全识别，并避免造型过于厚重或工业化。目标：通过仿生外观、轻量结构与安全细节，打造一款更适合儿童独立使用、也能让家长放心的滑步车。",
+        en: "Challenge: meet lightweight, weather resistance, easy grip, safety recognition, and child-friendly form all at once—without making the product feel too heavy or overly industrial. Goal: create a balance bike that children can use independently and parents can trust through biomorphic form, lightweight structure, and safety-focused details.",
       },
       color: {
         palette: [
