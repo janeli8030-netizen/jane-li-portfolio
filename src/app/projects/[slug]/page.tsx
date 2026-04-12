@@ -90,16 +90,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">03 / 用户洞察与 TAM 采纳模型</div>
                 <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">User Insights</h2>
                 <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">覆盖教育、零售、文旅、购物、游戏五大核心赛道，广泛收集整理了 200+ 份目标用户问卷，并引入 TAM 模型，从“感知有用性（PU）”与“感知易用性（PEU）”两个维度量化用户对 AR 的采纳意愿。研究结果显示：设备兼容性与跨设备体验一致性是阻碍用户高频使用 AR 功能的首要因素。</p>
-                <div className="mt-5 grid gap-3">
-                  <a href="https://www.mdpi.com/2073-445X/13/12/2207" target="_blank" rel="noreferrer" className="rounded-[20px] border border-black/10 bg-white/80 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-black/20">
-                    <div className="text-sm font-medium text-[#556D7D]">Comparative Study on the Perception of Cultural Ecosystem Services in Taibai Mountain National Forest Park</div>
-                    <p className="mt-2 text-sm leading-7 text-[#617785]">通过 184 份访谈与问卷结合参与式地图，分析不同利益相关者在情境感知与价值判断上的差异。该研究为 AR 设计中的“不同用户如何理解并评价同一空间体验”提供了参考。</p>
-                  </a>
-                  <a href="https://www.mdpi.com/2073-445X/13/10/1592" target="_blank" rel="noreferrer" className="rounded-[20px] border border-black/10 bg-white/80 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-black/20">
-                    <div className="text-sm font-medium text-[#556D7D]">Comparative Study of Cognitive Differences in Rural Landscapes Based on Eye Movement Experiments</div>
-                    <p className="mt-2 text-sm leading-7 text-[#617785]">通过眼动实验与半结构访谈研究不同群体对景观的注意分布与认知偏好，为 AR 界面中的视觉引导、层级组织与信息显著性设计提供了方法借鉴。</p>
-                  </a>
-                </div>
               </div>
 
               <div>

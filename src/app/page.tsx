@@ -178,33 +178,32 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* 1) Hero */}
-      <section className="overflow-hidden rounded-[32px] border border-white/10 bg-[#111111] text-white">
+      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-white text-black">
         <div className="p-10 md:p-14">
           <Reveal className="max-w-3xl">
-            <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
             <h1
-              className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl italic"
+              className="text-4xl font-semibold tracking-tight md:text-6xl italic"
               style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
             >
               “{site.slogan.en}”
             </h1>
 
-            <div className="mt-6 text-base text-white/90">
+            <div className="mt-6 text-base text-zinc-800">
               {site.name.zh} · {site.title.zh}
-              <span className="mx-2 text-white/40">|</span>
+              <span className="mx-2 text-zinc-400">|</span>
               {site.name.en} · {site.title.en}
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[var(--deep-green)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+                className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-black/90"
               >
                 查看作品 / Projects
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/15"
+                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
               >
                 联系我 / Contact
               </Link>
