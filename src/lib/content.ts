@@ -58,7 +58,7 @@ export const projects: Project[] = [
     },
     tags: ["汽车CMF", "女性向设计", "低饱和度色彩"],
     cover: {
-      src: "/projects/su7-cmf-proposal/cover-su7.png",
+      src: "/projects/su7-cmf-proposal/cover-su7.jpg",
       alt: { zh: "浅蓝色小米SU7外观图", en: "Light-blue Xiaomi SU7 exterior" },
     },
     year: "2026.04",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
               en: "Name: Mist Blue | Ref: Pantone 12-4604 TCX | Feel: pearl metallic | Process: 3C2B (carbon-black base → blue color coat with pearl → high-transparency clear coat) | Story: morning lake mist—calm yet lively.",
             },
             compare: {
-              afterSrc: "/projects/su7-cmf-proposal/exterior-su7.png",
+              afterSrc: "/projects/su7-cmf-proposal/cover-su7.jpg",
               alt: { zh: "外饰漆面主视觉", en: "Exterior paint hero" },
             },
           },
@@ -129,7 +129,7 @@ export const projects: Project[] = [
               en: "Main: Soft beige (Pantone 12-0806 TCX) | Secondary: Mist Blue for stitching/headrest/seatbelt | Accent: warm limestone (Pantone 16-3802 TCX) on trims | Material: microfiber suede with local Nappa leather highlights | Craft: double-needle quilting in blue + parametric gradient perforation | Soft-wrap: seats, door armrests, console sides.",
             },
             compare: {
-              afterSrc: "/projects/su7-cmf-proposal/interior-seats.png",
+              afterSrc: "/projects/su7-cmf-proposal/interior-seats.jpg",
               alt: { zh: "内饰座椅主视觉", en: "Interior seat hero" },
             },
           },
