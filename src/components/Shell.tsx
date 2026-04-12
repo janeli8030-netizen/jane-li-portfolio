@@ -6,14 +6,14 @@ import { site } from "@/lib/site";
 export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-[#C7D8E4] text-[#4F6472] backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#111111] text-white backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <Link href="/" className="text-sm font-medium tracking-tight text-[#4F6472]">
+          <Link href="/" className="text-sm font-medium tracking-tight text-white">
             {site.name.en}
           </Link>
-          <nav className="hidden items-center gap-5 text-sm text-[#4F6472]/90 md:flex">
+          <nav className="hidden items-center gap-5 text-sm text-white/85 md:flex">
             {nav.primary.map((item) => (
-              <Link key={item.key} href={item.href} className="hover:text-[#324754]">
+              <Link key={item.key} href={item.href} className="hover:text-white">
                 {item.label.zh} / {item.label.en}
               </Link>
             ))}
