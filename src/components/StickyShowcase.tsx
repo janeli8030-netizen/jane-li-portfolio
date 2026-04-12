@@ -18,9 +18,9 @@ export default function StickyShowcase({
     <section className="project-hero-fullbleed grid gap-6 bg-[#F5F1E8] px-4 py-10 md:grid-cols-12 md:gap-8 md:px-10 md:py-16 lg:px-16">
       <div className="md:col-span-4 md:pr-4">
         <div className="md:sticky md:top-24 p-1">
-          <div className="text-[10px] uppercase tracking-[0.14em] text-[#8A98A3]">{eyebrow}</div>
-          <h3 className="mt-3 text-xl font-medium tracking-tight text-[#5C6F7B] md:text-2xl">{title}</h3>
-          <p className="mt-4 max-w-md text-sm leading-7 text-[#667784] whitespace-pre-line">{body}</p>
+          <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">{eyebrow}</div>
+          <h3 className="mt-3 text-xl font-medium tracking-tight text-[#556D7D] md:text-2xl">{title}</h3>
+          <p className="mt-4 max-w-md text-sm leading-7 text-[#617785] whitespace-pre-line">{body}</p>
         </div>
       </div>
 

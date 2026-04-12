@@ -22,9 +22,9 @@ export default function Palette({ items }: { items: PaletteItem[] }) {
             title={c.hex ?? ""}
           />
           <div className="space-y-1 p-4">
-            <div className="truncate text-sm font-semibold text-[#5C6F7B]">{c.name}</div>
-            <div className="text-xs text-[#8A98A3]">{c.hex ?? ""}</div>
-            {c.note?.zh ? <div className="pt-1 text-xs leading-5 text-[#667784]">{c.note.zh}</div> : null}
+            <div className="truncate text-sm font-semibold text-[#556D7D]">{c.name}</div>
+            <div className="text-xs text-[#8B9EAC]">{c.hex ?? ""}</div>
+            {c.note?.zh ? <div className="pt-1 text-xs leading-5 text-[#617785]">{c.note.zh}</div> : null}
           </div>
         </div>
       ))}
