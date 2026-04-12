@@ -5,6 +5,8 @@ import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
 import MoodboardMagazine from "@/components/MoodboardMagazine";
 import Reveal from "@/components/Reveal";
 import StickyShowcase from "@/components/StickyShowcase";
+import HeroScene from "@/components/HeroScene";
+import StatementBlock from "@/components/StatementBlock";
 import { projects } from "@/lib/content";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -20,57 +22,25 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       <header
         className={
           isSu7
-            ? "overflow-hidden rounded-[24px] border border-black/10 bg-[#E8E2D5]"
+            ? "space-y-6"
             : "space-y-3"
         }
       >
         {isSu7 ? (
-          <Reveal>
-            <div className="grid gap-0 md:grid-cols-12">
-            <div className="flex flex-col justify-between p-8 md:col-span-5 md:p-10">
-              <div className="space-y-4">
-                <div className="text-xs font-medium uppercase tracking-[0.18em] text-[#6B6A63]">Automotive CMF Proposal</div>
-                <div className="flex flex-wrap gap-2 text-[11px] text-[#2D4A3E]">
-                  {(project.tags ?? []).map((tag) => (
-                    <span key={tag} className="rounded-full border border-black/10 bg-white/70 px-3 py-1">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <h1 className="text-3xl font-semibold tracking-tight text-[#2D4A3E] md:text-4xl">
-                  “蔚蓝之境”小米 SU7 CMF 设计提案
-                </h1>
-                <p className="text-base text-[#4C5A52]">Exterior paint + interior seating CMF design</p>
-                <p className="text-sm leading-7 text-[#5C665F]">{project.summary.zh}</p>
-              </div>
+          <>
+            <HeroScene
+              image={project.cover?.src}
+              title="蔚蓝之境"
+              subtitle="小米 SU7 CMF 设计提案｜以晨雾蓝为线索，将外饰漆面与内饰座椅连接成一套更宁静、更治愈、也更具女性共鸣的感性体验。"
+              tags={project.tags ?? []}
+            />
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Project type</div>
-                  <div className="mt-2 text-sm font-medium text-[#2D4A3E]">汽车 CMF 设计研究</div>
-                </div>
-                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Focus</div>
-                  <div className="mt-2 text-sm font-medium text-[#2D4A3E]">女性向 · 低饱和度色彩</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-7">
-              <div className="relative h-full min-h-[320px] overflow-hidden bg-[#D8E5E5] p-5 md:p-7">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.65),transparent_40%),linear-gradient(180deg,rgba(255,255,255,0.18),transparent)]" />
-                <div className="relative overflow-hidden rounded-[24px] border border-white/60 shadow-[0_20px_60px_rgba(45,74,62,0.12)]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.cover?.src}
-                    alt={project.cover?.alt.en ?? project.title.en}
-                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          </Reveal>
+            <StatementBlock
+              eyebrow="Concept statement"
+              title="用晨雾蓝连接外饰与内饰，在 SU7 的科技感之上叠加一层宁静治愈的情绪价值。"
+              body="这不是简单地换一种颜色，而是把女性用户对治愈感、呼吸感、长久耐看的期待，转译成一套可被制造、可被触摸、可被感知的 CMF 语言。"
+            />
+          </>
         ) : (
           <>
             <div className="text-xs text-zinc-500">CMF Project</div>
