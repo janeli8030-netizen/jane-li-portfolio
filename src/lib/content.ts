@@ -293,24 +293,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "lulu-aroma-device",
-    order: 3,
-    type: "aroma-device",
-    title: { zh: "露露馨香薰机", en: "Lulu Aroma Device" },
-    summary: {
-      zh: "仿生形态与 CMF 统一：让“治愈感”通过触感与微光被感知。",
-      en: "Unifying biomorphic form and CMF so ‘comfort’ is felt through tactility and soft glow.",
-    },
-    sections: {
-      overview: { zh: "（待补充项目概述）", en: "(Project overview coming soon)" },
-      challengeAndGoal: { zh: "（待补充）", en: "(Coming soon)" },
-      color: { palette: [] },
-      material: { items: [] },
-      finish: { processes: [] },
-      final: { renders: [] },
-    },
-  },
-  {
     slug: "taibai-travel-app",
     order: 4,
     type: "taibai-travel-app",
@@ -411,20 +393,101 @@ export const projects: Project[] = [
   },
   {
     slug: "ar-emotion-game",
-    order: 5,
+    order: 3,
     type: "ar-emotion-game",
-    title: { zh: "AR 情绪游戏", en: "AR Emotion Game" },
+    title: { zh: "基于 iOS 的 AR 增强现实技术采纳度研究", en: "iOS AR Technology Adoption Research" },
     summary: {
-      zh: "在数字产品中应用 CMF：用色彩与材质隐喻建立情绪反馈机制。",
-      en: "Applying CMF to digital products: color/material metaphors shaping emotional feedback.",
+      zh: "围绕 iOS AR 生态与 Apple Vision Pro 背景，结合 PEST 与 TAM 模型，对 AR 技术的采纳度、应用场景与空间界面设计机会进行系统研究。",
+      en: "A systematic study of iOS AR adoption, opportunity spaces, and spatial interface design using PEST and TAM in the context of Apple Vision Pro.",
     },
+    tags: ["AR 研究", "Apple Vision Pro", "TAM 模型"],
+    cover: {
+      src: "/images/cover-ar-emotion-game.png",
+      alt: { zh: "AR 技术研究封面", en: "AR technology research cover" },
+    },
+    year: "2024",
+    role: { zh: "生态分析 / 体验研究 / 空间界面设计", en: "Ecosystem analysis / UX research / spatial UI design" },
     sections: {
-      overview: { zh: "（待补充项目概述）", en: "(Project overview coming soon)" },
-      challengeAndGoal: { zh: "（待补充）", en: "(Coming soon)" },
-      color: { palette: [] },
-      material: { items: [] },
-      finish: { processes: [] },
-      final: { renders: [] },
+      overview: {
+        zh: "本项目聚焦空间计算时代到来前的 iOS AR 生态，围绕教育、零售、文旅、购物与游戏五大领域，对增强现实技术的采纳障碍、用户认知与设计机会进行系统分析。通过 PEST 宏观框架、桌面调研和 200+ 份用户问卷，项目输出了一套关于 AR 技术采纳度与空间界面设计方向的完整研究逻辑。",
+        en: "This project investigates the iOS AR ecosystem before the mainstream arrival of spatial computing. Across education, retail, tourism, shopping, and gaming, it analyzes adoption barriers, user perception, and design opportunities through PEST, desk research, and 200+ questionnaires.",
+      },
+      challengeAndGoal: {
+        zh: "挑战：移动端 AR 正处在从“尝鲜体验”走向“实用工具”的转型期，用户对兼容性、学习成本与实际价值存在明显顾虑。目标：构建一套从宏观环境到用户采纳心理的研究框架，并将洞察转译为空间界面设计原则，为后续 AR 产品设计提供依据。",
+        en: "Challenge: mobile AR is shifting from novelty to utility, yet users remain concerned about compatibility, learning cost, and real value. Goal: build a research framework from macro context to user adoption psychology, then translate it into spatial UI principles.",
+      },
+      color: {
+        palette: [
+          { name: "Spatial Blue", hex: "#CFE3F5", note: { zh: "空间科技感与玻璃层次", en: "Spatial-tech tone with glass depth" } },
+          { name: "Soft Fog", hex: "#EAE7E2", note: { zh: "中性浅底，突出界面层级", en: "Soft neutral base for interface layering" } },
+          { name: "Neon Cyan", hex: "#8EE7F5", note: { zh: "高亮信息与交互反馈", en: "Highlight for key info and interaction feedback" } },
+        ],
+        source: {
+          zh: "视觉方向来自 Apple 空间计算语境下的玻璃微透视（Glassmorphism）与深度层级（Spatial Depth）。",
+          en: "The visual direction is derived from glassmorphism and spatial depth within Apple’s spatial-computing context.",
+        },
+        psychology: {
+          zh: "通过轻量、透明、分层的界面语言降低技术门槛感，让 AR 更接近“自然延伸的数字工具”。",
+          en: "A light, transparent, layered UI language lowers the perceived barrier of AR and makes it feel like a natural extension of everyday tools.",
+        },
+      },
+      material: {
+        items: [
+          {
+            name: "PEST 宏观分析",
+            why: {
+              zh: "从政策、经济、社会、技术四个维度梳理 iOS AR 生态的发展趋势，判断 Vision Pro 普及后行业的潜在变化。",
+              en: "Mapped the iOS AR ecosystem through politics, economy, society, and technology to forecast the impact of Vision Pro adoption.",
+            },
+          },
+          {
+            name: "桌面调研与头部应用拆解",
+            why: {
+              zh: "梳理教育、零售、文旅、购物、游戏等领域的头部 AR 应用模式，总结其视觉语言与交互特征。",
+              en: "Reviewed leading AR use cases across education, retail, tourism, shopping, and gaming to summarize core UI patterns and interaction traits.",
+            },
+          },
+          {
+            name: "TAM 采纳模型 + 200+ 用户问卷",
+            why: {
+              zh: "通过技术采纳模型分析“感知有用性”和“感知易用性”，定位 AR 高频使用的关键阻碍因素。",
+              en: "Used TAM with 200+ user questionnaires to examine perceived usefulness and ease of use in AR adoption.",
+            },
+          },
+        ],
+      },
+      finish: {
+        processes: [
+          {
+            name: "Macro analysis — PEST framework",
+            description: {
+              zh: "从政策导向与隐私合规、硬件普及率与商业转化、用户认知度与教育成本，以及 ARKit 架构与算力突破四个维度，对 iOS AR 生态进行全景扫描。",
+              en: "A macro scan of the iOS AR ecosystem across privacy policy, hardware penetration, public awareness, and ARKit / computational capability evolution.",
+            },
+          },
+          {
+            name: "User insights — TAM adoption model",
+            description: {
+              zh: "覆盖五大赛道收集 200+ 问卷后，发现高达 85% 的用户将设备兼容性与跨设备体验一致性视为 AR 高频使用的首要阻碍。",
+              en: "Across five sectors and 200+ questionnaires, 85% of users identified device compatibility and cross-device consistency as the main barrier to frequent AR use.",
+            },
+          },
+          {
+            name: "Spatial interface design",
+            description: {
+              zh: "基于 Apple HIG 空间计算规范，提出玻璃微透视（Glassmorphism）与深度层级（Spatial Depth）的界面体系，用更轻量、可读、可感知的方式呈现 AR 交互。",
+              en: "Following Apple HIG for spatial computing, the project proposes a glassmorphism + spatial depth UI system to make AR interactions more legible and approachable.",
+            },
+          },
+        ],
+      },
+      final: {
+        renders: [],
+        notes: {
+          zh: "项目输出：PEST 分析框架、TAM 用户洞察、AR 采纳度研究结论，以及空间界面视觉方向建议。",
+          en: "Deliverables: PEST framework, TAM-based user insights, AR adoption findings, and proposed spatial interface directions.",
+        },
+      },
     },
   },
 ];
