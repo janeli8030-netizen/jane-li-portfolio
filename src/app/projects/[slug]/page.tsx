@@ -19,7 +19,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isEditorial = isSu7 || isKidsBike;
 
   return (
-    <div className={isEditorial ? isKidsBike ? "space-y-10 text-[#284033]" : "space-y-10 text-[#556D7D]" : "space-y-10"}>
+    <div className={isEditorial ? isKidsBike ? "space-y-10 text-[#284033]" : "space-y-10 text-black" : "space-y-10"}>
       <header
         className={
           isEditorial
@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </>
         ) : (
           <>
-            <div className="text-xs text-zinc-500">CMF Project</div>
+            <div className="text-xs text-zinc-500">Project</div>
             <h1 className="text-3xl font-semibold tracking-tight">
               {project.title.en}
               <span className="ml-2 text-base font-normal text-zinc-500">{project.title.zh}</span>
@@ -75,27 +75,31 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
             <div className="space-y-8">
               <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">01 / 研究宏观框架</div>
-                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Macro Analysis · PEST</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。它从政策、经济、社会与技术四个维度展开，判断空间计算时代中 AR 技术的机会、门槛与未来增长路径。</p>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">01 / 研究宏观框架</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis · PEST</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。它从政策、经济、社会与技术四个维度展开，判断空间计算时代中 AR 技术的机会、门槛与未来增长路径。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">02 / 项目背景与桌面调研</div>
-                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Background & Desk Research</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">在空间计算（Spatial Computing）时代到来前，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，梳理 iOS 生态下 AR 技术的演进路径、行业头部应用设计范式，以及教育、文旅、电商等真实场景中的核心痛点，为后续 TAM 用户分析与空间界面设计提供理论基础。</p>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">02 / 项目背景与桌面调研</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Background & Desk Research</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来前，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，梳理 iOS 生态下 AR 技术的演进路径、行业头部应用设计范式，以及教育、文旅、电商等真实场景中的核心痛点，为后续 TAM 用户分析与空间界面设计提供理论基础。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk Research" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">03 / 用户洞察与 TAM 采纳模型</div>
-                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">User Insights</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">覆盖教育、零售、文旅、购物、游戏五大核心赛道，广泛收集整理了 200+ 份目标用户问卷，并引入 TAM 模型，从“感知有用性（PU）”与“感知易用性（PEU）”两个维度量化用户对 AR 的采纳意愿。研究结果显示：设备兼容性与跨设备体验一致性是阻碍用户高频使用 AR 功能的首要因素。</p>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">User Insights</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏五大核心赛道，广泛收集整理了 200+ 份目标用户问卷，并引入 TAM 模型，从“感知有用性（PU）”与“感知易用性（PEU）”两个维度量化用户对 AR 的采纳意愿。研究结果显示：设备兼容性与跨设备体验一致性是阻碍用户高频使用 AR 功能的首要因素。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">04 / 核心界面设计落地</div>
-                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Spatial Interface Design</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">基于前期桌面调研与 TAM 采纳模型推导，项目依托 Apple HIG 空间计算设计规范，提出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系，以平衡可读性、沉浸感与空间层级关系。</p>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">04 / 核心界面设计落地</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Spatial Interface Design</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期桌面调研与 TAM 采纳模型推导，项目依托 Apple HIG 空间计算设计规范，提出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系，以平衡可读性、沉浸感与空间层级关系。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial Interface Design" className="h-full w-full object-cover" /></div>
               </div>
             </div>
           </section>
@@ -105,7 +109,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Project Overview</h2>
+        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black" : "text-sm font-semibold"}>Project Overview</h2>
 
         <p className={isEditorial ? isKidsBike ? "mt-4 text-sm leading-7 text-[#4A5C4D]" : "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
         <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.overview?.zh}</p>
@@ -163,7 +167,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {project.slug === "su7-cmf-proposal" ? (
         <Reveal>
         <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
-          <h2 className={isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]"}>Competitor CMF Analysis</h2>
+          <h2 className={isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black"}>Competitor CMF Analysis</h2>
           <p className="mt-2 text-xs text-[#7C7468]">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -196,8 +200,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
                 </div>
                 <div className="space-y-2 p-4">
-                  <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>{car.name}</div>
-                  <div className={isKidsBike ? "text-xs text-[#B08F61]" : "text-xs text-[#8B9EAC]"}>{car.price}</div>
+                  <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-black"}>{car.name}</div>
+                  <div className={isKidsBike ? "text-xs text-[#B08F61]" : "text-xs text-zinc-500"}>{car.price}</div>
                   <div className="text-sm text-[#55635B]">{car.note}</div>
                   <div className={isKidsBike ? "inline-flex rounded-full bg-[#E0D7C8] px-3 py-1 text-[11px] text-[#55624F] ring-1 ring-black/10" : "inline-flex rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10"}>
                     {car.female}
@@ -208,7 +212,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Exterior color comparison</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-black"}>Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
             <div className={isKidsBike ? "mt-4 border-l-2 border-[#BFA37A]/60 pl-4 text-xs leading-6 text-[#6E6558]" : "mt-4 border-l-2 border-[#C7DAE6]/60 pl-4 text-xs leading-6 text-[#7C7468]"}>
               图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
@@ -232,7 +236,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Interior CMF comparison</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-black"}>Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7 · 砂陶米", img: "/projects/su7-cmf-proposal/小米内饰米色.jpg" },
@@ -280,7 +284,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-[#556D7D]"}>Differentiation opportunities</div>
+            <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-black"}>Differentiation opportunities</div>
             <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-zinc-50 text-zinc-700">
@@ -342,7 +346,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
             <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
+        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
         <div className="mt-4 grid gap-6 md:grid-cols-12">
           <div className="md:col-span-7">
@@ -353,11 +357,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           {/* Palette integrated to the right */}
           <div className="md:col-span-5">
             <div className={isEditorial ? isKidsBike ? "rounded-[24px] border border-black/10 bg-white/85 p-4" : "rounded-[24px] border border-black/10 bg-white/80 p-4" : "rounded-2xl border border-black/10 bg-zinc-50 p-4"}>
-              <div className={isEditorial ? isKidsBike ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#B08F61]" : "text-xs font-semibold uppercase tracking-[0.12em] text-[#8B9EAC]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
+              <div className={isEditorial ? isKidsBike ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#B08F61]" : "text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
               <div className="mt-3">
                 <Palette items={s.color?.palette ?? []} />
               </div>
-              {s.color?.source?.en ? <p className={isEditorial ? isKidsBike ? "mt-3 text-xs leading-6 text-[#5D6B5E]" : "mt-3 text-xs leading-6 text-[#617785]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
+              {s.color?.source?.en ? <p className={isEditorial ? isKidsBike ? "mt-3 text-xs leading-6 text-[#5D6B5E]" : "mt-3 text-xs leading-6 text-zinc-700" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
               {s.color?.source?.zh ? <p className={isEditorial ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-1 text-xs text-zinc-500"}>{s.color?.source?.zh}</p> : null}
             </div>
           </div>
@@ -370,7 +374,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Materials & Finishes</h2>
+        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black" : "text-sm font-semibold"}>Materials & Finishes</h2>
         <p className={isEditorial ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
@@ -608,9 +612,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   )}
 
                   <div className="space-y-3 p-5">
-                    <div className={isKidsBike ? "text-[10px] uppercase tracking-[0.14em] text-[#B08F61]" : "text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]"}>CMF module</div>
-                    <div className={isKidsBike ? "text-lg font-medium text-[#284033]" : "text-lg font-medium text-[#556D7D]"}>{p.name}</div>
-                    {p.description?.zh ? <p className={isKidsBike ? "text-sm leading-7 text-[#4A5C4D] whitespace-pre-line" : "text-sm leading-7 text-[#617785] whitespace-pre-line"}>{p.description.zh}</p> : null}
+                    <div className={isKidsBike ? "text-[10px] uppercase tracking-[0.14em] text-[#B08F61]" : "text-[10px] uppercase tracking-[0.14em] text-zinc-500"}>CMF module</div>
+                    <div className={isKidsBike ? "text-lg font-medium text-[#284033]" : "text-lg font-medium text-black"}>{p.name}</div>
+                    {p.description?.zh ? <p className={isKidsBike ? "text-sm leading-7 text-[#4A5C4D] whitespace-pre-line" : "text-sm leading-7 text-zinc-700 whitespace-pre-line"}>{p.description.zh}</p> : null}
                     {p.description?.en ? <p className="text-xs leading-6 text-[#7C7468]">{p.description.en}</p> : null}
                   </div>
                 </div>
@@ -625,7 +629,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Final Renders</h2>
+        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black" : "text-sm font-semibold"}>Final Renders</h2>
 
         {(s.final?.renders ?? []).length ? (
           <div className="mt-4 grid gap-4">
@@ -647,8 +651,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               ["状态", "概念设计"],
             ].map(([label, value]) => (
               <div key={label} className="rounded-[24px] border border-black/10 bg-white/80 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                <div className={isKidsBike ? "text-[11px] uppercase tracking-[0.12em] text-[#B08F61]" : "text-[11px] uppercase tracking-[0.12em] text-[#8B9EAC]"}>{label}</div>
-                <div className={isKidsBike ? "mt-2 text-sm font-medium text-[#284033]" : "mt-2 text-sm font-medium text-[#556D7D]"}>{value}</div>
+                <div className={isKidsBike ? "text-[11px] uppercase tracking-[0.12em] text-[#B08F61]" : "text-[11px] uppercase tracking-[0.12em] text-zinc-500"}>{label}</div>
+                <div className={isKidsBike ? "mt-2 text-sm font-medium text-[#284033]" : "mt-2 text-sm font-medium text-black"}>{value}</div>
               </div>
             ))}
           </div>
