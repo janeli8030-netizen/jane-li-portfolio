@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </header>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Project Overview</h2>
 
         <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
@@ -112,7 +112,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       {project.slug === "su7-cmf-proposal" ? (
         <Reveal>
-        <section className="rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7">
+        <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
           <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]">Competitor CMF Analysis</h2>
           <p className="mt-2 text-xs text-[#7C7468]">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
 
@@ -149,7 +149,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <div className="text-sm font-semibold text-[#2D4A3E]">{car.name}</div>
                   <div className="text-xs text-[#8A7A63]">{car.price}</div>
                   <div className="text-sm text-[#55635B]">{car.note}</div>
-                  <div className="inline-flex rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10">
+                  <div className="inline-flex rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10">
                     {car.female}
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <div className="text-sm font-semibold text-[#2D4A3E]">{item.name}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {item.colors.map((c) => (
-                      <span key={c} className="rounded-full bg-[#E8E2D5] px-3 py-1 text-xs text-[#5C665F]">
+                      <span key={c} className="rounded-full bg-[#DCD4C7] px-3 py-1 text-xs text-[#5C665F]">
                         {c}
                       </span>
                     ))}
@@ -291,7 +291,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       ) : null}
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
         <div className="mt-4 grid gap-6 md:grid-cols-12">
@@ -319,7 +319,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </Reveal>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Materials & Finishes</h2>
         <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
@@ -516,13 +516,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
 
                       {p.name.includes("Exterior") ? (
-                        <div className="absolute left-5 top-5 rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
                           珠光金属漆 · 3C2B
                         </div>
                       ) : null}
 
                       {p.name.includes("Interior") ? (
-                        <div className="absolute left-5 top-5 rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
                           仿麂皮 · 撞色缝线 · 渐变打孔
                         </div>
                       ) : null}
@@ -550,7 +550,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </Reveal>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Final Renders</h2>
 
         {(s.final?.renders ?? []).length ? (

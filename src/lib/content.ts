@@ -74,9 +74,9 @@ export const projects: Project[] = [
       },
       color: {
         palette: [
-          { name: "Mist Blue", hex: "#A8D0D0", note: { zh: "晨雾蓝：宁静治愈、呼吸感", en: "Mist Blue: calm, healing, breathable" } },
-          { name: "Soft Beige", hex: "#F5E6D3", note: { zh: "浅米：温暖柔软、放大座舱", en: "Soft beige: warm, soft, enlarges cabin feel" } },
-          { name: "Warm Gray", hex: "#C4C4C4", note: { zh: "暖灰：克制点缀、结构层次", en: "Warm gray: restrained accents, structure" } },
+          { name: "Mist Blue", hex: "#DAE8EF", note: { zh: "晨雾蓝：宁静治愈、呼吸感", en: "Mist Blue: calm, healing, breathable" } },
+          { name: "Soft Beige", hex: "#DCD4C7", note: { zh: "浅米：温暖柔软、放大座舱", en: "Soft beige: warm, soft, enlarges cabin feel" } },
+          { name: "Warm Gray", hex: "#D0CFC8", note: { zh: "暖灰：克制点缀、结构层次", en: "Warm gray: restrained accents, structure" } },
         ],
         source: {
           zh: "趋势关键词：低饱和度、治愈感、内外呼应、可持续材料。",
