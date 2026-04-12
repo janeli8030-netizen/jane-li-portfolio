@@ -7,6 +7,8 @@
     <title>taibai-app-dev-20260304</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
+      /* fix Expo asset absolute paths when hosted under /taibai-demo */
+      #root { background: white; }
       /* These styles make the body full-height */
       html,
       body {
@@ -24,7 +26,7 @@
       }
     </style>
   <link rel="icon" href="./favicon.ico" />
-  <base href="./" />
+  <base href="/taibai-demo/" />
 </head>
 
   <body>
