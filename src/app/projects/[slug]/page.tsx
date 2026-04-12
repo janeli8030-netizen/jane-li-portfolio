@@ -30,6 +30,33 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <p className="mt-4 text-sm text-zinc-700">{s.overview?.en}</p>
         <p className="mt-2 text-xs text-zinc-500">{s.overview?.zh}</p>
 
+        {project.slug === "taibai-travel-app" ? (
+          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white">
+            <div className="flex items-center justify-between gap-3 border-b border-black/10 bg-zinc-50 px-4 py-3">
+              <div>
+                <div className="text-sm font-semibold text-zinc-900">Interactive Demo</div>
+                <div className="text-xs text-zinc-500">Web demo exported from the local Expo app</div>
+              </div>
+              <a
+                href="/taibai-demo/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-medium text-zinc-900 underline underline-offset-4"
+              >
+                Open in new tab
+              </a>
+            </div>
+
+            <iframe
+              title="Taibai Travel App Demo"
+              src="/taibai-demo/"
+              className="h-[820px] w-full"
+              style={{ border: 0 }}
+              allow="clipboard-read; clipboard-write"
+            />
+          </div>
+        ) : null}
+
         {/* Process: moodboard + sketches under overview */}
         {project.slug === "kids-balance-bike" ? (
           <div className="mt-6 grid gap-4">
