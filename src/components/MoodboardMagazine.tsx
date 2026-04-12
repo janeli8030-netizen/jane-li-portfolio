@@ -26,19 +26,14 @@ export default function MoodboardMagazine({
             <img src={primary.src} alt={primary.alt} className="h-full w-full object-cover" />
           </div>
 
-          <div className="col-span-8 row-span-2">
+          <div className="col-span-4 row-span-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={seed.src} alt={seed.alt} className="h-full w-full object-cover" />
+            <img src={patterns[1]?.src} alt={patterns[1]?.alt ?? "Pattern 2"} className="h-full w-full object-cover" />
           </div>
 
           <div className="col-span-4 row-span-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={patterns[0]?.src} alt={patterns[0]?.alt ?? "Pattern 1"} className="h-full w-full object-cover" />
-          </div>
-
-          <div className="col-span-4 row-span-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={patterns[1]?.src} alt={patterns[1]?.alt ?? "Pattern 2"} className="h-full w-full object-cover" />
           </div>
 
           <div className="col-span-4 row-span-2">
