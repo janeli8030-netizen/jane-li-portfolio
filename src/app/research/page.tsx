@@ -7,18 +7,18 @@ export default function ResearchPage() {
       </header>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <section className="rounded-3xl border border-black/10 bg-white p-6">
+        <a href="/research/trend-research" className="rounded-3xl border border-black/10 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-black/20 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)]">
           <h2 className="text-sm font-semibold">Trend Research</h2>
           <p className="mt-3 text-sm text-zinc-600">Add 1–2 trend topics with moodboards and palette takeaways.</p>
-        </section>
-        <section className="rounded-3xl border border-black/10 bg-white p-6">
+        </a>
+        <a href="/research/user-analysis" className="rounded-3xl border border-black/10 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-black/20 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)]">
           <h2 className="text-sm font-semibold">User Analysis</h2>
           <p className="mt-3 text-sm text-zinc-600">Questionnaires, personas, adoption barriers, and key user insights.</p>
-        </section>
-        <section className="rounded-3xl border border-black/10 bg-white p-6 md:col-span-2">
+        </a>
+        <a href="/research/ai-design-research" className="rounded-3xl border border-black/10 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-black/20 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] md:col-span-2">
           <h2 className="text-sm font-semibold">AI Design Research</h2>
           <p className="mt-3 text-sm text-zinc-600">Research projects on AI-assisted design, cognition, interaction, and emerging workflows.</p>
-        </section>
+        </a>
       </div>
     </div>
   );

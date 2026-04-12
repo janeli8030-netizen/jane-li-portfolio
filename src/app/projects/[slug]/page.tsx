@@ -73,42 +73,39 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <>
           <Reveal>
           <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+            <div className="space-y-8">
+              <div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">01 / 研究宏观框架</div>
-                <h3 className="mt-2 text-lg font-medium text-[#556D7D]">Macro Analysis · PEST</h3>
-                <p className="mt-3 text-sm leading-7 text-[#617785]">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描，预测 Vision Pro 硬件普及对行业带来的颠覆性影响。</p>
-                <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
-                  <img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" />
-                </div>
+                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Macro Analysis · PEST</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。它从政策、经济、社会与技术四个维度展开，判断空间计算时代中 AR 技术的机会、门槛与未来增长路径。</p>
               </div>
-              <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">02 / 项目背景与桌面调研</div>
-                <h3 className="mt-2 text-lg font-medium text-[#556D7D]">Background & Desk Research</h3>
-                <p className="mt-3 text-sm leading-7 text-[#617785]">围绕空间计算时代到来前的移动端 AR 转型节点，系统梳理 iOS 生态下 AR 技术的演进脉络、行业头部应用模式，以及教育、文旅、电商等真实场景中的核心痛点。</p>
-                <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
-                  <img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk research" className="h-full w-full object-cover" />
-                </div>
-              </div>
-              <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
-                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">03 / 用户洞察与 TAM 采纳模型</div>
-                <h3 className="mt-2 text-lg font-medium text-[#556D7D]">User Insights</h3>
-                <p className="mt-3 text-sm leading-7 text-[#617785]">覆盖教育、零售、文旅、购物、游戏五大赛道，收集 200+ 份问卷后发现：设备兼容性与跨设备一致性是阻碍用户高频使用 AR 功能的首要因素。这直接决定了后续空间界面的设计方向。
 
-补充研究参考：
-- 《Comparative Study on the Perception of Cultural Ecosystem Services in Taibai Mountain National Forest Park》：帮助理解不同利益相关者在空间情境中的价值感知差异。
-- 《Comparative Study of Cognitive Differences in Rural Landscapes Based on Eye Movement Experiments》：为 AR 设计中的视线引导、注意分布与认知差异提供了方法借鉴。</p>
-                <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
-                  <img src="/projects/ar-emotion-game/913b5e86.webp" alt="TAM analysis" className="h-full w-full object-cover" />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">02 / 项目背景与桌面调研</div>
+                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Background & Desk Research</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">在空间计算（Spatial Computing）时代到来前，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，梳理 iOS 生态下 AR 技术的演进路径、行业头部应用设计范式，以及教育、文旅、电商等真实场景中的核心痛点，为后续 TAM 用户分析与空间界面设计提供理论基础。</p>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">03 / 用户洞察与 TAM 采纳模型</div>
+                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">User Insights</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">覆盖教育、零售、文旅、购物、游戏五大核心赛道，广泛收集整理了 200+ 份目标用户问卷，并引入 TAM 模型，从“感知有用性（PU）”与“感知易用性（PEU）”两个维度量化用户对 AR 的采纳意愿。研究结果显示：设备兼容性与跨设备体验一致性是阻碍用户高频使用 AR 功能的首要因素。</p>
+                <div className="mt-5 grid gap-3">
+                  <a href="https://www.mdpi.com/2073-445X/13/12/2207" target="_blank" rel="noreferrer" className="rounded-[20px] border border-black/10 bg-white/80 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-black/20">
+                    <div className="text-sm font-medium text-[#556D7D]">Comparative Study on the Perception of Cultural Ecosystem Services in Taibai Mountain National Forest Park</div>
+                    <p className="mt-2 text-sm leading-7 text-[#617785]">通过 184 份访谈与问卷结合参与式地图，分析不同利益相关者在情境感知与价值判断上的差异。该研究为 AR 设计中的“不同用户如何理解并评价同一空间体验”提供了参考。</p>
+                  </a>
+                  <a href="https://www.mdpi.com/2073-445X/13/10/1592" target="_blank" rel="noreferrer" className="rounded-[20px] border border-black/10 bg-white/80 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-black/20">
+                    <div className="text-sm font-medium text-[#556D7D]">Comparative Study of Cognitive Differences in Rural Landscapes Based on Eye Movement Experiments</div>
+                    <p className="mt-2 text-sm leading-7 text-[#617785]">通过眼动实验与半结构访谈研究不同群体对景观的注意分布与认知偏好，为 AR 界面中的视觉引导、层级组织与信息显著性设计提供了方法借鉴。</p>
+                  </a>
                 </div>
               </div>
-              <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+
+              <div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">04 / 核心界面设计落地</div>
-                <h3 className="mt-2 text-lg font-medium text-[#556D7D]">Spatial Interface Design</h3>
-                <p className="mt-3 text-sm leading-7 text-[#617785]">基于前期桌面调研与 TAM 模型推导，依托 Apple HIG 空间计算设计规范，输出一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系。</p>
-                <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
-                  <img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial interface design" className="h-full w-full object-cover" />
-                </div>
+                <h2 className="mt-2 text-2xl font-medium text-[#556D7D]">Spatial Interface Design</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-[#617785]">基于前期桌面调研与 TAM 采纳模型推导，项目依托 Apple HIG 空间计算设计规范，提出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系，以平衡可读性、沉浸感与空间层级关系。</p>
               </div>
             </div>
           </section>
@@ -230,8 +227,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               {[
                 { name: "小米 SU7 · 流金粉", img: "/projects/su7-cmf-proposal/小米外观粉色.jpg" },
                 { name: "小米 SU7 · 霞光紫", img: "/projects/su7-cmf-proposal/小米外观紫色.jpg" },
-                { name: "小鹏 MONA M03 · 樱珞粉", img: "/projects/su7-cmf-proposal/小鹏外观粉色.jpg" },
-                { name: "蔚来 ET5 · 镜空粉", img: "/projects/su7-cmf-proposal/蔚来外观粉色.jpg" },
+                { name: "小鹏 MONA M03 · 罗兰紫", img: "/projects/su7-cmf-proposal/小鹏外观紫色.jpg" },
+                { name: "蔚来 ET5 · 宇航紫", img: "/projects/su7-cmf-proposal/蔚来外观紫色.jpg" },
               ].map((item) => (
                 <div key={item.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
                   <div className="aspect-[4/3] bg-zinc-100">
