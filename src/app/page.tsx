@@ -34,7 +34,7 @@ function FeaturedProjects() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-zinc-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`/images/cover-${p.slug}.png`}
+                  src={p.slug === "su7-cmf-proposal" ? "/projects/su7-cmf-proposal/cover-su7.jpg" : `/images/cover-${p.slug}.png`}
                   alt={`${p.title.en} cover`}
                   className="h-full w-full scale-[1.08] object-cover transition duration-700 group-hover:scale-[1.12]"
                 />
