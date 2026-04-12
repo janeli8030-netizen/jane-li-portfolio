@@ -45,11 +45,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4">
+                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
                   <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Project type</div>
                   <div className="mt-2 text-sm font-medium text-[#2D4A3E]">汽车 CMF 设计研究</div>
                 </div>
-                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4">
+                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
                   <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Focus</div>
                   <div className="mt-2 text-sm font-medium text-[#2D4A3E]">女性向 · 低饱和度色彩</div>
                 </div>
@@ -57,13 +57,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="md:col-span-7">
-              <div className="h-full min-h-[320px] bg-[#D8E5E5] p-5 md:p-7">
-                <div className="overflow-hidden rounded-[24px] border border-white/60 shadow-[0_20px_60px_rgba(45,74,62,0.12)]">
+              <div className="relative h-full min-h-[320px] overflow-hidden bg-[#D8E5E5] p-5 md:p-7">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.65),transparent_40%),linear-gradient(180deg,rgba(255,255,255,0.18),transparent)]" />
+                <div className="relative overflow-hidden rounded-[24px] border border-white/60 shadow-[0_20px_60px_rgba(45,74,62,0.12)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.cover?.src}
                     alt={project.cover?.alt.en ?? project.title.en}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
                   />
                 </div>
               </div>
@@ -190,6 +191,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
             <div className="text-sm font-semibold text-[#2D4A3E]">Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
+            <div className="mt-4 rounded-[24px] border border-dashed border-[#C9A87C]/50 bg-[#FBF8F3] p-4 text-xs leading-6 text-[#7C7468]">
+              图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
+            </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7", colors: ["霞光紫", "流金粉"] },
@@ -596,6 +600,22 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <div key={r.src} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={r.src} alt={r.alt.en} className="h-auto w-full" />
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {isSu7 ? (
+          <div className="mt-5 grid gap-4 md:grid-cols-4">
+            {[
+              ["时间", "2026 年 4 月"],
+              ["类型", "个人 CMF 设计研究"],
+              ["工具", "Keyshot / Photoshop / Figma"],
+              ["状态", "概念设计"],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-[24px] border border-black/10 bg-white/80 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
+                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">{label}</div>
+                <div className="mt-2 text-sm font-medium text-[#2D4A3E]">{value}</div>
               </div>
             ))}
           </div>
