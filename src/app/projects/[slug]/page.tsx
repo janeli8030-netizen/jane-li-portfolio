@@ -79,7 +79,156 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         ) : null}
       </section>
 
-      {(s.finish?.processes ?? []).length ? (
+      {project.slug === "su7-cmf-proposal" ? (
+        <section className="rounded-3xl border border-black/10 bg-white p-7">
+          <h2 className="text-sm font-semibold">Competitor CMF Analysis</h2>
+          <p className="mt-2 text-xs text-zinc-500">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                name: "小米 SU7",
+                price: "21.99–30.39 万",
+                female: "女性用户占比超 50%",
+                note: "主打“颜值 + 智能生态”",
+                img: "/projects/su7-cmf-proposal/cover-su7.jpg",
+              },
+              {
+                name: "小鹏 MONA M03",
+                price: "11.98–15.18 万",
+                female: "女性用户占比近一半",
+                note: "“樱珞粉”高定套装",
+                img: "/projects/su7-cmf-proposal/mona-m03.jpg",
+              },
+              {
+                name: "蔚来 ET5",
+                price: "29.80–35.60 万",
+                female: "女性用户占比高",
+                note: "“镜空粉”专属色",
+                img: "/projects/su7-cmf-proposal/nio-et5.jpg",
+              },
+            ].map((car) => (
+              <div key={car.name} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
+                <div className="aspect-[4/3] bg-white">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
+                </div>
+                <div className="space-y-2 p-4">
+                  <div className="text-sm font-semibold text-zinc-900">{car.name}</div>
+                  <div className="text-xs text-zinc-500">{car.price}</div>
+                  <div className="text-sm text-zinc-700">{car.note}</div>
+                  <div className="inline-flex rounded-full bg-white px-3 py-1 text-[11px] text-zinc-600 ring-1 ring-black/10">
+                    {car.female}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
+            <div className="text-sm font-semibold text-zinc-900">Exterior color comparison</div>
+            <div className="mt-1 text-xs text-zinc-500">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {[
+                { name: "小米 SU7", colors: ["霞光紫", "流金粉"] },
+                { name: "小鹏 MONA M03", colors: ["罗兰紫", "樱珞粉"] },
+                { name: "蔚来 ET5", colors: ["镜空粉", "宇航蓝"] },
+              ].map((item) => (
+                <div key={item.name} className="rounded-2xl border border-black/10 bg-white p-4">
+                  <div className="text-sm font-semibold text-zinc-900">{item.name}</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {item.colors.map((c) => (
+                      <span key={c} className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-700">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
+            <div className="text-sm font-semibold text-zinc-900">Interior CMF comparison</div>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {[
+                { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/interior-seats.jpg" },
+                { name: "小鹏 MONA M03 · 拂晓紫", img: "/projects/su7-cmf-proposal/mona-interior.jpg" },
+                { name: "蔚来 ET5 · 电驭紫", img: "/projects/su7-cmf-proposal/nio-interior.jpg" },
+              ].map((item) => (
+                <div key={item.name} className="overflow-hidden rounded-2xl border border-black/10 bg-white">
+                  <div className="aspect-[4/3] bg-zinc-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.img} alt={item.name} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="p-3 text-xs text-zinc-600">{item.name}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
+              <table className="min-w-full text-left text-sm">
+                <thead className="bg-zinc-50 text-zinc-700">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">对比维度</th>
+                    <th className="px-4 py-3 font-medium">小米 SU7</th>
+                    <th className="px-4 py-3 font-medium">小鹏 MONA M03</th>
+                    <th className="px-4 py-3 font-medium">蔚来 ET5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["内饰主色调", "暮光红、迷雾紫、砂陶米", "拂晓紫、晨雾灰、夜幕灰", "电驭紫、金沙米、苔原绿"],
+                    ["座椅面料", "Nappa 真皮", "仿麂皮 + Nappa", "Nappa + Haptex"],
+                    ["表面工艺", "绗缝 + 金属网罩", "全金属蚀刻 + UV 触感漆", "绗缝 + 打孔 + 参数化纹理"],
+                    ["女性专属配置", "补光化妆镜 + 18.4L 储物", "三档美妆镜 + 防晒天幕", "补光化妆镜 + 柔光氛围灯"],
+                  ].map((row) => (
+                    <tr key={row[0]} className="border-t border-black/10 align-top text-zinc-700">
+                      {row.map((cell, i) => (
+                        <td key={i} className="px-4 py-3 text-sm">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
+            <div className="text-sm font-semibold text-zinc-900">Differentiation opportunities</div>
+            <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
+              <table className="min-w-full text-left text-sm">
+                <thead className="bg-zinc-50 text-zinc-700">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">机会点</th>
+                    <th className="px-4 py-3 font-medium">竞品现状</th>
+                    <th className="px-4 py-3 font-medium">本提案差异化</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["🎨 外饰色彩", "紫 / 粉色系为主，蓝色系空白", "推出“晨雾蓝”低饱和度治愈蓝"],
+                    ["🛋️ 内饰色调", "紫色 / 米色为主", "浅米色 + 浅蓝色撞色，内外呼应"],
+                    ["📦 材料组合", "单一材质（全 Nappa 或全仿麂皮）", "仿麂皮 + Nappa 组合"],
+                    ["✨ 表面工艺", "直线绗缝为主", "参数化渐变打孔"],
+                    ["💭 情绪价值", "浪漫 / 优雅 / 豪华", "宁静 / 治愈 / 呼吸感"],
+                  ].map((row) => (
+                    <tr key={row[0]} className="border-t border-black/10 align-top text-zinc-700">
+                      {row.map((cell, i) => (
+                        <td key={i} className="px-4 py-3 text-sm">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      ) : (s.finish?.processes ?? []).length ? (
         <section className="rounded-3xl border border-black/10 bg-white p-7">
           <h2 className="text-sm font-semibold">IA & Journey</h2>
           <p className="mt-2 text-xs text-zinc-500">Information Architecture · User journey · Guidelines</p>
