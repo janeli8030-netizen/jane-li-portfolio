@@ -15,9 +15,9 @@ export default function StickyShowcase({
   children: ReactNode;
 }) {
   return (
-    <section className="grid gap-6 md:grid-cols-12 md:gap-8">
+    <section className="project-hero-fullbleed grid gap-6 bg-[#F5F1E8] px-4 py-10 md:grid-cols-12 md:gap-8 md:px-10 md:py-16 lg:px-16">
       <div className="md:col-span-5">
-        <div className="md:sticky md:top-24 rounded-[24px] border border-black/10 bg-white/70 p-6 backdrop-blur-sm">
+        <div className="md:sticky md:top-24 rounded-[24px] border border-black/10 bg-white/75 p-6 backdrop-blur-sm shadow-[0_18px_40px_rgba(45,74,62,0.08)]">
           <div className="text-[11px] uppercase tracking-[0.14em] text-[#8A7A63]">{eyebrow}</div>
           <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[#2D4A3E]">{title}</h3>
           <p className="mt-4 text-sm leading-7 text-[#58655E] whitespace-pre-line">{body}</p>
