@@ -7,7 +7,7 @@ export default function ProjectsPage() {
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">CMF Projects</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         <p className="text-sm text-zinc-600">4–6 core projects, structured for CMF storytelling.</p>
       </header>
 

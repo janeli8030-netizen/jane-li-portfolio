@@ -4,7 +4,7 @@ import { projects } from "@/lib/content";
 import { site } from "@/lib/site";
 
 function FeaturedProjects() {
-  const featuredSlugs = ["kids-balance-bike", "lulu-aroma-device", "ar-emotion-game"];
+  const featuredSlugs = ["su7-cmf-proposal", "kids-balance-bike", "ar-emotion-game"];
   const featured = featuredSlugs
     .map((slug) => projects.find((p) => p.slug === slug))
     .filter(Boolean)
@@ -179,8 +179,8 @@ export default function HomePage() {
     <div className="space-y-14">
       {/* 1) Hero */}
       <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--deep-green)] text-white">
-        <div className="grid gap-8 p-10 md:grid-cols-12 md:items-center">
-          <Reveal className="md:col-span-7">
+        <div className="p-10 md:p-14">
+          <Reveal className="max-w-3xl">
             <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
             <h1
               className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl italic"
@@ -208,18 +208,6 @@ export default function HomePage() {
               >
                 联系我 / Contact
               </Link>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.08} className="md:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-white/10 ring-1 ring-white/15 transition duration-700 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/hero.png"
-                alt="Hero image"
-                className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0" />
             </div>
           </Reveal>
         </div>
