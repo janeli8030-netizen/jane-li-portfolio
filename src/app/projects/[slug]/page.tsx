@@ -316,7 +316,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </section>
         </Reveal>
-      ) : (s.finish?.processes ?? []).length ? (
+      ) : (s.finish?.processes ?? []).length && !isKidsBike ? (
         <section className="rounded-3xl border border-black/10 bg-white p-7">
           <h2 className="text-sm font-semibold">IA & Journey</h2>
           <p className="mt-2 text-xs text-zinc-500">Information Architecture · User journey · Guidelines</p>
