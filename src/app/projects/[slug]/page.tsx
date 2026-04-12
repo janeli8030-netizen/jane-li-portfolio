@@ -72,33 +72,33 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {project.slug === "ar-emotion-game" ? (
         <>
           <Reveal>
-          <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
-            <div className="space-y-8">
+          <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7 text-black">
+            <div className="space-y-10">
               <div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">01 / 研究宏观框架</div>
-                <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis · PEST</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。它从政策、经济、社会与技术四个维度展开，判断空间计算时代中 AR 技术的机会、门槛与未来增长路径。</p>
+                <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。预测 Vision Pro 硬件普及对行业带来的颠覆性影响。</p>
                 <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">02 / 项目背景与桌面调研</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">Background & Desk Research</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来前，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，梳理 iOS 生态下 AR 技术的演进路径、行业头部应用设计范式，以及教育、文旅、电商等真实场景中的核心痛点，为后续 TAM 用户分析与空间界面设计提供理论基础。</p>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来的前夕，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，深度梳理了目前 iOS 生态下 AR 技术的演进脉络。重点聚焦于软硬件协同发展趋势、行业头部应用的设计范式，以及用户在真实场景（如教育、文旅、电商等）中的核心痛点。通过剖析现有的市场缺口，为后续的 TAM 采纳度分析与体验重塑提供了坚实的理论依托。</p>
                 <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk Research" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型</div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型构建</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">User Insights</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏五大核心赛道，广泛收集整理了 200+ 份目标用户问卷，并引入 TAM 模型，从“感知有用性（PU）”与“感知易用性（PEU）”两个维度量化用户对 AR 的采纳意愿。研究结果显示：设备兼容性与跨设备体验一致性是阻碍用户高频使用 AR 功能的首要因素。</p>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏 5 大核心赛道，广泛收集整理了 200+ 份目标用户需求问卷，深挖用户在使用 AR 技术时的核心痛点。为了量化分析，引入技术采纳模型（TAM），通过对“感知有用性（PU）”和“感知易用性（PEU）”的交叉对比分析，得出决定性结论：设备兼容性是影响 AR 高频使用的关键制约因素。</p>
                 <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">04 / 核心界面设计落地</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">Spatial Interface Design</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期桌面调研与 TAM 采纳模型推导，项目依托 Apple HIG 空间计算设计规范，提出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系，以平衡可读性、沉浸感与空间层级关系。</p>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期的桌面调研与 TAM 采纳模型推导，我针对“设备兼容性”与“沉浸式体验”两大核心诉求，依托 Apple HIG 空间计算设计规范，输出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系。</p>
                 <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial Interface Design" className="h-full w-full object-cover" /></div>
               </div>
             </div>
