@@ -14,7 +14,7 @@ export default function HeroScene({
   tags: string[];
 }) {
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-[#DCE7E4] text-white">
+    <section className="project-hero-fullbleed relative isolate min-h-screen overflow-hidden bg-[#DCE7E4] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.55),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(201,168,124,0.18),transparent_22%),linear-gradient(180deg,rgba(17,33,28,0.10),rgba(17,33,28,0.55))]" />
 
       {image ? (
