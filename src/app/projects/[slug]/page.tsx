@@ -4,7 +4,6 @@ import SectionImage from "@/components/SectionImage";
 import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
 import MoodboardMagazine from "@/components/MoodboardMagazine";
 import Reveal from "@/components/Reveal";
-import StickyShowcase from "@/components/StickyShowcase";
 import HeroScene from "@/components/HeroScene";
 import StatementBlock from "@/components/StatementBlock";
 import { projects } from "@/lib/content";
@@ -508,49 +507,39 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
             </>
           ) : isSu7 ? (
-            <div className="grid gap-6">
+            <div className="grid gap-4 md:grid-cols-2">
               {(s.finish?.processes ?? []).map((p) => (
-                <StickyShowcase
-                  key={p.name}
-                  eyebrow="CMF module"
-                  title={p.name}
-                  body={`${p.description?.en ?? ""}\n\n${p.description?.zh ?? ""}`}
-                >
+                <div key={p.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80 shadow-sm">
                   {p.compare?.afterSrc ? (
-                    <div className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-black/10 bg-[#E8E2D5] p-5 md:p-6 shadow-[0_20px_50px_rgba(45,74,62,0.10)]">
-                      <div className="overflow-hidden rounded-[24px] border border-white/60 bg-white">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]" />
-                      </div>
+                    <div className="relative aspect-[4/3] bg-white">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
 
                       {p.name.includes("Exterior") ? (
-                        <>
-                          <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
-                          <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                            珠光金属漆 · 3C2B 工艺
-                          </div>
-                        </>
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                          珠光金属漆 · 3C2B
+                        </div>
                       ) : null}
 
                       {p.name.includes("Interior") ? (
-                        <>
-                          <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
-                          <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                            仿麂皮 / 浅蓝撞色缝线
-                          </div>
-                          <div className="absolute bottom-8 right-8 h-16 w-16 border-b border-r border-[#C9A87C]" />
-                          <div className="absolute bottom-8 right-20 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                            参数化渐变打孔 · Nappa 局部点缀
-                          </div>
-                        </>
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                          仿麂皮 · 撞色缝线 · 渐变打孔
+                        </div>
                       ) : null}
                     </div>
                   ) : (
-                    <div className="flex min-h-[220px] items-center justify-center rounded-[24px] border border-black/10 bg-[#E8E2D5] p-6 text-sm text-[#7C7468]">
+                    <div className="flex aspect-[4/3] items-center justify-center bg-zinc-100 text-sm text-[#7C7468]">
                       Visual coming soon
                     </div>
                   )}
-                </StickyShowcase>
+
+                  <div className="space-y-3 p-5">
+                    <div className="text-[10px] uppercase tracking-[0.14em] text-[#8A7A63]">CMF module</div>
+                    <div className="text-lg font-medium text-[#2D4A3E]">{p.name}</div>
+                    {p.description?.zh ? <p className="text-sm leading-7 text-[#5C665F] whitespace-pre-line">{p.description.zh}</p> : null}
+                    {p.description?.en ? <p className="text-xs leading-6 text-[#7C7468]">{p.description.en}</p> : null}
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
