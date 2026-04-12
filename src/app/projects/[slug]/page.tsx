@@ -11,24 +11,79 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   if (!project) return notFound();
 
   const s = project.sections;
+  const isSu7 = project.slug === "su7-cmf-proposal";
 
   return (
-    <div className="space-y-10">
-      <header className="space-y-3">
-        <div className="text-xs text-zinc-500">CMF Project</div>
-        <h1 className="text-3xl font-semibold tracking-tight">
-          {project.title.en}
-          <span className="ml-2 text-base font-normal text-zinc-500">{project.title.zh}</span>
-        </h1>
-        <p className="text-base text-zinc-700">{project.summary.en}</p>
-        <p className="text-sm text-zinc-500">{project.summary.zh}</p>
+    <div className={isSu7 ? "space-y-10 text-[#2D4A3E]" : "space-y-10"}>
+      <header
+        className={
+          isSu7
+            ? "overflow-hidden rounded-[24px] border border-black/10 bg-[#E8E2D5]"
+            : "space-y-3"
+        }
+      >
+        {isSu7 ? (
+          <div className="grid gap-0 md:grid-cols-12">
+            <div className="flex flex-col justify-between p-8 md:col-span-5 md:p-10">
+              <div className="space-y-4">
+                <div className="text-xs font-medium uppercase tracking-[0.18em] text-[#6B6A63]">Automotive CMF Proposal</div>
+                <div className="flex flex-wrap gap-2 text-[11px] text-[#2D4A3E]">
+                  {(project.tags ?? []).map((tag) => (
+                    <span key={tag} className="rounded-full border border-black/10 bg-white/70 px-3 py-1">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+                <h1 className="text-3xl font-semibold tracking-tight text-[#2D4A3E] md:text-4xl">
+                  “蔚蓝之境”小米 SU7 CMF 设计提案
+                </h1>
+                <p className="text-base text-[#4C5A52]">Exterior paint + interior seating CMF design</p>
+                <p className="text-sm leading-7 text-[#5C665F]">{project.summary.zh}</p>
+              </div>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4">
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Project type</div>
+                  <div className="mt-2 text-sm font-medium text-[#2D4A3E]">汽车 CMF 设计研究</div>
+                </div>
+                <div className="rounded-[24px] border border-black/10 bg-white/70 p-4">
+                  <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">Focus</div>
+                  <div className="mt-2 text-sm font-medium text-[#2D4A3E]">女性向 · 低饱和度色彩</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7">
+              <div className="h-full min-h-[320px] bg-[#D8E5E5] p-5 md:p-7">
+                <div className="overflow-hidden rounded-[24px] border border-white/60 shadow-[0_20px_60px_rgba(45,74,62,0.12)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.cover?.src}
+                    alt={project.cover?.alt.en ?? project.title.en}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="text-xs text-zinc-500">CMF Project</div>
+            <h1 className="text-3xl font-semibold tracking-tight">
+              {project.title.en}
+              <span className="ml-2 text-base font-normal text-zinc-500">{project.title.zh}</span>
+            </h1>
+            <p className="text-base text-zinc-700">{project.summary.en}</p>
+            <p className="text-sm text-zinc-500">{project.summary.zh}</p>
+          </>
+        )}
       </header>
 
-      <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Project Overview</h2>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Project Overview</h2>
 
-        <p className="mt-4 text-sm text-zinc-700">{s.overview?.en}</p>
-        <p className="mt-2 text-xs text-zinc-500">{s.overview?.zh}</p>
+        <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
+        <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.overview?.zh}</p>
 
         {project.slug === "taibai-travel-app" ? (
           <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white">
@@ -80,9 +135,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </section>
 
       {project.slug === "su7-cmf-proposal" ? (
-        <section className="rounded-3xl border border-black/10 bg-white p-7">
-          <h2 className="text-sm font-semibold">Competitor CMF Analysis</h2>
-          <p className="mt-2 text-xs text-zinc-500">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
+        <section className="rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]">Competitor CMF Analysis</h2>
+          <p className="mt-2 text-xs text-[#7C7468]">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {[
@@ -108,16 +163,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 img: "/projects/su7-cmf-proposal/nio-et5.jpg",
               },
             ].map((car) => (
-              <div key={car.name} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
+              <div key={car.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80 shadow-sm">
                 <div className="aspect-[4/3] bg-white">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
                 </div>
                 <div className="space-y-2 p-4">
-                  <div className="text-sm font-semibold text-zinc-900">{car.name}</div>
-                  <div className="text-xs text-zinc-500">{car.price}</div>
-                  <div className="text-sm text-zinc-700">{car.note}</div>
-                  <div className="inline-flex rounded-full bg-white px-3 py-1 text-[11px] text-zinc-600 ring-1 ring-black/10">
+                  <div className="text-sm font-semibold text-[#2D4A3E]">{car.name}</div>
+                  <div className="text-xs text-[#8A7A63]">{car.price}</div>
+                  <div className="text-sm text-[#55635B]">{car.note}</div>
+                  <div className="inline-flex rounded-full bg-[#E8E2D5] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10">
                     {car.female}
                   </div>
                 </div>
@@ -125,20 +180,20 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             ))}
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
-            <div className="text-sm font-semibold text-zinc-900">Exterior color comparison</div>
-            <div className="mt-1 text-xs text-zinc-500">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
+          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+            <div className="text-sm font-semibold text-[#2D4A3E]">Exterior color comparison</div>
+            <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7", colors: ["霞光紫", "流金粉"] },
                 { name: "小鹏 MONA M03", colors: ["罗兰紫", "樱珞粉"] },
                 { name: "蔚来 ET5", colors: ["镜空粉", "宇航蓝"] },
               ].map((item) => (
-                <div key={item.name} className="rounded-2xl border border-black/10 bg-white p-4">
-                  <div className="text-sm font-semibold text-zinc-900">{item.name}</div>
+                <div key={item.name} className="rounded-[24px] border border-black/10 bg-white p-4">
+                  <div className="text-sm font-semibold text-[#2D4A3E]">{item.name}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {item.colors.map((c) => (
-                      <span key={c} className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-700">
+                      <span key={c} className="rounded-full bg-[#E8E2D5] px-3 py-1 text-xs text-[#5C665F]">
                         {c}
                       </span>
                     ))}
@@ -148,15 +203,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
-            <div className="text-sm font-semibold text-zinc-900">Interior CMF comparison</div>
+          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+            <div className="text-sm font-semibold text-[#2D4A3E]">Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/interior-seats.jpg" },
                 { name: "小鹏 MONA M03 · 拂晓紫", img: "/projects/su7-cmf-proposal/mona-interior.jpg" },
                 { name: "蔚来 ET5 · 电驭紫", img: "/projects/su7-cmf-proposal/nio-interior.jpg" },
               ].map((item) => (
-                <div key={item.name} className="overflow-hidden rounded-2xl border border-black/10 bg-white">
+                <div key={item.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
                   <div className="aspect-[4/3] bg-zinc-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={item.img} alt={item.name} className="h-full w-full object-cover" />
@@ -196,8 +251,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-zinc-50 p-4">
-            <div className="text-sm font-semibold text-zinc-900">Differentiation opportunities</div>
+          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+            <div className="text-sm font-semibold text-[#2D4A3E]">Differentiation opportunities</div>
             <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-zinc-50 text-zinc-700">
@@ -254,24 +309,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </section>
       ) : null}
 
-      <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Design Challenge & CMF Goal</h2>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
         <div className="mt-4 grid gap-6 md:grid-cols-12">
           <div className="md:col-span-7">
-            <p className="text-sm text-zinc-700">{s.challengeAndGoal?.en}</p>
-            <p className="mt-2 text-xs text-zinc-500">{s.challengeAndGoal?.zh}</p>
+            <p className={isSu7 ? "text-sm leading-7 text-[#4B5A53]" : "text-sm text-zinc-700"}>{s.challengeAndGoal?.en}</p>
+            <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.challengeAndGoal?.zh}</p>
           </div>
 
           {/* Palette integrated to the right */}
           <div className="md:col-span-5">
-            <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-              <div className="text-xs font-semibold text-zinc-700">Color Scheme</div>
+            <div className={isSu7 ? "rounded-[24px] border border-black/10 bg-white/80 p-4" : "rounded-2xl border border-black/10 bg-zinc-50 p-4"}>
+              <div className={isSu7 ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#8A7A63]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
               <div className="mt-3">
                 <Palette items={s.color?.palette ?? []} />
               </div>
-              {s.color?.source?.en ? <p className="mt-3 text-xs text-zinc-600">{s.color?.source?.en}</p> : null}
-              {s.color?.source?.zh ? <p className="mt-1 text-xs text-zinc-500">{s.color?.source?.zh}</p> : null}
+              {s.color?.source?.en ? <p className={isSu7 ? "mt-3 text-xs leading-6 text-[#5C665F]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
+              {s.color?.source?.zh ? <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-1 text-xs text-zinc-500"}>{s.color?.source?.zh}</p> : null}
             </div>
           </div>
         </div>
@@ -280,9 +335,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         {s.color?.psychology?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.color?.psychology?.zh}</p> : null}
       </section>
 
-      <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Materials & Finishes</h2>
-        <p className="mt-2 text-xs text-zinc-500">
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Materials & Finishes</h2>
+        <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
 
@@ -467,14 +522,65 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             </>
+          ) : isSu7 ? (
+            <div className="grid gap-4">
+              {(s.finish?.processes ?? []).map((p) => (
+                <div key={p.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80">
+                  <div className="grid gap-0 md:grid-cols-12">
+                    <div className="p-5 md:col-span-5 md:p-6">
+                      <div className="text-xs uppercase tracking-[0.12em] text-[#8A7A63]">CMF module</div>
+                      <div className="mt-2 text-lg font-semibold text-[#2D4A3E]">{p.name}</div>
+                      {p.description?.en ? <p className="mt-4 text-sm leading-7 text-[#4B5A53]">{p.description.en}</p> : null}
+                      {p.description?.zh ? <p className="mt-3 text-sm leading-7 text-[#6B6A63] whitespace-pre-line">{p.description.zh}</p> : null}
+                    </div>
+                    <div className="md:col-span-7">
+                      {p.compare?.afterSrc ? (
+                        <div className="relative h-full min-h-[320px] bg-[#E8E2D5] p-5 md:p-6">
+                          <div className="overflow-hidden rounded-[24px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(45,74,62,0.10)]">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
+                          </div>
+
+                          {p.name.includes("Exterior") ? (
+                            <>
+                              <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
+                              <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                                珠光金属漆 · 3C2B 工艺
+                              </div>
+                            </>
+                          ) : null}
+
+                          {p.name.includes("Interior") ? (
+                            <>
+                              <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
+                              <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                                仿麂皮 / 浅蓝撞色缝线
+                              </div>
+                              <div className="absolute bottom-8 right-8 h-16 w-16 border-b border-r border-[#C9A87C]" />
+                              <div className="absolute bottom-8 right-20 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                                参数化渐变打孔 · Nappa 局部点缀
+                              </div>
+                            </>
+                          ) : null}
+                        </div>
+                      ) : (
+                        <div className="flex h-full min-h-[220px] items-center justify-center bg-[#E8E2D5] p-6 text-sm text-[#7C7468]">
+                          Visual coming soon
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <div className="text-sm text-zinc-500">(We can merge materials + finishes per component here.)</div>
           )}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-black/10 bg-white p-7">
-        <h2 className="text-sm font-semibold">Final Renders</h2>
+      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Final Renders</h2>
 
         {(s.final?.renders ?? []).length ? (
           <div className="mt-4 grid gap-4">
@@ -487,8 +593,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         ) : null}
 
-        {s.final?.notes?.en ? <p className="mt-4 text-sm text-zinc-700">{s.final?.notes?.en}</p> : null}
-        {s.final?.notes?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.final?.notes?.zh}</p> : null}
+        {s.final?.notes?.en ? <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
+        {s.final?.notes?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
       </section>
     </div>
   );
