@@ -3,6 +3,8 @@ import Palette from "@/components/Palette";
 import SectionImage from "@/components/SectionImage";
 import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
 import MoodboardMagazine from "@/components/MoodboardMagazine";
+import Reveal from "@/components/Reveal";
+import StickyShowcase from "@/components/StickyShowcase";
 import { projects } from "@/lib/content";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -23,7 +25,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         }
       >
         {isSu7 ? (
-          <div className="grid gap-0 md:grid-cols-12">
+          <Reveal>
+            <div className="grid gap-0 md:grid-cols-12">
             <div className="flex flex-col justify-between p-8 md:col-span-5 md:p-10">
               <div className="space-y-4">
                 <div className="text-xs font-medium uppercase tracking-[0.18em] text-[#6B6A63]">Automotive CMF Proposal</div>
@@ -66,6 +69,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
             </div>
           </div>
+          </Reveal>
         ) : (
           <>
             <div className="text-xs text-zinc-500">CMF Project</div>
@@ -79,6 +83,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         )}
       </header>
 
+      <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Project Overview</h2>
 
@@ -133,8 +138,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         ) : null}
       </section>
+      </Reveal>
 
       {project.slug === "su7-cmf-proposal" ? (
+        <Reveal>
         <section className="rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7">
           <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]">Competitor CMF Analysis</h2>
           <p className="mt-2 text-xs text-[#7C7468]">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
@@ -283,6 +290,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
         </section>
+        </Reveal>
       ) : (s.finish?.processes ?? []).length ? (
         <section className="rounded-3xl border border-black/10 bg-white p-7">
           <h2 className="text-sm font-semibold">IA & Journey</h2>
@@ -309,6 +317,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </section>
       ) : null}
 
+      <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
@@ -331,10 +340,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
 
-        {s.color?.psychology?.en ? <p className="mt-5 text-sm text-zinc-700">{s.color?.psychology?.en}</p> : null}
-        {s.color?.psychology?.zh ? <p className="mt-2 text-xs text-zinc-500">{s.color?.psychology?.zh}</p> : null}
+        {s.color?.psychology?.en ? <p className={isSu7 ? "mt-5 text-sm leading-7 text-[#4B5A53]" : "mt-5 text-sm text-zinc-700"}>{s.color?.psychology?.en}</p> : null}
+        {s.color?.psychology?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.color?.psychology?.zh}</p> : null}
       </section>
+      </Reveal>
 
+      <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Materials & Finishes</h2>
         <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
@@ -523,54 +534,49 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </div>
             </>
           ) : isSu7 ? (
-            <div className="grid gap-4">
+            <div className="grid gap-6">
               {(s.finish?.processes ?? []).map((p) => (
-                <div key={p.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80">
-                  <div className="grid gap-0 md:grid-cols-12">
-                    <div className="p-5 md:col-span-5 md:p-6">
-                      <div className="text-xs uppercase tracking-[0.12em] text-[#8A7A63]">CMF module</div>
-                      <div className="mt-2 text-lg font-semibold text-[#2D4A3E]">{p.name}</div>
-                      {p.description?.en ? <p className="mt-4 text-sm leading-7 text-[#4B5A53]">{p.description.en}</p> : null}
-                      {p.description?.zh ? <p className="mt-3 text-sm leading-7 text-[#6B6A63] whitespace-pre-line">{p.description.zh}</p> : null}
-                    </div>
-                    <div className="md:col-span-7">
-                      {p.compare?.afterSrc ? (
-                        <div className="relative h-full min-h-[320px] bg-[#E8E2D5] p-5 md:p-6">
-                          <div className="overflow-hidden rounded-[24px] border border-white/60 bg-white shadow-[0_20px_50px_rgba(45,74,62,0.10)]">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
+                <StickyShowcase
+                  key={p.name}
+                  eyebrow="CMF module"
+                  title={p.name}
+                  body={`${p.description?.en ?? ""}\n\n${p.description?.zh ?? ""}`}
+                >
+                  {p.compare?.afterSrc ? (
+                    <div className="relative min-h-[320px] overflow-hidden rounded-[24px] border border-black/10 bg-[#E8E2D5] p-5 md:p-6 shadow-[0_20px_50px_rgba(45,74,62,0.10)]">
+                      <div className="overflow-hidden rounded-[24px] border border-white/60 bg-white">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]" />
+                      </div>
+
+                      {p.name.includes("Exterior") ? (
+                        <>
+                          <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
+                          <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                            珠光金属漆 · 3C2B 工艺
                           </div>
+                        </>
+                      ) : null}
 
-                          {p.name.includes("Exterior") ? (
-                            <>
-                              <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
-                              <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                                珠光金属漆 · 3C2B 工艺
-                              </div>
-                            </>
-                          ) : null}
-
-                          {p.name.includes("Interior") ? (
-                            <>
-                              <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
-                              <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                                仿麂皮 / 浅蓝撞色缝线
-                              </div>
-                              <div className="absolute bottom-8 right-8 h-16 w-16 border-b border-r border-[#C9A87C]" />
-                              <div className="absolute bottom-8 right-20 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
-                                参数化渐变打孔 · Nappa 局部点缀
-                              </div>
-                            </>
-                          ) : null}
-                        </div>
-                      ) : (
-                        <div className="flex h-full min-h-[220px] items-center justify-center bg-[#E8E2D5] p-6 text-sm text-[#7C7468]">
-                          Visual coming soon
-                        </div>
-                      )}
+                      {p.name.includes("Interior") ? (
+                        <>
+                          <div className="absolute left-8 top-8 h-16 w-16 border-l border-t border-[#C9A87C]" />
+                          <div className="absolute left-20 top-8 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                            仿麂皮 / 浅蓝撞色缝线
+                          </div>
+                          <div className="absolute bottom-8 right-8 h-16 w-16 border-b border-r border-[#C9A87C]" />
+                          <div className="absolute bottom-8 right-20 max-w-[180px] rounded-2xl border border-[#C9A87C]/50 bg-white/90 px-4 py-3 text-xs leading-5 text-[#5C665F] shadow-sm">
+                            参数化渐变打孔 · Nappa 局部点缀
+                          </div>
+                        </>
+                      ) : null}
                     </div>
-                  </div>
-                </div>
+                  ) : (
+                    <div className="flex min-h-[220px] items-center justify-center rounded-[24px] border border-black/10 bg-[#E8E2D5] p-6 text-sm text-[#7C7468]">
+                      Visual coming soon
+                    </div>
+                  )}
+                </StickyShowcase>
               ))}
             </div>
           ) : (
@@ -578,7 +584,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           )}
         </div>
       </section>
+      </Reveal>
 
+      <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F5F1E8] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Final Renders</h2>
 
@@ -596,6 +604,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         {s.final?.notes?.en ? <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
         {s.final?.notes?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
       </section>
+      </Reveal>
     </div>
   );
 }
