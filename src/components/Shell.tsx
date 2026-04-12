@@ -24,7 +24,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-10 [&_.project-hero-fullbleed]:mx-[calc(50%-50vw)] [&_.project-hero-fullbleed]:w-screen [&_.project-hero-fullbleed]:max-w-none [&_.project-hero-fullbleed]:px-0 [&_.project-hero-fullbleed]:py-0">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-10 first:[&_.project-hero-fullbleed]:-mt-10 [&_.project-hero-fullbleed]:mx-[calc(50%-50vw)] [&_.project-hero-fullbleed]:w-screen [&_.project-hero-fullbleed]:max-w-none [&_.project-hero-fullbleed]:px-0 [&_.project-hero-fullbleed]:py-0">{children}</main>
 
       <footer className="border-t border-black/10 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-zinc-700">
