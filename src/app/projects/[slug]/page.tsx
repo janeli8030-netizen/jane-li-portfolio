@@ -130,14 +130,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 price: "11.98–15.18 万",
                 female: "女性用户占比近一半",
                 note: "“樱珞粉”高定套装",
-                img: "/projects/su7-cmf-proposal/mona-m03.jpg",
+                img: "/projects/su7-cmf-proposal/小鹏外观粉色.jpg",
               },
               {
                 name: "蔚来 ET5",
                 price: "29.80–35.60 万",
                 female: "女性用户占比高",
                 note: "“镜空粉”专属色",
-                img: "/projects/su7-cmf-proposal/nio-et5.jpg",
+                img: "/projects/su7-cmf-proposal/蔚来外观粉色.jpg",
               },
             ].map((car) => (
               <div key={car.name} className="overflow-hidden bg-transparent">
@@ -187,9 +187,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="text-sm font-semibold text-[#2D4A3E]">Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
-                { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/interior-seats.jpg" },
-                { name: "小鹏 MONA M03 · 拂晓紫", img: "/projects/su7-cmf-proposal/mona-interior.jpg" },
-                { name: "蔚来 ET5 · 电驭紫", img: "/projects/su7-cmf-proposal/nio-interior.jpg" },
+                { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/小米内饰米色.jpg" },
+                { name: "小鹏 MONA M03 · 拂晓紫", img: "/projects/su7-cmf-proposal/小鹏内饰.jpg" },
+                { name: "蔚来 ET5 · 电驭紫", img: "/projects/su7-cmf-proposal/蔚来内饰紫色.jpg" },
               ].map((item) => (
                 <div key={item.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
                   <div className="aspect-[4/3] bg-zinc-100">
