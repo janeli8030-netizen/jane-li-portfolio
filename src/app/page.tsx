@@ -178,7 +178,7 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* 1) Hero */}
-      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-[var(--deep-green)] text-white">
+      <section className="overflow-hidden rounded-[32px] border border-white/10 bg-[#111111] text-white">
         <div className="p-10 md:p-14">
           <Reveal className="max-w-3xl">
             <div className="text-xs font-medium text-white/70">CMF Portfolio</div>
