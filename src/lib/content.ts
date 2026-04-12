@@ -166,6 +166,13 @@ export const projects: Project[] = [
       zh: "以螳螂自然色为起点，通过降饱和色彩策略与安全识别点，打造轻便、安全、舒适的儿童滑步车 CMF 方案。",
       en: "Starting from mantis-inspired naturals, a de-saturated palette and safety accents shape a lightweight, safe, and comfortable CMF concept.",
     },
+    tags: ["儿童产品CMF", "仿生灵感", "轻量化与安全"],
+    cover: {
+      src: "/projects/kids-balance-bike/final-renders.png",
+      alt: { zh: "儿童滑步车主视觉", en: "Kids balance bike hero visual" },
+    },
+    year: "2025",
+    role: { zh: "个人 CMF 概念设计", en: "Individual CMF concept" },
     sections: {
       overview: {
         zh: "以仿生螳螂为灵感的儿童滑步车概念方案，围绕“轻便、安全、舒适”建立 CMF 语言与可制造的落地细节。",

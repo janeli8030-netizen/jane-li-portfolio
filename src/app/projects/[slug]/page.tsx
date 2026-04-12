@@ -15,29 +15,43 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   const s = project.sections;
   const isSu7 = project.slug === "su7-cmf-proposal";
+  const isKidsBike = project.slug === "kids-balance-bike";
+  const isEditorial = isSu7 || isKidsBike;
 
   return (
-    <div className={isSu7 ? "space-y-10 text-[#556D7D]" : "space-y-10"}>
+    <div className={isEditorial ? "space-y-10 text-[#556D7D]" : "space-y-10"}>
       <header
         className={
-          isSu7
+          isEditorial
             ? "space-y-6"
             : "space-y-3"
         }
       >
-        {isSu7 ? (
+        {isEditorial ? (
           <>
             <HeroScene
               image={project.cover?.src}
-              title="蔚蓝之境"
-              subtitle="小米 SU7 CMF 设计提案｜以晨雾蓝为线索，将外饰漆面与内饰座椅连接成一套更宁静、更治愈、也更具女性共鸣的感性体验。"
+              title={isSu7 ? "蔚蓝之境" : "Mantis"}
+              subtitle={
+                isSu7
+                  ? "小米 SU7 CMF 设计提案｜以晨雾蓝为线索，将外饰漆面与内饰座椅连接成一套更宁静、更治愈、也更具女性共鸣的感性体验。"
+                  : "儿童滑步车 CMF 设计提案｜从螳螂自然色与儿童骑行场景出发，将轻量化、安全性与亲和触感统一成一套更完整的产品体验。"
+              }
               tags={project.tags ?? []}
             />
 
             <StatementBlock
               eyebrow="Concept statement"
-              title="用晨雾蓝连接外饰与内饰，在 SU7 的科技感之上叠加一层宁静治愈的情绪价值。"
-              body="这不是简单地换一种颜色，而是把女性用户对治愈感、呼吸感、长久耐看的期待，转译成一套可被制造、可被触摸、可被感知的 CMF 语言。"
+              title={
+                isSu7
+                  ? "用晨雾蓝连接外饰与内饰，在 SU7 的科技感之上叠加一层宁静治愈的情绪价值。"
+                  : "以螳螂自然色为起点，把轻便、安全、舒适转译为儿童可感知、家长可信赖的 CMF 语言。"
+              }
+              body={
+                isSu7
+                  ? "这不是简单地换一种颜色，而是把女性用户对治愈感、呼吸感、长久耐看的期待，转译成一套可被制造、可被触摸、可被感知的 CMF 语言。"
+                  : "这个项目不是单独讨论色彩或材质，而是从骑行稳定性、户外耐候性和儿童握持体验出发，让颜色、材料与工艺一起服务于更安全、更轻松的成长型骑行场景。"
+              }
             />
           </>
         ) : (
@@ -54,11 +68,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </header>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Project Overview</h2>
+      <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isEditorial ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Project Overview</h2>
 
-        <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
-        <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.overview?.zh}</p>
+        <p className={isEditorial ? "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
+        <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.overview?.zh}</p>
 
         {project.slug === "taibai-travel-app" ? (
           <div className="mt-6 overflow-hidden rounded-2xl border border-black/10 bg-white">
@@ -291,37 +305,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       ) : null}
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
+      <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isEditorial ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
         <div className="mt-4 grid gap-6 md:grid-cols-12">
           <div className="md:col-span-7">
-            <p className={isSu7 ? "text-sm leading-7 text-[#5A7180]" : "text-sm text-zinc-700"}>{s.challengeAndGoal?.en}</p>
-            <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.challengeAndGoal?.zh}</p>
+            <p className={isEditorial ? "text-sm leading-7 text-[#5A7180]" : "text-sm text-zinc-700"}>{s.challengeAndGoal?.en}</p>
+            <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.challengeAndGoal?.zh}</p>
           </div>
 
           {/* Palette integrated to the right */}
           <div className="md:col-span-5">
-            <div className={isSu7 ? "rounded-[24px] border border-black/10 bg-white/80 p-4" : "rounded-2xl border border-black/10 bg-zinc-50 p-4"}>
-              <div className={isSu7 ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#8B9EAC]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
+            <div className={isEditorial ? "rounded-[24px] border border-black/10 bg-white/80 p-4" : "rounded-2xl border border-black/10 bg-zinc-50 p-4"}>
+              <div className={isEditorial ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#8B9EAC]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
               <div className="mt-3">
                 <Palette items={s.color?.palette ?? []} />
               </div>
-              {s.color?.source?.en ? <p className={isSu7 ? "mt-3 text-xs leading-6 text-[#617785]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
-              {s.color?.source?.zh ? <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-1 text-xs text-zinc-500"}>{s.color?.source?.zh}</p> : null}
+              {s.color?.source?.en ? <p className={isEditorial ? "mt-3 text-xs leading-6 text-[#617785]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
+              {s.color?.source?.zh ? <p className={isEditorial ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-1 text-xs text-zinc-500"}>{s.color?.source?.zh}</p> : null}
             </div>
           </div>
         </div>
 
-        {s.color?.psychology?.en ? <p className={isSu7 ? "mt-5 text-sm leading-7 text-[#5A7180]" : "mt-5 text-sm text-zinc-700"}>{s.color?.psychology?.en}</p> : null}
-        {s.color?.psychology?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.color?.psychology?.zh}</p> : null}
+        {s.color?.psychology?.en ? <p className={isEditorial ? "mt-5 text-sm leading-7 text-[#5A7180]" : "mt-5 text-sm text-zinc-700"}>{s.color?.psychology?.en}</p> : null}
+        {s.color?.psychology?.zh ? <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.color?.psychology?.zh}</p> : null}
       </section>
       </Reveal>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Materials & Finishes</h2>
-        <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
+      <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isEditorial ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Materials & Finishes</h2>
+        <p className={isEditorial ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
 
@@ -506,7 +520,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             </>
-          ) : isSu7 ? (
+          ) : isEditorial ? (
             <div className="grid gap-4 md:grid-cols-2">
               {(s.finish?.processes ?? []).map((p) => (
                 <div key={p.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80 shadow-sm">
@@ -515,15 +529,39 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
 
-                      {p.name.includes("Exterior") ? (
+                      {isSu7 && p.name.includes("Exterior") ? (
                         <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
                           珠光金属漆 · 3C2B
                         </div>
                       ) : null}
 
-                      {p.name.includes("Interior") ? (
+                      {isSu7 && p.name.includes("Interior") ? (
                         <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
                           仿麂皮 · 撞色缝线 · 渐变打孔
+                        </div>
+                      ) : null}
+
+                      {isKidsBike && p.name.includes("车架") ? (
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
+                          轻量化 · 哑光微磨砂
+                        </div>
+                      ) : null}
+
+                      {isKidsBike && p.name.includes("车轮") ? (
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
+                          原生橡胶 · 防滑纹路
+                        </div>
+                      ) : null}
+
+                      {isKidsBike && p.name.includes("把手") ? (
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
+                          双色注塑 · 安全防滑
+                        </div>
+                      ) : null}
+
+                      {isKidsBike && p.name.includes("LOGO") ? (
+                        <div className="absolute left-5 top-5 rounded-full bg-[#E7E2DA] px-3 py-1 text-[11px] text-[#617785] ring-1 ring-black/10">
+                          激光雕刻 · 安全耐用
                         </div>
                       ) : null}
                     </div>
@@ -550,8 +588,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </Reveal>
 
       <Reveal>
-      <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Final Renders</h2>
+      <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
+        <h2 className={isEditorial ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Final Renders</h2>
 
         {(s.final?.renders ?? []).length ? (
           <div className="mt-4 grid gap-4">
@@ -564,7 +602,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         ) : null}
 
-        {isSu7 ? (
+        {isEditorial ? (
           <div className="mt-5 grid gap-4 md:grid-cols-4">
             {[
               ["时间", "2026 年 4 月"],
@@ -580,8 +618,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         ) : null}
 
-        {s.final?.notes?.en ? <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
-        {s.final?.notes?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
+        {s.final?.notes?.en ? <p className={isEditorial ? "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
+        {s.final?.notes?.zh ? <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
       </section>
       </Reveal>
     </div>
