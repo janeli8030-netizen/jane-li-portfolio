@@ -17,7 +17,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isSu7 = project.slug === "su7-cmf-proposal";
 
   return (
-    <div className={isSu7 ? "space-y-10 text-[#2D4A3E]" : "space-y-10"}>
+    <div className={isSu7 ? "space-y-10 text-[#5C6F7B]" : "space-y-10"}>
       <header
         className={
           isSu7
@@ -55,9 +55,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Project Overview</h2>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#5C6F7B]" : "text-sm font-semibold"}>Project Overview</h2>
 
-        <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
+        <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#5F717D]" : "mt-4 text-sm text-zinc-700"}>{s.overview?.en}</p>
         <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.overview?.zh}</p>
 
         {project.slug === "taibai-travel-app" ? (
@@ -113,7 +113,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {project.slug === "su7-cmf-proposal" ? (
         <Reveal>
         <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]">Competitor CMF Analysis</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#5C6F7B]">Competitor CMF Analysis</h2>
           <p className="mt-2 text-xs text-[#7C7468]">竞品车型概览 · 外饰色彩对比 · 内饰 CMF 对比 · 差异化机会</p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -146,8 +146,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
                 </div>
                 <div className="space-y-2 p-4">
-                  <div className="text-sm font-semibold text-[#2D4A3E]">{car.name}</div>
-                  <div className="text-xs text-[#8A7A63]">{car.price}</div>
+                  <div className="text-sm font-semibold text-[#5C6F7B]">{car.name}</div>
+                  <div className="text-xs text-[#8A98A3]">{car.price}</div>
                   <div className="text-sm text-[#55635B]">{car.note}</div>
                   <div className="inline-flex rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#6B6A63] ring-1 ring-black/10">
                     {car.female}
@@ -158,9 +158,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#2D4A3E]">Exterior color comparison</div>
+            <div className="text-sm font-semibold text-[#5C6F7B]">Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
-            <div className="mt-4 border-l-2 border-[#C9A87C]/60 pl-4 text-xs leading-6 text-[#7C7468]">
+            <div className="mt-4 border-l-2 border-[#B7C8D3]/60 pl-4 text-xs leading-6 text-[#7C7468]">
               图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
             </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -170,10 +170,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 { name: "蔚来 ET5", colors: ["镜空粉", "宇航蓝"] },
               ].map((item) => (
                 <div key={item.name} className="border-t border-black/10 bg-transparent px-0 py-4 first:border-t-0">
-                  <div className="text-sm font-semibold text-[#2D4A3E]">{item.name}</div>
+                  <div className="text-sm font-semibold text-[#5C6F7B]">{item.name}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {item.colors.map((c) => (
-                      <span key={c} className="rounded-full bg-[#DCD4C7] px-3 py-1 text-xs text-[#5C665F]">
+                      <span key={c} className="rounded-full bg-[#DCD4C7] px-3 py-1 text-xs text-[#667784]">
                         {c}
                       </span>
                     ))}
@@ -184,7 +184,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#2D4A3E]">Interior CMF comparison</div>
+            <div className="text-sm font-semibold text-[#5C6F7B]">Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7 · 暮光红", img: "/projects/su7-cmf-proposal/小米内饰米色.jpg" },
@@ -232,7 +232,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <div className="mt-6 overflow-hidden p-0">
-            <div className="text-sm font-semibold text-[#2D4A3E]">Differentiation opportunities</div>
+            <div className="text-sm font-semibold text-[#5C6F7B]">Differentiation opportunities</div>
             <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-zinc-50 text-zinc-700">
@@ -292,35 +292,35 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#5C6F7B]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
 
         <div className="mt-4 grid gap-6 md:grid-cols-12">
           <div className="md:col-span-7">
-            <p className={isSu7 ? "text-sm leading-7 text-[#4B5A53]" : "text-sm text-zinc-700"}>{s.challengeAndGoal?.en}</p>
+            <p className={isSu7 ? "text-sm leading-7 text-[#5F717D]" : "text-sm text-zinc-700"}>{s.challengeAndGoal?.en}</p>
             <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.challengeAndGoal?.zh}</p>
           </div>
 
           {/* Palette integrated to the right */}
           <div className="md:col-span-5">
             <div className={isSu7 ? "rounded-[24px] border border-black/10 bg-white/80 p-4" : "rounded-2xl border border-black/10 bg-zinc-50 p-4"}>
-              <div className={isSu7 ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#8A7A63]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
+              <div className={isSu7 ? "text-xs font-semibold uppercase tracking-[0.12em] text-[#8A98A3]" : "text-xs font-semibold text-zinc-700"}>Color Scheme</div>
               <div className="mt-3">
                 <Palette items={s.color?.palette ?? []} />
               </div>
-              {s.color?.source?.en ? <p className={isSu7 ? "mt-3 text-xs leading-6 text-[#5C665F]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
+              {s.color?.source?.en ? <p className={isSu7 ? "mt-3 text-xs leading-6 text-[#667784]" : "mt-3 text-xs text-zinc-600"}>{s.color?.source?.en}</p> : null}
               {s.color?.source?.zh ? <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-1 text-xs text-zinc-500"}>{s.color?.source?.zh}</p> : null}
             </div>
           </div>
         </div>
 
-        {s.color?.psychology?.en ? <p className={isSu7 ? "mt-5 text-sm leading-7 text-[#4B5A53]" : "mt-5 text-sm text-zinc-700"}>{s.color?.psychology?.en}</p> : null}
+        {s.color?.psychology?.en ? <p className={isSu7 ? "mt-5 text-sm leading-7 text-[#5F717D]" : "mt-5 text-sm text-zinc-700"}>{s.color?.psychology?.en}</p> : null}
         {s.color?.psychology?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.color?.psychology?.zh}</p> : null}
       </section>
       </Reveal>
 
       <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Materials & Finishes</h2>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#5C6F7B]" : "text-sm font-semibold"}>Materials & Finishes</h2>
         <p className={isSu7 ? "mt-2 text-xs leading-6 text-[#7C7468]" : "mt-2 text-xs text-zinc-500"}>
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
@@ -516,13 +516,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       <img src={p.compare.afterSrc} alt={p.compare?.alt?.en ?? p.name} className="h-full w-full object-cover" />
 
                       {p.name.includes("Exterior") ? (
-                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#667784] ring-1 ring-black/10">
                           珠光金属漆 · 3C2B
                         </div>
                       ) : null}
 
                       {p.name.includes("Interior") ? (
-                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#5C665F] ring-1 ring-black/10">
+                        <div className="absolute left-5 top-5 rounded-full bg-[#DCD4C7] px-3 py-1 text-[11px] text-[#667784] ring-1 ring-black/10">
                           仿麂皮 · 撞色缝线 · 渐变打孔
                         </div>
                       ) : null}
@@ -534,9 +534,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   )}
 
                   <div className="space-y-3 p-5">
-                    <div className="text-[10px] uppercase tracking-[0.14em] text-[#8A7A63]">CMF module</div>
-                    <div className="text-lg font-medium text-[#2D4A3E]">{p.name}</div>
-                    {p.description?.zh ? <p className="text-sm leading-7 text-[#5C665F] whitespace-pre-line">{p.description.zh}</p> : null}
+                    <div className="text-[10px] uppercase tracking-[0.14em] text-[#8A98A3]">CMF module</div>
+                    <div className="text-lg font-medium text-[#5C6F7B]">{p.name}</div>
+                    {p.description?.zh ? <p className="text-sm leading-7 text-[#667784] whitespace-pre-line">{p.description.zh}</p> : null}
                     {p.description?.en ? <p className="text-xs leading-6 text-[#7C7468]">{p.description.en}</p> : null}
                   </div>
                 </div>
@@ -551,7 +551,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <Reveal>
       <section className={isSu7 ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#2D4A3E]" : "text-sm font-semibold"}>Final Renders</h2>
+        <h2 className={isSu7 ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#5C6F7B]" : "text-sm font-semibold"}>Final Renders</h2>
 
         {(s.final?.renders ?? []).length ? (
           <div className="mt-4 grid gap-4">
@@ -573,14 +573,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               ["状态", "概念设计"],
             ].map(([label, value]) => (
               <div key={label} className="rounded-[24px] border border-black/10 bg-white/80 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A7A63]">{label}</div>
-                <div className="mt-2 text-sm font-medium text-[#2D4A3E]">{value}</div>
+                <div className="text-[11px] uppercase tracking-[0.12em] text-[#8A98A3]">{label}</div>
+                <div className="mt-2 text-sm font-medium text-[#5C6F7B]">{value}</div>
               </div>
             ))}
           </div>
         ) : null}
 
-        {s.final?.notes?.en ? <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#4B5A53]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
+        {s.final?.notes?.en ? <p className={isSu7 ? "mt-4 text-sm leading-7 text-[#5F717D]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
         {s.final?.notes?.zh ? <p className={isSu7 ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
       </section>
       </Reveal>

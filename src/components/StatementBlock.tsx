@@ -20,9 +20,9 @@ export default function StatementBlock({
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto flex max-w-5xl flex-col items-center text-center"
       >
-        <div className="text-[11px] uppercase tracking-[0.18em] text-[#C9A87C]">{eyebrow}</div>
-        <h2 className="mt-4 max-w-3xl text-2xl font-medium leading-[1.18] tracking-tight text-[#2D4A3E] md:text-4xl lg:text-[42px]">{title}</h2>
-        <p className="mt-6 max-w-2xl text-sm leading-8 text-[#5C665F] md:text-[15px]">{body}</p>
+        <div className="text-[11px] uppercase tracking-[0.18em] text-[#B7C8D3]">{eyebrow}</div>
+        <h2 className="mt-4 max-w-3xl text-2xl font-medium leading-[1.18] tracking-tight text-[#5C6F7B] md:text-4xl lg:text-[42px]">{title}</h2>
+        <p className="mt-6 max-w-2xl text-sm leading-8 text-[#667784] md:text-[15px]">{body}</p>
       </motion.div>
     </section>
   );
