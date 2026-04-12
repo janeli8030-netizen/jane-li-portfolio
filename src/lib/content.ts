@@ -168,7 +168,7 @@ export const projects: Project[] = [
     },
     tags: ["儿童产品CMF", "仿生灵感", "轻量化与安全"],
     cover: {
-      src: "/projects/kids-balance-bike/final-renders.png",
+      src: "/images/hero.png",
       alt: { zh: "儿童滑步车主视觉", en: "Kids balance bike hero visual" },
     },
     year: "2025",
@@ -402,7 +402,7 @@ export const projects: Project[] = [
     },
     tags: ["AR 研究", "Apple Vision Pro", "TAM 模型"],
     cover: {
-      src: "/images/cover-ar-emotion-game.png",
+      src: "/projects/ar-emotion-game/1ade45ac.webp",
       alt: { zh: "AR 技术研究封面", en: "AR technology research cover" },
     },
     year: "2024",

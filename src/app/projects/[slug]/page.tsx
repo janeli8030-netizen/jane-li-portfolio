@@ -306,6 +306,55 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </section>
       ) : null}
 
+
+
+      {project.slug === "ar-emotion-game" ? (
+        <Reveal>
+        <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]">Research Framework</h2>
+          <p className="mt-2 text-xs text-[#7C7468]">PEST 宏观分析 · 桌面调研 · TAM 用户采纳模型 · 空间界面设计</p>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+              <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">01 / Macro analysis</div>
+              <h3 className="mt-2 text-lg font-medium text-[#556D7D]">PEST framework</h3>
+              <p className="mt-3 text-sm leading-7 text-[#617785]">从政策、经济、社会、技术四个维度对 iOS AR 生态进行全景扫描，评估 Vision Pro 与空间计算普及对行业带来的影响。</p>
+              <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
+                <img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST framework" className="h-full w-full object-cover" />
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+              <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">02 / Desk research</div>
+              <h3 className="mt-2 text-lg font-medium text-[#556D7D]">Background & ecosystem scan</h3>
+              <p className="mt-3 text-sm leading-7 text-[#617785]">通过系统桌面调研梳理教育、零售、文旅、购物、游戏等领域的头部 AR 应用，总结其界面模式、使用场景与体验机会点。</p>
+              <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
+                <img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk research" className="h-full w-full object-cover" />
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+              <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">03 / User insights</div>
+              <h3 className="mt-2 text-lg font-medium text-[#556D7D]">TAM adoption model</h3>
+              <p className="mt-3 text-sm leading-7 text-[#617785]">围绕感知有用性（PU）与感知易用性（PEU）收集并分析 200+ 用户问卷，识别 AR 高频使用的关键阻碍，其中设备兼容性是一项决定性因素。</p>
+              <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
+                <img src="/projects/ar-emotion-game/913b5e86.webp" alt="TAM analysis" className="h-full w-full object-cover" />
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-black/10 bg-white/85 p-5">
+              <div className="text-[10px] uppercase tracking-[0.14em] text-[#8B9EAC]">04 / Interface design</div>
+              <h3 className="mt-2 text-lg font-medium text-[#556D7D]">Spatial interface direction</h3>
+              <p className="mt-3 text-sm leading-7 text-[#617785]">基于 Apple HIG 空间计算规范，提出以 Glassmorphism 与 Spatial Depth 为核心的 AR 界面视觉体系，让信息层级、沉浸感与可读性达到平衡。</p>
+              <div className="mt-4 overflow-hidden rounded-[20px] border border-black/10 bg-white">
+                <img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial interface design" className="h-full w-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
+        </Reveal>
+      ) : null}
+
       <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
         <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-[#556D7D]" : "text-sm font-semibold"}>Design Challenge & CMF Goal</h2>
