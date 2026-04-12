@@ -1,7 +1,7 @@
 export type Locale = "zh" | "en";
 
 export type ProjectType =
-  | "cmf-experiment"
+  | "su7-cmf-proposal"
   | "kids-balance-bike"
   | "aroma-device"
   | "taibai-travel-app"
@@ -48,45 +48,63 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "cmf-experiments",
+    slug: "su7-cmf-proposal",
     order: 1,
-    type: "cmf-experiment",
-    title: { zh: "CMF 专项实验", en: "CMF Focus Experiments" },
+    type: "su7-cmf-proposal",
+    title: { zh: "小米SU7 CMF设计提案——蔚蓝之境", en: "Xiaomi SU7 CMF Proposal — Azure Sanctuary" },
     summary: {
-      zh: "用材料样板、色彩搭配与工艺对比，建立可复用的 CMF 语言与落地方法。",
-      en: "Building a reusable CMF language through swatches, color exercises, and finish comparisons.",
+      zh: "为 25–35 岁都市女性打造一套宁静、治愈、有呼吸感的 CMF 语言：从外饰漆面到内饰座椅，建立可落地的颜色、材料与工艺方案。",
+      en: "A calm, healing, breathable CMF language for urban women aged 25–35—covering exterior paint and interior seating with manufacturable choices.",
     },
+    tags: ["汽车CMF", "女性向设计", "低饱和度色彩"],
+    cover: {
+      src: "/projects/su7-cmf-proposal/cover-su7.png",
+      alt: { zh: "浅蓝色小米SU7外观图", en: "Light-blue Xiaomi SU7 exterior" },
+    },
+    year: "2026.04",
+    role: { zh: "个人 CMF 设计研究", en: "Individual CMF study" },
     sections: {
       overview: {
-        zh: "这是一个持续更新的 CMF 实验合集，记录从趋势→色彩→材料→工艺→呈现的完整推导过程。",
-        en: "An evolving collection of CMF experiments documenting a full reasoning chain from trends to execution.",
+        zh: "本项目以小米 SU7 为设计载体，面向 25–35 岁都市女性用户，提出一套“宁静、治愈、有呼吸感”的 CMF 设计方案。通过竞品分析（小鹏 MONA M03、蔚来 ET5）、趋势研究及用户洞察，从外饰漆面与内饰座椅两个维度展开 CMF 设计，探索低饱和浅蓝色系在女性向汽车 CMF 中的差异化机会。",
+        en: "Using Xiaomi SU7 as the vehicle, this project proposes a calm, healing, breathable CMF direction for urban women aged 25–35. Through competitor review (XPeng MONA M03, NIO ET5), trend research and insights, the proposal covers exterior paint and interior seating, exploring white-space for low-saturation light-blue CMF in a female-oriented context.",
       },
       challengeAndGoal: {
-        zh: "挑战：把主观偏好变成可沟通、可制造的决策。目标：沉淀可复用的色彩与材料组合规则。",
-        en: "Challenge: turning subjective preference into communicable, manufacturable decisions. Goal: codify reusable rules for color–material pairings.",
+        zh: "背景：女性用户在汽车颜色与内饰选择中更重视情绪价值与长期耐看度。目标：在 SU7 的科技感基底上叠加“宁静治愈”的情绪层；并给出可制造的漆面层次与座椅材料工艺路径。方法：竞品分析 + 趋势研究 + CMF 提案输出。",
+        en: "Context: women often value emotional resonance and long-term appeal in color/interior decisions. Goal: add a calm-healing emotional layer on top of SU7’s tech identity with manufacturable paint and seating material/finish routes. Method: competitor analysis + trend research + CMF proposal.",
       },
       color: {
         palette: [
-          { name: "Warm Sand", hex: "#D6C2A8", note: { zh: "温暖、亲肤", en: "Warm, skin-friendly" } },
-          { name: "Graphite", hex: "#2E2F33", note: { zh: "理性、稳重", en: "Rational, grounded" } },
-          { name: "Mist Blue", hex: "#A8C3D6", note: { zh: "干净、呼吸感", en: "Clean, breathable" } },
+          { name: "Mist Blue", hex: "#A8D0D0", note: { zh: "晨雾蓝：宁静治愈、呼吸感", en: "Mist Blue: calm, healing, breathable" } },
+          { name: "Soft Beige", hex: "#F5E6D3", note: { zh: "浅米：温暖柔软、放大座舱", en: "Soft beige: warm, soft, enlarges cabin feel" } },
+          { name: "Warm Gray", hex: "#C4C4C4", note: { zh: "暖灰：克制点缀、结构层次", en: "Warm gray: restrained accents, structure" } },
         ],
         source: {
-          zh: "来源于自然材质（砂石/矿物）与当代家居色彩趋势的交集。",
-          en: "Sourced from the intersection of natural materials (stone/minerals) and contemporary home color trends.",
-        },
-        psychology: {
-          zh: "降低焦虑、增强安全感与可信赖感，适合日常高频触达的产品。",
-          en: "Designed to reduce anxiety and increase trust—fit for everyday high-touch products.",
+          zh: "趋势关键词：低饱和度、治愈感、内外呼应、可持续材料。",
+          en: "Trend keywords: low saturation, healing mood, inside–out harmony, sustainable materials.",
         },
       },
       material: {
         items: [
           {
-            name: "PC+ABS (fine texture)",
+            name: "Competitor comparison",
             why: {
-              zh: "平衡强度与成本，可通过模具蚀纹获得细腻触感。",
-              en: "Balances strength and cost; fine tactile feel via mold texturing.",
+              zh: "对比小米 SU7、小鹏 MONA M03、蔚来 ET5 的女性偏好色与内饰材质取向，发现紫/粉色系较常见，而浅蓝色仍具差异化空间。",
+              en: "Comparing SU7, MONA M03 and ET5 reveals purple/pink tones are common, while light-blue remains a differentiator.",
+            },
+            photo: {
+              src: "/projects/su7-cmf-proposal/compete-table.png",
+              alt: { zh: "竞品分析对比表", en: "Competitor CMF comparison" },
+            },
+          },
+          {
+            name: "Inspiration / Moodboard",
+            why: {
+              zh: "以“湖面薄雾、浅砂岩、哑光金属微光”为情绪母题，建立宁静但不沉闷的色彩与质感基调。",
+              en: "A mood built from lake mist, light sandstone, and a soft metallic glow—calm without dullness.",
+            },
+            photo: {
+              src: "/projects/su7-cmf-proposal/moodboard.png",
+              alt: { zh: "情绪板 / 灵感图", en: "Mood board" },
             },
           },
         ],
@@ -94,18 +112,47 @@ export const projects: Project[] = [
       finish: {
         processes: [
           {
-            name: "Matte UV",
+            name: "Exterior paint — ‘Mist Blue’ pearl metallic",
             description: {
-              zh: "降低反光、提升高级感；与细纹理叠加能显著改善指纹问题。",
-              en: "Reduces glare and elevates premium feel; layered with fine texture to mitigate fingerprints.",
+              zh: "颜色名：晨雾蓝（Mist Blue）｜参考：Pantone 12-4604 TCX｜质感：珠光金属漆｜工艺：3C2B（炭黑打底 → 含珠光粉蓝色色漆层 → 高透清漆）｜故事：来自清晨湖面的薄雾，宁静但不沉闷。",
+              en: "Name: Mist Blue | Ref: Pantone 12-4604 TCX | Feel: pearl metallic | Process: 3C2B (carbon-black base → blue color coat with pearl → high-transparency clear coat) | Story: morning lake mist—calm yet lively.",
+            },
+            compare: {
+              afterSrc: "/projects/su7-cmf-proposal/exterior-su7.png",
+              alt: { zh: "外饰漆面主视觉", en: "Exterior paint hero" },
+            },
+          },
+          {
+            name: "Interior seats — beige base + blue stitching",
+            description: {
+              zh: "主色：浅米（Pantone 12-0806 TCX）座椅主体｜辅色：浅蓝（同外饰）用于缝线/头枕/安全带｜点缀：暖石灰（Pantone 16-3802 TCX）用于按键区/饰条｜面料：仿麂皮/超纤为主，头枕/坐垫中央用 Nappa 真皮局部点缀｜工艺：浅蓝撞色双针绗缝 + 参数化渐变打孔｜软包范围：座椅、门板扶手、中控台两侧。",
+              en: "Main: Soft beige (Pantone 12-0806 TCX) | Secondary: Mist Blue for stitching/headrest/seatbelt | Accent: warm limestone (Pantone 16-3802 TCX) on trims | Material: microfiber suede with local Nappa leather highlights | Craft: double-needle quilting in blue + parametric gradient perforation | Soft-wrap: seats, door armrests, console sides.",
+            },
+            compare: {
+              afterSrc: "/projects/su7-cmf-proposal/interior-seats.png",
+              alt: { zh: "内饰座椅主视觉", en: "Interior seat hero" },
+            },
+          },
+          {
+            name: "CMF logic summary",
+            description: {
+              zh: "色彩逻辑：外饰浅蓝（冷静治愈）+ 内饰浅米（温暖柔软）+ 浅蓝缝线（内外呼应）\n材料逻辑：仿麂皮主料（环保亲肤）+ Nappa 局部点缀（质感提升）\n工艺逻辑：珠光漆面（层次感）+ 撞色缝线（精致度）+ 渐变打孔（呼吸感）\n女性友好细节：浅米座舱显大、仿麂皮冬季不冰凉、撞色缝线提升精致感。",
+              en: "Color: Mist Blue (calm) + soft beige (warm) + blue stitching (inside–out tie)\nMaterial: microfiber suede (skin-friendly, sustainable) + local Nappa highlights\nProcess: pearl metallic paint + contrast stitching + gradient perforation\nWomen-friendly details: airy beige cabin, suede not cold in winter, refined quilting.",
+            },
+          },
+          {
+            name: "One-line highlight",
+            description: {
+              zh: "用晨雾蓝连接外饰与内饰，在 SU7 的科技感之上叠加一层“宁静治愈”的情绪价值。",
+              en: "Using Mist Blue to connect exterior and interior, adding a calm-healing emotional layer on SU7’s tech identity.",
             },
           },
         ],
       },
       final: {
         notes: {
-          zh: "后续会补充：样板照片、Keyshot 材质球、工艺对比图。",
-          en: "To be added: swatch photos, Keyshot materials, and finish comparison images.",
+          zh: "项目信息｜时间：2026 年 4 月｜类型：个人 CMF 设计研究｜工具：Keyshot / Photoshop / Figma｜状态：概念设计。",
+          en: "Info | Time: Apr 2026 | Type: Individual CMF study | Tools: Keyshot / Photoshop / Figma | Status: Concept.",
         },
       },
     },
