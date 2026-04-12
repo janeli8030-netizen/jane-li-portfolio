@@ -18,7 +18,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isSu7 = project.slug === "su7-cmf-proposal";
 
   return (
-    <div className={isSu7 ? "space-y-10 text-[#2D4A3E] -mt-10" : "space-y-10"}>
+    <div className={isSu7 ? "space-y-10 text-[#2D4A3E]" : "space-y-10"}>
       <header
         className={
           isSu7
