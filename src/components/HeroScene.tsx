@@ -37,19 +37,19 @@ export default function HeroScene({
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           className="max-w-4xl"
         >
-          <div className="mb-5 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.18em] text-white/80">
+          <div className="mb-5 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.16em] text-white/70">
             {tags.map((tag) => (
-              <span key={tag} className="rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur-sm">
+              <span key={tag} className="rounded-full border border-white/15 bg-white/8 px-3 py-1 backdrop-blur-sm">
                 #{tag}
               </span>
             ))}
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-[92px]">
+          <h1 className="max-w-4xl text-4xl font-semibold leading-[0.98] tracking-tight text-white md:text-6xl lg:text-[78px]">
             {title}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 md:text-lg">{subtitle}</p>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-white/76 md:text-base">{subtitle}</p>
         </motion.div>
       </div>
     </section>

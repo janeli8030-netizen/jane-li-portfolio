@@ -141,7 +141,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 img: "/projects/su7-cmf-proposal/nio-et5.jpg",
               },
             ].map((car) => (
-              <div key={car.name} className="overflow-hidden rounded-[24px] border border-black/10 bg-white/80 shadow-sm">
+              <div key={car.name} className="overflow-hidden bg-transparent">
                 <div className="aspect-[4/3] bg-white">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={car.img} alt={car.name} className="h-full w-full object-cover" />
@@ -158,10 +158,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             ))}
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+          <div className="mt-6 overflow-hidden p-0">
             <div className="text-sm font-semibold text-[#2D4A3E]">Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
-            <div className="mt-4 rounded-[24px] border border-dashed border-[#C9A87C]/50 bg-[#FBF8F3] p-4 text-xs leading-6 text-[#7C7468]">
+            <div className="mt-4 border-l-2 border-[#C9A87C]/60 pl-4 text-xs leading-6 text-[#7C7468]">
               图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
             </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -170,7 +170,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 { name: "小鹏 MONA M03", colors: ["罗兰紫", "樱珞粉"] },
                 { name: "蔚来 ET5", colors: ["镜空粉", "宇航蓝"] },
               ].map((item) => (
-                <div key={item.name} className="rounded-[24px] border border-black/10 bg-white p-4">
+                <div key={item.name} className="border-t border-black/10 bg-transparent px-0 py-4 first:border-t-0">
                   <div className="text-sm font-semibold text-[#2D4A3E]">{item.name}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {item.colors.map((c) => (
@@ -184,7 +184,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+          <div className="mt-6 overflow-hidden p-0">
             <div className="text-sm font-semibold text-[#2D4A3E]">Interior CMF comparison</div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
@@ -232,7 +232,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
 
-          <div className="mt-6 overflow-hidden rounded-[24px] border border-black/10 bg-white/70 p-4">
+          <div className="mt-6 overflow-hidden p-0">
             <div className="text-sm font-semibold text-[#2D4A3E]">Differentiation opportunities</div>
             <div className="mt-4 overflow-x-auto rounded-2xl border border-black/10 bg-white">
               <table className="min-w-full text-left text-sm">
