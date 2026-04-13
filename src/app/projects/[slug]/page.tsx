@@ -18,6 +18,53 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const isKidsBike = project.slug === "kids-balance-bike";
   const isEditorial = isSu7 || isKidsBike;
 
+  if (project.slug === "ar-emotion-game") {
+    return (
+      <div className="space-y-10 text-black">
+        <header className="space-y-3">
+          <div className="text-xs text-zinc-500">Project</div>
+          <h1 className="text-3xl font-semibold tracking-tight">{project.title.en}<span className="ml-2 text-base font-normal text-zinc-500">{project.title.zh}</span></h1>
+          <p className="text-base text-zinc-700">{project.summary.en}</p>
+          <p className="text-sm text-zinc-500">{project.summary.zh}</p>
+        </header>
+
+        <Reveal>
+          <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7 text-black">
+            <div className="space-y-10">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">01 / 研究宏观框架</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。预测 Vision Pro 硬件普及对行业带来的颠覆性影响。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" /></div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">02 / 项目背景与桌面调研</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Background & Desk Research</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来的前夕，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，深度梳理了目前 iOS 生态下 AR 技术的演进脉络。重点聚焦于软硬件协同发展趋势、行业头部应用的设计范式，以及用户在真实场景（如教育、文旅、电商等）中的核心痛点。通过剖析现有的市场缺口，为后续的 TAM 采纳度分析与体验重塑提供了坚实的理论依托。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk Research" className="h-full w-full object-cover" /></div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型构建</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">User Insights</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏 5 大核心赛道，广泛收集整理了 200+ 份目标用户需求问卷，深挖用户在使用 AR 技术时的核心痛点。为了量化分析，引入技术采纳模型（TAM），通过对“感知有用性（PU）”和“感知易用性（PEU）”的交叉对比分析，得出决定性结论：设备兼容性是影响 AR 高频使用的关键制约因素。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
+              </div>
+
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">04 / 核心界面设计落地</div>
+                <h2 className="mt-2 text-2xl font-medium text-black">Spatial Interface Design</h2>
+                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期的桌面调研与 TAM 采纳模型推导，我针对“设备兼容性”与“沉浸式体验”两大核心诉求，依托 Apple HIG 空间计算设计规范，输出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系。</p>
+                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial Interface Design" className="h-full w-full object-cover" /></div>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+      </div>
+    );
+  }
+
   return (
     <div className={isEditorial ? isKidsBike ? "space-y-10 text-[#284033]" : "space-y-10 text-black" : "space-y-10"}>
       <header
@@ -68,44 +115,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </>
         )}
       </header>
-
-      {project.slug === "ar-emotion-game" ? (
-        <>
-          <Reveal>
-          <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7 text-black">
-            <div className="space-y-10">
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">01 / 研究宏观框架</div>
-                <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。预测 Vision Pro 硬件普及对行业带来的颠覆性影响。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" /></div>
-              </div>
-
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">02 / 项目背景与桌面调研</div>
-                <h2 className="mt-2 text-2xl font-medium text-black">Background & Desk Research</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来的前夕，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，深度梳理了目前 iOS 生态下 AR 技术的演进脉络。重点聚焦于软硬件协同发展趋势、行业头部应用的设计范式，以及用户在真实场景（如教育、文旅、电商等）中的核心痛点。通过剖析现有的市场缺口，为后续的 TAM 采纳度分析与体验重塑提供了坚实的理论依托。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk Research" className="h-full w-full object-cover" /></div>
-              </div>
-
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型构建</div>
-                <h2 className="mt-2 text-2xl font-medium text-black">User Insights</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏 5 大核心赛道，广泛收集整理了 200+ 份目标用户需求问卷，深挖用户在使用 AR 技术时的核心痛点。为了量化分析，引入技术采纳模型（TAM），通过对“感知有用性（PU）”和“感知易用性（PEU）”的交叉对比分析，得出决定性结论：设备兼容性是影响 AR 高频使用的关键制约因素。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
-              </div>
-
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">04 / 核心界面设计落地</div>
-                <h2 className="mt-2 text-2xl font-medium text-black">Spatial Interface Design</h2>
-                <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期的桌面调研与 TAM 采纳模型推导，我针对“设备兼容性”与“沉浸式体验”两大核心诉求，依托 Apple HIG 空间计算设计规范，输出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial Interface Design" className="h-full w-full object-cover" /></div>
-              </div>
-            </div>
-          </section>
-          </Reveal>
-        </>
-      ) : null}
 
       <Reveal>
       <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
