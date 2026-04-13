@@ -139,12 +139,20 @@ export const projects: Project[] = [
               zh: "色彩逻辑：外饰浅蓝（冷静治愈）+ 内饰浅米（温暖柔软）+ 浅蓝缝线（内外呼应）\n材料逻辑：仿麂皮主料（环保亲肤）+ Nappa 局部点缀（质感提升）\n工艺逻辑：珠光漆面（层次感）+ 撞色缝线（精致度）+ 渐变打孔（呼吸感）\n女性友好细节：浅米座舱显大、仿麂皮冬季不冰凉、撞色缝线提升精致感。",
               en: "Color: Mist Blue (calm) + soft beige (warm) + blue stitching (inside–out tie)\nMaterial: microfiber suede (skin-friendly, sustainable) + local Nappa highlights\nProcess: pearl metallic paint + contrast stitching + gradient perforation\nWomen-friendly details: airy beige cabin, suede not cold in winter, refined quilting.",
             },
+            compare: {
+              afterSrc: "/projects/su7-cmf-proposal/小米03.33.jpg",
+              alt: { zh: "CMF 设计逻辑总结图", en: "CMF logic summary visual" },
+            },
           },
           {
             name: "One-line highlight",
             description: {
               zh: "用晨雾蓝连接外饰与内饰，在 SU7 的科技感之上叠加一层“宁静治愈”的情绪价值。",
               en: "Using Mist Blue to connect exterior and interior, adding a calm-healing emotional layer on SU7’s tech identity.",
+            },
+            compare: {
+              afterSrc: "/projects/su7-cmf-proposal/小米03.32.jpg",
+              alt: { zh: "一句话亮点总结图", en: "One-line highlight visual" },
             },
           },
         ],
