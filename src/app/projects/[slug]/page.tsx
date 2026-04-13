@@ -284,9 +284,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="mt-6 overflow-hidden p-0">
             <div className={isKidsBike ? "text-sm font-semibold text-[#284033]" : "text-sm font-semibold text-black"}>Exterior color comparison</div>
             <div className="mt-1 text-xs text-[#7C7468]">女性首选色对比：紫 / 粉色系集中，浅蓝色仍有差异化空间</div>
-            <div className={isKidsBike ? "mt-4 border-l-2 border-[#BFA37A]/60 pl-4 text-xs leading-6 text-[#6E6558]" : "mt-4 border-l-2 border-[#C7DAE6]/60 pl-4 text-xs leading-6 text-[#7C7468]"}>
-              图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
-            </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
                 { name: "小米 SU7 · 霞光紫", img: "/projects/su7-cmf-proposal/小米外观紫色.jpg" },

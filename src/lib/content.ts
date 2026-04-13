@@ -69,7 +69,7 @@ export const projects: Project[] = [
         en: "Using Xiaomi SU7 as the vehicle, this project proposes a calm, healing, breathable CMF direction for urban women aged 25–35. Through competitor review (XPeng MONA M03, NIO ET5), trend research and insights, the proposal covers exterior paint and interior seating, exploring white-space for low-saturation light-blue CMF in a female-oriented context.",
       },
       challengeAndGoal: {
-        zh: "背景：女性用户在汽车颜色与内饰选择中更重视情绪价值与长期耐看度。目标：在 SU7 的科技感基底上叠加“宁静治愈”的情绪层；并给出可制造的漆面层次与座椅材料工艺路径。方法：竞品分析 + 趋势研究 + CMF 提案输出。",
+        zh: "背景：女性用户在汽车颜色与内饰选择中更重视情绪价值与长期耐看度。目标：在 SU7 的科技感基底上叠加“宁静治愈”的情绪层；并给出可制造的漆面层次与座椅材料工艺路径。",
         en: "Context: women often value emotional resonance and long-term appeal in color/interior decisions. Goal: add a calm-healing emotional layer on top of SU7’s tech identity with manufacturable paint and seating material/finish routes. Method: competitor analysis + trend research + CMF proposal.",
       },
       color: {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
           {
             name: "Exterior paint — ‘Mist Blue’ pearl metallic",
             description: {
-              zh: "颜色名：晨雾蓝（Mist Blue）｜参考：Pantone 12-4604 TCX｜质感：珠光金属漆｜工艺：3C2B（炭黑打底 → 含珠光粉蓝色色漆层 → 高透清漆）｜故事：来自清晨湖面的薄雾，宁静但不沉闷。",
+              zh: "颜色名：晨雾蓝（Mist Blue）\n参考：Pantone 12-4604 TCX\n质感：珠光金属漆\n工艺：3C2B（炭黑打底 → 含珠光粉蓝色色漆层 → 高透清漆）\n故事：来自清晨湖面的薄雾，宁静但不沉闷。",
               en: "Name: Mist Blue | Ref: Pantone 12-4604 TCX | Feel: pearl metallic | Process: 3C2B (carbon-black base → blue color coat with pearl → high-transparency clear coat) | Story: morning lake mist—calm yet lively.",
             },
             compare: {
