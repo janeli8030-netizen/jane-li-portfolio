@@ -23,8 +23,8 @@ export const site = {
   },
   contact: {
     email: "janeli8030@gmail.com",
-    phone: "15004158030",
-    wechat: "",
+    phone: "",
+    wechat: "Jl_spurrr",
     linkedin: "",
   },
 } as const;

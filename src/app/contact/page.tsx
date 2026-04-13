@@ -18,10 +18,6 @@ export default function ContactPage() {
             <div className="text-xs text-zinc-500">WeChat</div>
             <div className="mt-1 font-medium">{site.contact.wechat || "(add)"}</div>
           </div>
-          <div>
-            <div className="text-xs text-zinc-500">Phone</div>
-            <div className="mt-1 font-medium">{site.contact.phone || "(add)"}</div>
-          </div>
         </div>
       </div>
     </div>

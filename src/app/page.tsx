@@ -120,16 +120,12 @@ function AboutMe() {
         <div className="mt-6 flex flex-wrap gap-3">
           <a
             href="/files/resume-data.pdf"
+            target="_blank"
+            rel="noreferrer"
             download="Jane-Li-Resume-Data.pdf"
             className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
           >
             下载简历 / Resume
-          </a>
-          <a
-            href={site.contact.linkedin || "#"}
-            className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
-          >
-            领英 / LinkedIn
           </a>
         </div>
       </div>
