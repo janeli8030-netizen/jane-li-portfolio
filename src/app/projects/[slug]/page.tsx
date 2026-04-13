@@ -79,6 +79,15 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">03 / 用户洞察与 TAM 采纳模型构建</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">User Insights</h2>
                 <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">覆盖教育、零售、文旅、购物、游戏 5 大核心赛道，广泛收集整理了 200+ 份目标用户需求问卷，深挖用户在使用 AR 技术时的核心痛点。为了量化分析，引入技术采纳模型（TAM），通过对“感知有用性（PU）”和“感知易用性（PEU）”的交叉对比分析，得出决定性结论：设备兼容性是影响 AR 高频使用的关键制约因素。</p>
+                <div className="mt-5 grid gap-5 md:grid-cols-12 md:items-start">
+                  <div className="md:col-span-4 rounded-[24px] border border-black/10 bg-white p-6 text-center">
+                    <div className="text-5xl font-semibold tracking-tight text-black">85%</div>
+                    <div className="mt-3 text-sm font-medium text-black">关键制约因素：设备兼容性</div>
+                  </div>
+                  <div className="md:col-span-8 rounded-[24px] border border-black/10 bg-white p-6">
+                    <p className="text-sm leading-8 text-zinc-700">数据表明，高达 85% 的用户将跨设备体验的一致性与硬件兼容门槛视为阻碍其高频使用 AR 功能的第一要素。这为后续的空间 UI 设计指明了“降本增效”的优化方向。</p>
+                  </div>
+                </div>
                 <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
               </div>
 
