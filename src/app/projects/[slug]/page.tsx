@@ -35,7 +35,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">01 / 研究宏观框架</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">Macro Analysis</h2>
                 <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">本报告首要任务是对 iOS 平台 ARKit 技术架构进行技术解析，并运用 PEST 模型对整个 iOS AR 生态的发展趋势进行全景式扫描。预测 Vision Pro 硬件普及对行业带来的颠覆性影响。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/12e33441.webp" alt="PEST" className="h-full w-full object-cover" /></div>
+                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  {[
+                    ["P - Politics", "政策导向与隐私合规"],
+                    ["E - Economy", "硬件普及率与商业转化"],
+                    ["S - Society", "用户认知度与教育成本"],
+                    ["T - Technology", "ARKit 架构与算力突破"],
+                  ].map(([title, desc]) => (
+                    <div key={title} className="rounded-[20px] border border-black/10 bg-white p-4">
+                      <div className="text-sm font-medium text-black">{title}</div>
+                      <div className="mt-2 text-sm leading-7 text-zinc-700">{desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div>
