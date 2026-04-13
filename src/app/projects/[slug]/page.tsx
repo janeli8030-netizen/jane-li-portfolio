@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Palette from "@/components/Palette";
 import SectionImage from "@/components/SectionImage";
-import CmfSwatchGrid, { type CmfSwatch } from "@/components/CmfSwatchGrid";
 import MoodboardMagazine from "@/components/MoodboardMagazine";
 import Reveal from "@/components/Reveal";
 import HeroScene from "@/components/HeroScene";
@@ -445,59 +444,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           By component — one card tells the full CMF decision: material choice → finish → touch & reason.
         </p>
 
-        {project.slug === "kids-balance-bike" ? (
-          <div className="mt-5">
-            <CmfSwatchGrid
-              items={(
-                [
-                  {
-                    id: "magnesium-matte",
-                    title: "Magnesium alloy",
-                    subtitle: "Matte coating · micro texture",
-                    meta: "Frame · Lightweight, low glare, better grip",
-                    image: {
-                      src: "/projects/kids-balance-bike/materials/magnesium-matte.jpg",
-                      alt: "Magnesium alloy matte coating sample",
-                    },
-                  },
-                  {
-                    id: "rubber-tread",
-                    title: "Natural rubber",
-                    subtitle: "Pneumatic tire · anti-slip tread",
-                    meta: "Wheels · Vibration absorption, strong grip",
-                    image: {
-                      src: "/projects/kids-balance-bike/materials/rubber-tread.jpg",
-                      alt: "Natural rubber tread sample",
-                    },
-                  },
-                  {
-                    id: "pu-foam",
-                    title: "Eco PU foam",
-                    subtitle: "Soft-touch · low odor",
-                    meta: "Handle · Child-safe tactility",
-                    image: {
-                      src: "/projects/kids-balance-bike/materials/pu-foam.jpg",
-                      alt: "Eco PU foam sample",
-                    },
-                  },
-                  {
-                    id: "laser-engraved-steel",
-                    title: "Stainless steel",
-                    subtitle: "Laser engraved",
-                    meta: "Branding · Durable + safe (no stickers)",
-                    image: {
-                      src: "/projects/kids-balance-bike/materials/stainless-laser.jpg",
-                      alt: "Stainless steel laser engraving sample",
-                    },
-                  },
-                ] satisfies CmfSwatch[]
-              )}
-            />
-            <p className="mt-3 text-[11px] text-zinc-500">
-              Tip: replace these placeholder swatch images with your real material photos (close-up, neutral light).
-            </p>
-          </div>
-        ) : null}
 
         <div className="mt-5 space-y-4">
           {project.slug === "kids-balance-bike" ? (
@@ -693,41 +639,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       </section>
       </Reveal>
 
-      <Reveal>
-      <section className={isEditorial ? "rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7" : "rounded-3xl border border-black/10 bg-white p-7"}>
-        <h2 className={isEditorial ? isKidsBike ? "text-sm font-semibold uppercase tracking-[0.12em] text-[#284033]" : "text-sm font-semibold uppercase tracking-[0.12em] text-black" : "text-sm font-semibold"}>Final Renders</h2>
-
-        {(s.final?.renders ?? []).length ? (
-          <div className="mt-4 grid gap-4">
-            {(s.final?.renders ?? []).map((r) => (
-              <div key={r.src} className="overflow-hidden rounded-2xl border border-black/10 bg-zinc-50">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={r.src} alt={r.alt.en} className="h-auto w-full" />
-              </div>
-            ))}
-          </div>
-        ) : null}
-
-        {isEditorial ? (
-          <div className="mt-5 grid gap-4 md:grid-cols-4">
-            {[
-              ["时间", "2026 年 4 月"],
-              ["类型", "个人 CMF 设计研究"],
-              ["工具", "Keyshot / Photoshop / Figma"],
-              ["状态", "概念设计"],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-[24px] border border-black/10 bg-white/80 p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(45,74,62,0.08)]">
-                <div className={isKidsBike ? "text-[11px] uppercase tracking-[0.12em] text-[#B08F61]" : "text-[11px] uppercase tracking-[0.12em] text-zinc-500"}>{label}</div>
-                <div className={isKidsBike ? "mt-2 text-sm font-medium text-[#284033]" : "mt-2 text-sm font-medium text-black"}>{value}</div>
-              </div>
-            ))}
-          </div>
-        ) : null}
-
-        {s.final?.notes?.en ? <p className={isEditorial ? isKidsBike ? "mt-4 text-sm leading-7 text-[#4A5C4D]" : "mt-4 text-sm leading-7 text-[#5A7180]" : "mt-4 text-sm text-zinc-700"}>{s.final?.notes?.en}</p> : null}
-        {s.final?.notes?.zh ? <p className={isEditorial ? "mt-3 text-sm leading-7 text-[#6B6A63]" : "mt-2 text-xs text-zinc-500"}>{s.final?.notes?.zh}</p> : null}
-      </section>
-      </Reveal>
     </div>
   );
 }

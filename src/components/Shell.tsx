@@ -30,8 +30,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-zinc-700">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
-              <div className="font-medium">请联系我 → {site.contact.phone} / {site.contact.email}</div>
-              <div className="text-xs text-zinc-500">Contact → {site.contact.phone} / {site.contact.email}</div>
+              <div className="font-medium">请联系我 → {site.contact.email}</div>
+              <div className="text-xs text-zinc-500">Contact → {site.contact.email}</div>
             </div>
             <div className="text-xs text-zinc-500">© {new Date().getFullYear()} {site.name.zh} | CMF Portfolio | {site.domain}</div>
           </div>
