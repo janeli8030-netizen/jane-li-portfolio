@@ -84,7 +84,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <div className="mt-3 text-sm font-medium text-black">关键制约因素：设备兼容性</div>
                   <p className="mt-4 text-sm leading-8 text-zinc-700">数据表明，高达 85% 的用户将跨设备体验的一致性与硬件兼容门槛视为阻碍其高频使用 AR 功能的第一要素。这为后续的空间 UI 设计指明了“降本增效”的优化方向。</p>
                 </div>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/913b5e86.webp" alt="User Insights" className="h-full w-full object-cover" /></div>
               </div>
 
               <div>
