@@ -90,7 +90,32 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">04 / 核心界面设计落地</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">Spatial Interface Design</h2>
                 <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">基于前期的桌面调研与 TAM 采纳模型推导，我针对“设备兼容性”与“沉浸式体验”两大核心诉求，依托 Apple HIG 空间计算设计规范，输出了一套具有玻璃微透视质感（Glassmorphism）与深度层级（Spatial Depth）的 AR 界面视觉体系。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial Interface Design" className="h-full w-full object-cover" /></div>
+
+                <div className="mt-5 space-y-6">
+                  <div className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
+                    <img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Spatial interface visual 1" className="h-full w-full object-cover" />
+                  </div>
+
+                  <div className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
+                    <img src="/projects/ar-emotion-game/1ade45ac.webp" alt="Spatial interface visual 2" className="h-full w-full object-cover" />
+                  </div>
+                  <p className="text-sm leading-8 text-zinc-700">
+                    <span className="font-medium text-black">空间景深与视觉层级</span><br />
+                    利用真实的材质光影与动态模糊底板（Vibrancy），确保界面在任何复杂的现实物理背景下都能保持极高的文本可读性与操作清晰度。
+                  </p>
+
+                  <div className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
+                    <img src="/projects/ar-emotion-game/12e33441.webp" alt="Spatial interface visual 3" className="h-full w-full object-cover" />
+                  </div>
+                  <p className="text-sm leading-8 text-zinc-700">
+                    <span className="font-medium text-black">眼动与手势的自然协同</span><br />
+                    抛弃传统的点按点击逻辑，界面元素在用户视线注视（Eye Tracking）时提供微妙的高光反馈，配合轻捏（Pinch）手势完成确认，实现无感交互。
+                  </p>
+
+                  <div className="overflow-hidden rounded-[24px] border border-black/10 bg-white">
+                    <img src="/projects/ar-emotion-game/913b5e86.webp" alt="Spatial interface visual 4" className="h-full w-full object-cover" />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
