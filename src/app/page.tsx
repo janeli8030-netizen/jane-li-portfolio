@@ -15,7 +15,6 @@ function FeaturedProjects() {
       <div className="flex items-end justify-between gap-6">
         <div>
           <h2 className="text-xl font-semibold tracking-tight">精选项目 / Featured</h2>
-          <p className="mt-1 text-sm text-zinc-600">3–4 个快速浏览入口（后续替换为你的封面图）。</p>
         </div>
         <Link href="/projects" className="text-sm font-medium hover:underline">
           查看全部作品 →
@@ -120,7 +119,8 @@ function AboutMe() {
 
         <div className="mt-6 flex flex-wrap gap-3">
           <a
-            href="#"
+            href="/files/resume-data.pdf"
+            download="Jane-Li-Resume-Data.pdf"
             className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
           >
             下载简历 / Resume
