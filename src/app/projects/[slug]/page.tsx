@@ -21,12 +21,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   if (project.slug === "ar-emotion-game") {
     return (
       <div className="space-y-10 text-black">
+        <Reveal>
         <header className="space-y-3">
           <div className="text-xs text-zinc-500">Project</div>
           <h1 className="text-3xl font-semibold tracking-tight">{project.title.en}<span className="ml-2 text-base font-normal text-zinc-500">{project.title.zh}</span></h1>
           <p className="text-base text-zinc-700">{project.summary.en}</p>
           <p className="text-sm text-zinc-500">{project.summary.zh}</p>
         </header>
+        </Reveal>
 
         <Reveal>
           <section className="rounded-[24px] border border-black/10 bg-[#F3EEE6] p-7 text-black">
