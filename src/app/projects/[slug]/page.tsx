@@ -54,7 +54,25 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-500">02 / 项目背景与桌面调研</div>
                 <h2 className="mt-2 text-2xl font-medium text-black">Background & Desk Research</h2>
                 <p className="mt-4 max-w-4xl text-sm leading-8 text-zinc-700">在空间计算（Spatial Computing）时代到来的前夕，移动端 AR 正处于从“尝鲜体验”向“实用工具”转型的关键节点。本模块通过系统性的桌面调研，深度梳理了目前 iOS 生态下 AR 技术的演进脉络。重点聚焦于软硬件协同发展趋势、行业头部应用的设计范式，以及用户在真实场景（如教育、文旅、电商等）中的核心痛点。通过剖析现有的市场缺口，为后续的 TAM 采纳度分析与体验重塑提供了坚实的理论依托。</p>
-                <div className="mt-5 overflow-hidden rounded-[24px] border border-black/10 bg-white"><img src="/projects/ar-emotion-game/3d1f1abc.webp" alt="Desk Research" className="h-full w-full object-cover" /></div>
+                <div className="mt-6 space-y-5">
+                  <div>
+                    <h3 className="text-lg font-medium text-black">桌面调研核心发现 (Key Findings)</h3>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="rounded-[20px] border border-black/10 bg-white p-4">
+                      <div className="text-sm font-medium text-black">VisionOS 范式转移</div>
+                      <p className="mt-2 text-sm leading-7 text-zinc-700">将 AR 交互从“2D 屏幕视窗”推向“3D 全景沉浸”，对 UI 元素的景深（Depth）、材质和光影提出了全新的规范要求。</p>
+                    </div>
+                    <div className="rounded-[20px] border border-black/10 bg-white p-4">
+                      <div className="text-sm font-medium text-black">多模态交互崛起</div>
+                      <p className="mt-2 text-sm leading-7 text-zinc-700">传统点按操作被“眼动追踪 + 捏合手势”取代。如何提供精准的防误触微交互与即时反馈，成为核心痛点。</p>
+                    </div>
+                    <div className="rounded-[20px] border border-black/10 bg-white p-4">
+                      <div className="text-sm font-medium text-black">现实与虚拟的锚定</div>
+                      <p className="mt-2 text-sm leading-7 text-zinc-700">数字信息如何与复杂的物理环境进行稳定、无违和的“锚定（Anchoring）”，是影响用户认知与沉浸感的最大挑战。</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div>
