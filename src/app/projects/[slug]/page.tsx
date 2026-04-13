@@ -287,9 +287,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className={isKidsBike ? "mt-4 border-l-2 border-[#BFA37A]/60 pl-4 text-xs leading-6 text-[#6E6558]" : "mt-4 border-l-2 border-[#C7DAE6]/60 pl-4 text-xs leading-6 text-[#7C7468]"}>
               图片位可继续补充三车外饰横向对比图；当前先以标签化方式呈现女性偏好色，保持信息清晰。
             </div>
-            <div className="mt-4 grid gap-4 md:grid-cols-4">
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
               {[
-                { name: "小米 SU7 · 流金粉", img: "/projects/su7-cmf-proposal/小米外观粉色.jpg" },
                 { name: "小米 SU7 · 霞光紫", img: "/projects/su7-cmf-proposal/小米外观紫色.jpg" },
                 { name: "小鹏 MONA M03 · 罗兰紫", img: "/projects/su7-cmf-proposal/小鹏外观紫色.jpg" },
                 { name: "蔚来 ET5 · 宇航紫", img: "/projects/su7-cmf-proposal/蔚来外观紫色.jpg" },
