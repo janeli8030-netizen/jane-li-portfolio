@@ -58,10 +58,10 @@ function InteractiveHeroCard() {
       />
 
       <motion.div
-        className="pointer-events-none absolute inset-[-18%] opacity-95 blur-[84px]"
+        className="pointer-events-none absolute inset-[-22%] opacity-100 blur-[88px]"
         animate={{
-          x: [0, 52 + pointer.x * 0.085, -18, 28, 0],
-          y: [0, -34 + pointer.y * 0.06, 18, 36, 0],
+          x: [0, 72 + pointer.x * 0.11, -30, 42, 0],
+          y: [0, -44 + pointer.y * 0.075, 24, 46, 0],
           background: [
             `radial-gradient(50% 46% at 14% 24%, ${active.layerA} 0%, transparent 74%), radial-gradient(42% 38% at 82% 24%, ${active.layerB} 0%, transparent 74%), radial-gradient(46% 42% at 56% 82%, ${active.layerC} 0%, transparent 78%)`,
             `radial-gradient(48% 44% at 28% 18%, ${active.layerA} 0%, transparent 74%), radial-gradient(44% 38% at 78% 38%, ${active.layerB} 0%, transparent 74%), radial-gradient(44% 40% at 60% 74%, ${active.layerC} 0%, transparent 78%)`,
@@ -71,16 +71,16 @@ function InteractiveHeroCard() {
           ],
         }}
         transition={{
-          background: { duration: 12.5, repeat: Infinity, ease: "easeInOut" },
-          x: { duration: 11, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 12, repeat: Infinity, ease: "easeInOut" },
+          background: { duration: 9.5, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 8.8, repeat: Infinity, ease: "easeInOut" },
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-[-14%] opacity-82 blur-[104px]"
+        className="pointer-events-none absolute inset-[-18%] opacity-88 blur-[112px]"
         animate={{
-          x: [0, -40 + pointer.x * 0.055, 18, -12, 0],
-          y: [0, 34 + pointer.y * 0.045, -12, -22, 0],
+          x: [0, -56 + pointer.x * 0.075, 28, -22, 0],
+          y: [0, 46 + pointer.y * 0.06, -18, -32, 0],
           background: [
             `radial-gradient(38% 34% at 24% 24%, ${active.layerC} 0%, transparent 74%), radial-gradient(36% 32% at 78% 66%, ${active.glow} 0%, transparent 76%)`,
             `radial-gradient(36% 34% at 40% 24%, ${active.layerC} 0%, transparent 74%), radial-gradient(38% 34% at 72% 54%, ${active.glow} 0%, transparent 76%)`,
@@ -90,9 +90,9 @@ function InteractiveHeroCard() {
           ],
         }}
         transition={{
-          background: { duration: 13.5, repeat: Infinity, ease: "easeInOut" },
-          x: { duration: 12, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 11.5, repeat: Infinity, ease: "easeInOut" },
+          background: { duration: 10.5, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 8.5, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 9, repeat: Infinity, ease: "easeInOut" },
         }}
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06)_48%,rgba(255,255,255,0.16))]" />
