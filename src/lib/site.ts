@@ -22,7 +22,7 @@ export const site = {
     en: ["CMF / Product Designer", "Blending nature-inspired, biomorphic form with a clear CMF language"],
   },
   contact: {
-    email: "janeli8030@gmail.com",
+    email: "2576584713@qq.com",
     phone: "",
     wechat: "Jl_spurrr",
     linkedin: "",
