@@ -1,7 +1,150 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { projects } from "@/lib/content";
 import { site } from "@/lib/site";
+
+function InteractiveHeroCard() {
+  const themes = useMemo(
+    () => ({
+      calm: {
+        label: "Calm",
+        base: "linear-gradient(135deg, #f7f2e8 0%, #edf4f6 42%, #f6efe7 100%)",
+        orbA: "rgba(171, 198, 214, 0.62)",
+        orbB: "rgba(223, 205, 186, 0.58)",
+        orbC: "rgba(242, 236, 225, 0.90)",
+        glow: "rgba(255,255,255,0.55)",
+      },
+      nature: {
+        label: "Nature",
+        base: "linear-gradient(135deg, #eef1e8 0%, #dce8de 42%, #f1eadf 100%)",
+        orbA: "rgba(124, 156, 132, 0.58)",
+        orbB: "rgba(202, 184, 143, 0.52)",
+        orbC: "rgba(235, 232, 218, 0.88)",
+        glow: "rgba(255,255,255,0.42)",
+      },
+      future: {
+        label: "Future",
+        base: "linear-gradient(135deg, #edf1f6 0%, #dde4ef 42%, #f1edf3 100%)",
+        orbA: "rgba(145, 168, 198, 0.60)",
+        orbB: "rgba(192, 182, 204, 0.50)",
+        orbC: "rgba(239, 240, 244, 0.88)",
+        glow: "rgba(255,255,255,0.48)",
+      },
+    }),
+    []
+  );
+
+  const [theme, setTheme] = useState<keyof typeof themes>("calm");
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
+  const active = themes[theme];
+
+  return (
+    <section className="relative overflow-hidden rounded-[32px] border border-black/10 text-black">
+      <motion.div
+        className="absolute inset-0"
+        animate={{ background: active.base }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      />
+
+      <motion.div
+        className="pointer-events-none absolute -left-12 top-[-40px] h-[260px] w-[260px] rounded-full blur-3xl"
+        animate={{
+          x: pointer.x * -0.18,
+          y: pointer.y * -0.16,
+          backgroundColor: active.orbA,
+        }}
+        transition={{ type: "spring", stiffness: 70, damping: 18, mass: 1.2 }}
+      />
+      <motion.div
+        className="pointer-events-none absolute right-[-30px] top-[70px] h-[240px] w-[240px] rounded-full blur-3xl"
+        animate={{
+          x: pointer.x * 0.16,
+          y: pointer.y * 0.14,
+          backgroundColor: active.orbB,
+        }}
+        transition={{ type: "spring", stiffness: 70, damping: 18, mass: 1.2 }}
+      />
+      <motion.div
+        className="pointer-events-none absolute bottom-[-90px] left-[24%] h-[280px] w-[280px] rounded-full blur-3xl"
+        animate={{
+          x: pointer.x * 0.1,
+          y: pointer.y * 0.12,
+          backgroundColor: active.orbC,
+        }}
+        transition={{ type: "spring", stiffness: 64, damping: 18, mass: 1.2 }}
+      />
+      <motion.div
+        className="pointer-events-none absolute inset-0 opacity-80"
+        animate={{
+          background: `radial-gradient(circle at ${50 + pointer.x * 0.015}% ${36 + pointer.y * 0.015}%, ${active.glow} 0%, transparent 28%)`,
+        }}
+        transition={{ type: "spring", stiffness: 55, damping: 16 }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08)_45%,rgba(255,255,255,0.18))]" />
+
+      <div
+        className="relative p-10 md:p-14"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          setPointer({ x, y });
+        }}
+        onMouseLeave={() => setPointer({ x: 0, y: 0 })}
+      >
+        <div className="mb-8 flex items-center justify-between gap-4">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-black/45">Interactive color mood</div>
+          <div className="flex items-center gap-2 rounded-full border border-black/10 bg-white/55 px-2 py-2 backdrop-blur-sm">
+            {(Object.entries(themes) as Array<[keyof typeof themes, (typeof themes)[keyof typeof themes]]>).map(([key, value]) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setTheme(key)}
+                className={`rounded-full px-3 py-1.5 text-[11px] font-medium transition ${theme === key ? "bg-black text-white shadow-sm" : "text-black/55 hover:bg-white/70 hover:text-black"}`}
+              >
+                {value.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <Reveal className="max-w-3xl">
+          <h1
+            className="text-4xl font-semibold tracking-tight md:text-6xl italic"
+            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+          >
+            “{site.slogan.en}”
+          </h1>
+
+          <div className="mt-6 text-base text-zinc-800">
+            {site.name.zh} · {site.title.zh}
+            <span className="mx-2 text-zinc-400">|</span>
+            {site.name.en} · {site.title.en}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/projects"
+              className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-black/90"
+            >
+              查看作品 / Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-full border border-black/10 bg-white/75 px-5 py-2.5 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+            >
+              联系我 / Contact
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
 function FeaturedProjects() {
   const featuredSlugs = ["su7-cmf-proposal", "kids-balance-bike", "ar-emotion-game"];
@@ -169,39 +312,7 @@ export default function HomePage() {
   return (
     <div className="space-y-14">
       {/* 1) Hero */}
-      <section className="overflow-hidden rounded-[32px] border border-black/10 bg-white text-black">
-        <div className="p-10 md:p-14">
-          <Reveal className="max-w-3xl">
-            <h1
-              className="text-4xl font-semibold tracking-tight md:text-6xl italic"
-              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-            >
-              “{site.slogan.en}”
-            </h1>
-
-            <div className="mt-6 text-base text-zinc-800">
-              {site.name.zh} · {site.title.zh}
-              <span className="mx-2 text-zinc-400">|</span>
-              {site.name.en} · {site.title.en}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/projects"
-                className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-black/90"
-              >
-                查看作品 / Projects
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-full border border-black/10 bg-white px-5 py-2.5 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-50"
-              >
-                联系我 / Contact
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <InteractiveHeroCard />
 
       <Reveal>
         <FeaturedProjects />
