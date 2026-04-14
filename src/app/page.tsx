@@ -58,39 +58,41 @@ function InteractiveHeroCard() {
       />
 
       <motion.div
-        className="pointer-events-none absolute inset-[-16%] opacity-95 blur-[78px]"
+        className="pointer-events-none absolute inset-[-18%] opacity-95 blur-[84px]"
         animate={{
-          x: [0, 44 + pointer.x * 0.075, -30, 0],
-          y: [0, -28 + pointer.y * 0.055, 34, 0],
+          x: [0, 52 + pointer.x * 0.085, -18, 28, 0],
+          y: [0, -34 + pointer.y * 0.06, 18, 36, 0],
           background: [
-            `radial-gradient(45% 42% at 18% 24%, ${active.layerA} 0%, transparent 72%), radial-gradient(38% 34% at 78% 28%, ${active.layerB} 0%, transparent 72%), radial-gradient(42% 38% at 52% 76%, ${active.layerC} 0%, transparent 76%)`,
-            `radial-gradient(44% 40% at 24% 22%, ${active.layerA} 0%, transparent 72%), radial-gradient(40% 34% at 76% 34%, ${active.layerB} 0%, transparent 72%), radial-gradient(40% 38% at 54% 74%, ${active.layerC} 0%, transparent 76%)`,
-            `radial-gradient(42% 40% at 20% 28%, ${active.layerA} 0%, transparent 72%), radial-gradient(40% 36% at 74% 26%, ${active.layerB} 0%, transparent 72%), radial-gradient(44% 40% at 48% 78%, ${active.layerC} 0%, transparent 76%)`,
-            `radial-gradient(45% 42% at 18% 24%, ${active.layerA} 0%, transparent 72%), radial-gradient(38% 34% at 78% 28%, ${active.layerB} 0%, transparent 72%), radial-gradient(42% 38% at 52% 76%, ${active.layerC} 0%, transparent 76%)`,
+            `radial-gradient(50% 46% at 14% 24%, ${active.layerA} 0%, transparent 74%), radial-gradient(42% 38% at 82% 24%, ${active.layerB} 0%, transparent 74%), radial-gradient(46% 42% at 56% 82%, ${active.layerC} 0%, transparent 78%)`,
+            `radial-gradient(48% 44% at 28% 18%, ${active.layerA} 0%, transparent 74%), radial-gradient(44% 38% at 78% 38%, ${active.layerB} 0%, transparent 74%), radial-gradient(44% 40% at 60% 74%, ${active.layerC} 0%, transparent 78%)`,
+            `radial-gradient(46% 42% at 36% 30%, ${active.layerA} 0%, transparent 74%), radial-gradient(42% 38% at 70% 48%, ${active.layerB} 0%, transparent 74%), radial-gradient(46% 42% at 46% 68%, ${active.layerC} 0%, transparent 78%)`,
+            `radial-gradient(48% 44% at 20% 44%, ${active.layerA} 0%, transparent 74%), radial-gradient(44% 38% at 62% 58%, ${active.layerB} 0%, transparent 74%), radial-gradient(46% 42% at 54% 54%, ${active.layerC} 0%, transparent 78%)`,
+            `radial-gradient(50% 46% at 14% 24%, ${active.layerA} 0%, transparent 74%), radial-gradient(42% 38% at 82% 24%, ${active.layerB} 0%, transparent 74%), radial-gradient(46% 42% at 56% 82%, ${active.layerC} 0%, transparent 78%)`,
           ],
         }}
         transition={{
-          background: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-          x: { duration: 8.5, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 10.5, repeat: Infinity, ease: "easeInOut" },
+          background: { duration: 12.5, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 11, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 12, repeat: Infinity, ease: "easeInOut" },
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-[-12%] opacity-78 blur-[96px]"
+        className="pointer-events-none absolute inset-[-14%] opacity-82 blur-[104px]"
         animate={{
-          x: [0, -34 + pointer.x * 0.05, 24, 0],
-          y: [0, 28 + pointer.y * 0.04, -20, 0],
+          x: [0, -40 + pointer.x * 0.055, 18, -12, 0],
+          y: [0, 34 + pointer.y * 0.045, -12, -22, 0],
           background: [
-            `radial-gradient(36% 32% at 30% 30%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 32% at 72% 62%, ${active.glow} 0%, transparent 74%)`,
-            `radial-gradient(34% 32% at 34% 28%, ${active.layerC} 0%, transparent 72%), radial-gradient(36% 34% at 70% 58%, ${active.glow} 0%, transparent 74%)`,
-            `radial-gradient(36% 34% at 26% 34%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 30% at 74% 60%, ${active.glow} 0%, transparent 74%)`,
-            `radial-gradient(36% 32% at 30% 30%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 32% at 72% 62%, ${active.glow} 0%, transparent 74%)`,
+            `radial-gradient(38% 34% at 24% 24%, ${active.layerC} 0%, transparent 74%), radial-gradient(36% 32% at 78% 66%, ${active.glow} 0%, transparent 76%)`,
+            `radial-gradient(36% 34% at 40% 24%, ${active.layerC} 0%, transparent 74%), radial-gradient(38% 34% at 72% 54%, ${active.glow} 0%, transparent 76%)`,
+            `radial-gradient(38% 34% at 50% 38%, ${active.layerC} 0%, transparent 74%), radial-gradient(36% 32% at 58% 50%, ${active.glow} 0%, transparent 76%)`,
+            `radial-gradient(36% 34% at 30% 52%, ${active.layerC} 0%, transparent 74%), radial-gradient(38% 34% at 48% 38%, ${active.glow} 0%, transparent 76%)`,
+            `radial-gradient(38% 34% at 24% 24%, ${active.layerC} 0%, transparent 74%), radial-gradient(36% 32% at 78% 66%, ${active.glow} 0%, transparent 76%)`,
           ],
         }}
         transition={{
-          background: { duration: 11, repeat: Infinity, ease: "easeInOut" },
-          x: { duration: 9, repeat: Infinity, ease: "easeInOut" },
-          y: { duration: 9.5, repeat: Infinity, ease: "easeInOut" },
+          background: { duration: 13.5, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 12, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 11.5, repeat: Infinity, ease: "easeInOut" },
         }}
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06)_48%,rgba(255,255,255,0.16))]" />
