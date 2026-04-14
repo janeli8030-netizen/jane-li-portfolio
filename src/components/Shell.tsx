@@ -37,7 +37,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               <div className="font-medium">请联系我 → {site.contact.email}</div>
               <div className="text-xs text-zinc-500">Contact → {site.contact.email}</div>
             </div>
-            <div className="text-xs text-zinc-500">© {new Date().getFullYear()} {site.name.zh} | CMF Portfolio | {site.domain}</div>
+            <div className="text-xs text-zinc-500">© {new Date().getFullYear()} {site.name.zh} | Design Portfolio | {site.domain}</div>
           </div>
         </div>
       </footer>

@@ -6,8 +6,8 @@ export const site = {
     en: "Let materials speak, let color resonate",
   },
   title: {
-    zh: "CMF 设计师",
-    en: "CMF Designer",
+    zh: "设计师",
+    en: "Designer",
   },
   intro: {
     zh: "专注于 CMF（Color / Material / Finish）与产品体验的统一：从趋势洞察到材料落地，用可制造的细节把概念变成真实触感。",

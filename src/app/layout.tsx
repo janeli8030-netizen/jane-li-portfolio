@@ -4,8 +4,8 @@ import { I18nProvider } from "@/components/I18nProvider";
 import Shell from "@/components/Shell";
 
 export const metadata: Metadata = {
-  title: "Jane Li — CMF Portfolio",
-  description: "CMF portfolio (Color · Material · Finish) — bilingual.",
+  title: "Jane Li — Design Portfolio",
+  description: "Design portfolio — bilingual.",
 };
 
 export default function RootLayout({

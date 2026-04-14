@@ -56,30 +56,25 @@ function FeaturedProjects() {
 function ResearchMethods() {
   const cards = [
     {
-      title: "趋势板 / Trends",
-      desc: "2026 自然共生：关键词、情绪曲线与色彩方向。",
-      href: "/research",
+      title: "用户分析 / User Analysis",
+      desc: "问卷、用户画像、使用障碍与关键洞察整理。",
+      href: "/research/user-analysis",
     },
     {
-      title: "竞品分析 / Benchmark",
-      desc: "同类产品 CMF 对比：色彩策略、材料选择、工艺成本。",
-      href: "/research",
-    },
-    {
-      title: "材料实验 / Materials",
-      desc: "磨砂 vs 高光、触感对比、指纹/耐磨/可制造性记录。",
-      href: "/experiments",
+      title: "AI 设计研究 / AI Design Research",
+      desc: "关于 AI 辅助设计、认知、交互与新工作流的研究项目。",
+      href: "/research/ai-design-research",
     },
   ];
 
   return (
     <section className="space-y-5 rounded-3xl bg-[var(--warm-lime)] p-8">
       <div>
-        <h2 className="text-xl font-semibold tracking-tight">CMF Research</h2>
-        <p className="mt-2 text-sm text-zinc-700">把“感觉”变成可沟通的证据链：趋势 → 分析 → 实验。</p>
+        <h2 className="text-xl font-semibold tracking-tight">Research</h2>
+        <p className="mt-2 text-sm text-zinc-700">用户研究、设计研究与方法整理。</p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {cards.map((c) => (
           <Link
             key={c.title}
