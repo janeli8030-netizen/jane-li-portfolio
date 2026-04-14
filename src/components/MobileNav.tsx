@@ -27,7 +27,7 @@ export default function MobileNav() {
             className="fixed inset-0 z-40 bg-black/45"
           />
 
-          <aside className="fixed inset-y-0 left-0 z-50 w-[82vw] max-w-[320px] border-r border-white/10 bg-[#111111] shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+          <aside className="fixed inset-y-0 left-0 z-50 w-[82vw] max-w-[320px] border-r border-white/10 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-4">
               <div className="text-sm font-medium text-white">Menu</div>
               <button
