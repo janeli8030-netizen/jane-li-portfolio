@@ -38,9 +38,16 @@ function InteractiveHeroCard() {
     []
   );
 
+  const themeKeys = Object.keys(themes) as Array<keyof typeof themes>;
   const [theme, setTheme] = useState<keyof typeof themes>("calm");
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const active = themes[theme];
+
+  const cycleTheme = () => {
+    const currentIndex = themeKeys.indexOf(theme);
+    const nextKey = themeKeys[(currentIndex + 1) % themeKeys.length];
+    setTheme(nextKey);
+  };
 
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-black/10 text-black">
@@ -86,8 +93,11 @@ function InteractiveHeroCard() {
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08)_45%,rgba(255,255,255,0.18))]" />
 
-      <div
-        className="relative p-10 md:p-14"
+      <button
+        type="button"
+        aria-label="Change hero color mood"
+        className="relative block w-full cursor-pointer p-10 text-left md:p-14"
+        onClick={cycleTheme}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
           const x = e.clientX - rect.left - rect.width / 2;
@@ -97,18 +107,9 @@ function InteractiveHeroCard() {
         onMouseLeave={() => setPointer({ x: 0, y: 0 })}
       >
         <div className="mb-8 flex items-center justify-between gap-4">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-black/45">Interactive color mood</div>
-          <div className="flex items-center gap-2 rounded-full border border-black/10 bg-white/55 px-2 py-2 backdrop-blur-sm">
-            {(Object.entries(themes) as Array<[keyof typeof themes, (typeof themes)[keyof typeof themes]]>).map(([key, value]) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => setTheme(key)}
-                className={`rounded-full px-3 py-1.5 text-[11px] font-medium transition ${theme === key ? "bg-black text-white shadow-sm" : "text-black/55 hover:bg-white/70 hover:text-black"}`}
-              >
-                {value.label}
-              </button>
-            ))}
+          <div className="text-[11px] uppercase tracking-[0.18em] text-black/45">Tap anywhere to shift the mood</div>
+          <div className="rounded-full border border-black/10 bg-white/55 px-3 py-1.5 text-[11px] font-medium text-black/55 backdrop-blur-sm">
+            {active.label}
           </div>
         </div>
 
@@ -141,7 +142,7 @@ function InteractiveHeroCard() {
             </Link>
           </div>
         </Reveal>
-      </div>
+      </button>
     </section>
   );
 }
