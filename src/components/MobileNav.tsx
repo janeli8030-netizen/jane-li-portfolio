@@ -14,7 +14,7 @@ export default function MobileNav() {
         type="button"
         aria-label="Open navigation menu"
         onClick={() => setOpen(true)}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-white/35 text-black backdrop-blur-sm"
       >
         <span className="text-lg leading-none">☰</span>
       </button>

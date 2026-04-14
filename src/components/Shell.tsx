@@ -7,9 +7,9 @@ import { site } from "@/lib/site";
 export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
-      <header className="sticky top-0 z-50 border-b border-white/25 bg-[rgba(17,17,17,0.38)] text-white shadow-[0_14px_40px_rgba(0,0,0,0.10)] backdrop-blur-2xl supports-[backdrop-filter]:bg-[rgba(17,17,17,0.28)]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-white/40" />
-        <div className="pointer-events-none absolute inset-x-[12%] top-0 h-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.20),rgba(255,255,255,0))] blur-xl" />
+      <header className="sticky top-0 z-50 border-b border-white/35 bg-[rgba(255,255,255,0.42)] text-black shadow-[0_14px_40px_rgba(15,23,42,0.08)] backdrop-blur-2xl supports-[backdrop-filter]:bg-[rgba(255,255,255,0.28)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-white/65" />
+        <div className="pointer-events-none absolute inset-x-[12%] top-0 h-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.45),rgba(255,255,255,0))] blur-xl" />
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <MobileNav />
