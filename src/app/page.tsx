@@ -12,27 +12,27 @@ function InteractiveHeroCard() {
     () => ({
       calm: {
         label: "Calm",
-        base: "linear-gradient(135deg, #f7f2e8 0%, #edf4f6 42%, #f6efe7 100%)",
-        orbA: "rgba(171, 198, 214, 0.62)",
-        orbB: "rgba(223, 205, 186, 0.58)",
-        orbC: "rgba(242, 236, 225, 0.90)",
-        glow: "rgba(255,255,255,0.55)",
+        base: "linear-gradient(140deg, #f8f3ea 0%, #eef4f6 38%, #f5eee6 100%)",
+        layerA: "rgba(164, 194, 210, 0.42)",
+        layerB: "rgba(234, 216, 197, 0.46)",
+        layerC: "rgba(255, 255, 255, 0.72)",
+        glow: "rgba(255,255,255,0.42)",
       },
       nature: {
         label: "Nature",
-        base: "linear-gradient(135deg, #eef1e8 0%, #dce8de 42%, #f1eadf 100%)",
-        orbA: "rgba(124, 156, 132, 0.58)",
-        orbB: "rgba(202, 184, 143, 0.52)",
-        orbC: "rgba(235, 232, 218, 0.88)",
-        glow: "rgba(255,255,255,0.42)",
+        base: "linear-gradient(140deg, #edf1e8 0%, #dfe8df 40%, #f2ecdf 100%)",
+        layerA: "rgba(138, 166, 142, 0.34)",
+        layerB: "rgba(209, 191, 151, 0.38)",
+        layerC: "rgba(251, 248, 241, 0.70)",
+        glow: "rgba(255,255,255,0.34)",
       },
       future: {
         label: "Future",
-        base: "linear-gradient(135deg, #edf1f6 0%, #dde4ef 42%, #f1edf3 100%)",
-        orbA: "rgba(145, 168, 198, 0.60)",
-        orbB: "rgba(192, 182, 204, 0.50)",
-        orbC: "rgba(239, 240, 244, 0.88)",
-        glow: "rgba(255,255,255,0.48)",
+        base: "linear-gradient(140deg, #eef2f7 0%, #dde5ef 40%, #f2edf4 100%)",
+        layerA: "rgba(152, 172, 201, 0.38)",
+        layerB: "rgba(196, 188, 210, 0.34)",
+        layerC: "rgba(248, 249, 252, 0.72)",
+        glow: "rgba(255,255,255,0.36)",
       },
     }),
     []
@@ -58,40 +58,42 @@ function InteractiveHeroCard() {
       />
 
       <motion.div
-        className="pointer-events-none absolute -left-12 top-[-40px] h-[260px] w-[260px] rounded-full blur-3xl"
+        className="pointer-events-none absolute inset-[-12%] opacity-80 blur-[72px]"
         animate={{
-          x: pointer.x * -0.18,
-          y: pointer.y * -0.16,
-          backgroundColor: active.orbA,
+          x: [0, 22 + pointer.x * 0.04, -14, 0],
+          y: [0, -12 + pointer.y * 0.03, 18, 0],
+          background: [
+            `radial-gradient(45% 42% at 18% 24%, ${active.layerA} 0%, transparent 72%), radial-gradient(38% 34% at 78% 28%, ${active.layerB} 0%, transparent 72%), radial-gradient(42% 38% at 52% 76%, ${active.layerC} 0%, transparent 76%)`,
+            `radial-gradient(44% 40% at 24% 22%, ${active.layerA} 0%, transparent 72%), radial-gradient(40% 34% at 76% 34%, ${active.layerB} 0%, transparent 72%), radial-gradient(40% 38% at 54% 74%, ${active.layerC} 0%, transparent 76%)`,
+            `radial-gradient(42% 40% at 20% 28%, ${active.layerA} 0%, transparent 72%), radial-gradient(40% 36% at 74% 26%, ${active.layerB} 0%, transparent 72%), radial-gradient(44% 40% at 48% 78%, ${active.layerC} 0%, transparent 76%)`,
+            `radial-gradient(45% 42% at 18% 24%, ${active.layerA} 0%, transparent 72%), radial-gradient(38% 34% at 78% 28%, ${active.layerB} 0%, transparent 72%), radial-gradient(42% 38% at 52% 76%, ${active.layerC} 0%, transparent 76%)`,
+          ],
         }}
-        transition={{ type: "spring", stiffness: 70, damping: 18, mass: 1.2 }}
+        transition={{
+          background: { duration: 16, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 14, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 18, repeat: Infinity, ease: "easeInOut" },
+        }}
       />
       <motion.div
-        className="pointer-events-none absolute right-[-30px] top-[70px] h-[240px] w-[240px] rounded-full blur-3xl"
+        className="pointer-events-none absolute inset-[-8%] opacity-60 blur-[88px]"
         animate={{
-          x: pointer.x * 0.16,
-          y: pointer.y * 0.14,
-          backgroundColor: active.orbB,
+          x: [0, -18 + pointer.x * 0.025, 10, 0],
+          y: [0, 14 + pointer.y * 0.02, -10, 0],
+          background: [
+            `radial-gradient(36% 32% at 30% 30%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 32% at 72% 62%, ${active.glow} 0%, transparent 74%)`,
+            `radial-gradient(34% 32% at 34% 28%, ${active.layerC} 0%, transparent 72%), radial-gradient(36% 34% at 70% 58%, ${active.glow} 0%, transparent 74%)`,
+            `radial-gradient(36% 34% at 26% 34%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 30% at 74% 60%, ${active.glow} 0%, transparent 74%)`,
+            `radial-gradient(36% 32% at 30% 30%, ${active.layerC} 0%, transparent 72%), radial-gradient(34% 32% at 72% 62%, ${active.glow} 0%, transparent 74%)`,
+          ],
         }}
-        transition={{ type: "spring", stiffness: 70, damping: 18, mass: 1.2 }}
-      />
-      <motion.div
-        className="pointer-events-none absolute bottom-[-90px] left-[24%] h-[280px] w-[280px] rounded-full blur-3xl"
-        animate={{
-          x: pointer.x * 0.1,
-          y: pointer.y * 0.12,
-          backgroundColor: active.orbC,
+        transition={{
+          background: { duration: 19, repeat: Infinity, ease: "easeInOut" },
+          x: { duration: 17, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
         }}
-        transition={{ type: "spring", stiffness: 64, damping: 18, mass: 1.2 }}
       />
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-80"
-        animate={{
-          background: `radial-gradient(circle at ${50 + pointer.x * 0.015}% ${36 + pointer.y * 0.015}%, ${active.glow} 0%, transparent 28%)`,
-        }}
-        transition={{ type: "spring", stiffness: 55, damping: 16 }}
-      />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08)_45%,rgba(255,255,255,0.18))]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06)_48%,rgba(255,255,255,0.16))]" />
 
       <button
         type="button"
