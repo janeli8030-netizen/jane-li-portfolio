@@ -106,13 +106,6 @@ function InteractiveHeroCard() {
         }}
         onMouseLeave={() => setPointer({ x: 0, y: 0 })}
       >
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-black/45">Tap anywhere to shift the mood</div>
-          <div className="rounded-full border border-black/10 bg-white/55 px-3 py-1.5 text-[11px] font-medium text-black/55 backdrop-blur-sm">
-            {active.label}
-          </div>
-        </div>
-
         <Reveal className="max-w-3xl">
           <h1
             className="text-4xl font-semibold tracking-tight md:text-6xl italic"
