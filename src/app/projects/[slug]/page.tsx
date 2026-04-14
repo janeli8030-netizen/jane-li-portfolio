@@ -543,34 +543,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-                <div className="text-sm font-semibold">品牌标识 / Branding</div>
-                <div className="mt-3 grid gap-4 md:grid-cols-12">
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Material</div>
-                    <div className="mt-1 text-sm font-medium">不锈钢紧固件 / Stainless fasteners</div>
-                    <div className="mt-2 text-sm text-zinc-700">Corrosion-resistant; safe for rainy outdoor use.</div>
-                    <div className="mt-1 text-xs text-zinc-500">防锈，淋雨不腐蚀。</div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Finish</div>
-                    <div className="mt-1 text-sm font-medium">激光雕刻 / Laser engraving</div>
-                    <div className="mt-2 text-sm text-zinc-700">Flush and durable; avoids stickers that could be picked/chewed—safety first.</div>
-                    <div className="mt-1 text-xs text-zinc-500">平整无凸起，避免贴纸被抠咬或脱落，安全第一。</div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="text-xs text-zinc-500">Prototype</div>
-                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/projects/kids-balance-bike/sections/materials-finishing-03.png"
-                        alt="Branding materials and finishing"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </>
           ) : isEditorial ? (
             <div className="grid gap-4 md:grid-cols-2">
