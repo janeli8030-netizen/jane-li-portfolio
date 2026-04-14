@@ -13,13 +13,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <MobileNav />
-            <Link href="/" className="text-sm font-medium tracking-tight text-white">
+            <Link href="/" className="text-sm font-medium tracking-tight text-black">
               {site.name.en}
             </Link>
           </div>
-          <nav className="hidden items-center gap-5 text-sm text-white/85 md:flex">
+          <nav className="hidden items-center gap-5 text-sm text-black/70 md:flex">
             {nav.primary.map((item) => (
-              <Link key={item.key} href={item.href} className="hover:text-white">
+              <Link key={item.key} href={item.href} className="hover:text-black">
                 {item.label.zh} / {item.label.en}
               </Link>
             ))}

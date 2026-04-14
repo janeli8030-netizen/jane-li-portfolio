@@ -118,7 +118,11 @@ function InteractiveHeroCard() {
             “{site.slogan.en}”
           </h1>
 
-          <div className="mt-6 text-base text-zinc-800">
+          <div className="mt-6 max-w-2xl text-base leading-8 text-zinc-800/90 md:text-lg">
+            以材料、色彩与产品体验为线索，构建设计中的感知、叙事与秩序。
+          </div>
+
+          <div className="mt-6 text-sm text-zinc-700 md:text-base">
             {site.name.zh} · {site.title.zh}
             <span className="mx-2 text-zinc-400">|</span>
             {site.name.en} · {site.title.en}
@@ -317,6 +321,43 @@ export default function HomePage() {
       </Reveal>
 
       <Reveal>
+        <ResearchMethods />
+      </Reveal>
+
+      <Reveal>
+        <AboutMe />
+      </Reveal>
+
+      <Reveal>
+        <Skills />
+      </Reveal>
+    </div>
+  );
+}
+return (
+    <div className="space-y-14">
+      {/* 1) Hero */}
+      <InteractiveHeroCard />
+
+      <Reveal>
+        <FeaturedProjects />
+      </Reveal>
+
+      <Reveal>
+        <ResearchMethods />
+      </Reveal>
+
+      <Reveal>
+        <AboutMe />
+      </Reveal>
+
+      <Reveal>
+        <Skills />
+      </Reveal>
+    </div>
+  );
+}
+veal>
         <ResearchMethods />
       </Reveal>
 
