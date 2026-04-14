@@ -27,8 +27,8 @@ export default function MobileNav() {
             className="fixed inset-0 z-40 bg-black/70 backdrop-blur-[2px]"
           />
 
-          <aside className="fixed inset-y-0 left-0 z-50 w-[82vw] max-w-[320px] border-r border-white/10 bg-[#000000] opacity-100 shadow-[0_20px_50px_rgba(0,0,0,0.65)]">
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-4">
+          <aside className="fixed left-0 top-0 bottom-0 z-50 flex h-dvh w-[82vw] max-w-[320px] flex-col border-r border-white/10 bg-[#000000] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            <div className="flex items-center justify-between border-b border-white/10 bg-black px-4 py-4">
               <div className="text-sm font-semibold text-white">Menu</div>
               <button
                 type="button"
@@ -40,7 +40,7 @@ export default function MobileNav() {
               </button>
             </div>
 
-            <nav className="flex flex-col gap-1 p-3">
+            <nav className="flex-1 flex flex-col gap-1 bg-black p-3">
               {nav.primary.map((item) => (
                 <Link
                   key={item.key}
