@@ -50,7 +50,7 @@ function InteractiveHeroCard() {
   };
 
   return (
-    <section className="relative overflow-hidden rounded-[32px] border border-black/10 text-black">
+    <section className="relative overflow-hidden rounded-[32px] border border-white/40 bg-white/35 text-black shadow-[0_24px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl">
       <motion.div
         className="absolute inset-0"
         animate={{ background: active.base }}
@@ -308,6 +308,29 @@ function Skills() {
 
 export default function HomePage() {
   return (
+    <div className="space-y-14">
+      {/* 1) Hero */}
+      <InteractiveHeroCard />
+
+      <Reveal>
+        <FeaturedProjects />
+      </Reveal>
+
+      <Reveal>
+        <ResearchMethods />
+      </Reveal>
+
+      <Reveal>
+        <AboutMe />
+      </Reveal>
+
+      <Reveal>
+        <Skills />
+      </Reveal>
+    </div>
+  );
+}
+return (
     <div className="space-y-14">
       {/* 1) Hero */}
       <InteractiveHeroCard />

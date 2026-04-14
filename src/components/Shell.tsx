@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#111111] text-white backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-white/20 bg-[rgba(17,17,17,0.55)] text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl">
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
             <MobileNav />
