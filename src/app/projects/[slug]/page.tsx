@@ -447,131 +447,32 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
         <div className="mt-5 space-y-4">
           {project.slug === "kids-balance-bike" ? (
-            <>
-              <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-                <div className="text-sm font-semibold">车架 / Frame</div>
-                <div className="mt-3 grid gap-4 md:grid-cols-12">
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Material</div>
-                    <div className="mt-1 text-sm font-medium">镁合金 / Magnesium alloy</div>
-                    <div className="mt-2 text-sm text-zinc-700">
-                      ~40% lighter than carbon steel (target 1.2kg total); kids can carry it; better inherent damping.
-                    </div>
-                    <div className="mt-1 text-xs text-zinc-500">比碳钢轻约 40%（整车约 1.2kg），儿童可自己搬动；天然减震性更好。</div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Finish</div>
-                    <div className="mt-1 text-sm font-medium">哑光喷涂 + 微磨砂纹理 / Matte coating + micro texture</div>
-                    <div className="mt-2 text-sm text-zinc-700">
-                      Fine, non-slippery feel; reduced glare outdoors; micro texture improves grip.
-                    </div>
-                    <div className="mt-1 text-xs text-zinc-500">触感细腻不滑手；户外不反光刺眼；磨砂增加摩擦力，孩子握持更稳。</div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="text-xs text-zinc-500">Prototype</div>
-                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/projects/kids-balance-bike/sections/prototype-frame.svg"
-                        alt="Prototype material - frame"
-                        className="h-auto w-full"
-                      />
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  src: "/projects/kids-balance-bike/sections/materials-finishing-01.png",
+                  alt: "Kids balance bike materials and finishing board 1",
+                },
+                {
+                  src: "/projects/kids-balance-bike/sections/materials-finishing-02.png",
+                  alt: "Kids balance bike materials and finishing board 2",
+                },
+                {
+                  src: "/projects/kids-balance-bike/sections/materials-finishing-03.png",
+                  alt: "Kids balance bike materials and finishing board 3",
+                },
+              ].map((item, index) => (
+                <div key={item.src} className="overflow-hidden rounded-[24px] border border-black/10 bg-white shadow-sm">
+                  <div className="relative aspect-[4/5] bg-white">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
+                    <div className="absolute left-4 top-4 rounded-full bg-[#E0D7C8] px-3 py-1 text-[11px] text-[#55624F] ring-1 ring-black/10">
+                      Board {index + 1}
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-                <div className="text-sm font-semibold">车轮 / Wheels</div>
-                <div className="mt-3 grid gap-4 md:grid-cols-12">
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Material</div>
-                    <div className="mt-1 text-sm font-medium">充气橡胶胎 / Pneumatic rubber tire</div>
-                    <div className="mt-2 text-sm text-zinc-700">
-                      Absorbs vibration on rough ground; strong grip for parks/communities/grass.
-                    </div>
-                    <div className="mt-1 text-xs text-zinc-500">缓冲碎石路震动，抓地力强，适合公园/小区/草地。</div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Finish</div>
-                    <div className="mt-1 text-sm font-medium">原生橡胶 + 防滑纹路 / Natural rubber + tread</div>
-                    <div className="mt-2 text-sm text-zinc-700">Soft and elastic; ~1.5mm tread depth for drainage and anti-slip.</div>
-                    <div className="mt-1 text-xs text-zinc-500">柔软有弹性；纹路深度约 1.5mm，排水+防滑。</div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="text-xs text-zinc-500">Prototype</div>
-                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/projects/kids-balance-bike/sections/prototype-wheels.svg"
-                        alt="Prototype material - wheels"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-                <div className="text-sm font-semibold">把手 / Handle</div>
-                <div className="mt-3 grid gap-4 md:grid-cols-12">
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Material</div>
-                    <div className="mt-1 text-sm font-medium">环保 PU 发泡 / Eco PU foam</div>
-                    <div className="mt-2 text-sm text-zinc-700">
-                      Soft yet supportive; non-toxic/low-odor for child safety standards.
-                    </div>
-                    <div className="mt-1 text-xs text-zinc-500">柔软但有支撑，无毒无味，符合儿童产品安全标准。</div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Finish</div>
-                    <div className="mt-1 text-sm font-medium">双色注塑 + 防滑颗粒 / Two-shot + grip bumps</div>
-                    <div className="mt-2 text-sm text-zinc-700">Soft with slight tack; ~30-mesh bumps reduce slippage for small hands.</div>
-                    <div className="mt-1 text-xs text-zinc-500">柔软、微粘；颗粒密度约 30 目，小手不易滑脱。</div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="text-xs text-zinc-500">Prototype</div>
-                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/projects/kids-balance-bike/sections/prototype-handle.svg"
-                        alt="Prototype material - handle"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-black/10 bg-zinc-50 p-4">
-                <div className="text-sm font-semibold">品牌标识 / Branding</div>
-                <div className="mt-3 grid gap-4 md:grid-cols-12">
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Material</div>
-                    <div className="mt-1 text-sm font-medium">不锈钢紧固件 / Stainless fasteners</div>
-                    <div className="mt-2 text-sm text-zinc-700">Corrosion-resistant; safe for rainy outdoor use.</div>
-                    <div className="mt-1 text-xs text-zinc-500">防锈，淋雨不腐蚀。</div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="text-xs text-zinc-500">Finish</div>
-                    <div className="mt-1 text-sm font-medium">激光雕刻 / Laser engraving</div>
-                    <div className="mt-2 text-sm text-zinc-700">Flush and durable; avoids stickers that could be picked/chewed—safety first.</div>
-                    <div className="mt-1 text-xs text-zinc-500">平整无凸起，避免贴纸被抠咬或脱落，安全第一。</div>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="text-xs text-zinc-500">Prototype</div>
-                    <div className="mt-2 overflow-hidden rounded-xl border border-black/10 bg-white">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src="/projects/kids-balance-bike/sections/prototype-branding.svg"
-                        alt="Prototype material - branding"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
+              ))}
+            </div>
           ) : isEditorial ? (
             <div className="grid gap-4 md:grid-cols-2">
               {(s.finish?.processes ?? []).map((p) => (
