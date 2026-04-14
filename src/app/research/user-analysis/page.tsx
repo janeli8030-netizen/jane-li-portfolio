@@ -64,7 +64,7 @@ export default function UserAnalysisPage() {
 
         <div className="space-y-4 text-sm leading-8 text-zinc-700">
           <p>
-            这项研究强化了我使用客观行为数据理解用户认知的能力。它不仅帮助我理解不同用户如何分配视觉注意，也让我在后续做 AR 与空间界面设计时，能更有依据地组织信息层级、优化视觉引导并减少认知负担。
+            这项研究强化了我使用客观行为数据理解用户认知的能力。它帮助我更清晰地理解不同用户如何分配视觉注意、形成认知偏好，并让我在面对信息组织、视觉引导与体验判断时，能够建立更有依据的分析视角。
           </p>
           <a href="https://www.mdpi.com/2073-445X/13/10/1592" target="_blank" rel="noreferrer" className="inline-flex rounded-full border border-black/10 bg-zinc-50 px-4 py-2 text-sm font-medium hover:bg-zinc-100">
             查看论文原文
