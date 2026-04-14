@@ -24,12 +24,12 @@ export default function MobileNav() {
             type="button"
             aria-label="Close navigation overlay"
             onClick={() => setOpen(false)}
-            className="fixed inset-0 z-40 bg-black/45"
+            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-[2px]"
           />
 
-          <aside className="fixed inset-y-0 left-0 z-50 w-[82vw] max-w-[320px] border-r border-white/10 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
+          <aside className="fixed inset-y-0 left-0 z-50 w-[82vw] max-w-[320px] border-r border-white/10 bg-[#000000] opacity-100 shadow-[0_20px_50px_rgba(0,0,0,0.65)]">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-4">
-              <div className="text-sm font-medium text-white">Menu</div>
+              <div className="text-sm font-semibold text-white">Menu</div>
               <button
                 type="button"
                 aria-label="Close navigation menu"
@@ -40,13 +40,13 @@ export default function MobileNav() {
               </button>
             </div>
 
-            <nav className="flex flex-col p-3">
+            <nav className="flex flex-col gap-1 p-3">
               {nav.primary.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm text-white/90 hover:bg-white/5 hover:text-white"
+                  className="rounded-xl bg-white/[0.03] px-4 py-3 text-sm font-medium text-white hover:bg-white/10 hover:text-white"
                 >
                   {item.label.zh} / {item.label.en}
                 </Link>
